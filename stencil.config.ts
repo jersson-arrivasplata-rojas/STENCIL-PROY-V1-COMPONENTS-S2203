@@ -1,8 +1,7 @@
-import { angularOutputTarget } from '@stencil/angular-output-target';
 import { Config } from '@stencil/core';
 
 export const config: Config = {
-  namespace: 'sami',
+  namespace: 'sami-core',
   outputTargets: [
     {
       type: 'dist',
