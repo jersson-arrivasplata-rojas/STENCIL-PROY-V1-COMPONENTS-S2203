@@ -1,10 +1,11 @@
 {
-    "name": "@jersson-arrivasplata-rojas/stencil-proy-v1-components-s2203",
+    "name": "@jersson-arrivasplata-rojas/sami",
     "private": false,
     "description": "Componente de Stencil",
     "authors": "Jersson G. Arrivasplata Rojas",
     "version": "0.0.1",
     "main": "pathToMain",
+    "repository": "https://github.com/jersson-arrivasplata-rojas/STENCIL-PROY-V1-COMPONENTS-S2203.git",
     "scripts": {
         "start": "stencil build --dev --watch --serve --port=8015",
         "test": "stencil test --spec --e2e",
@@ -45,5 +46,8 @@
         "typescript": "^3.9.5",
         "workbox-build": "4.3.1"
     },
-    "license": "MIT"
+    "license": "MIT",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    }
 }
