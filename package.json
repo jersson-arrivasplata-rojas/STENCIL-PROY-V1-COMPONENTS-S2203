@@ -1,11 +1,19 @@
 {
     "name": "@jersson-arrivasplata-rojas/sami",
-    "private": false,
+    "version": "0.0.3",
     "description": "Componente de Stencil",
-    "authors": "Jersson G. Arrivasplata Rojas",
-    "version": "0.0.1",
-    "main": "pathToMain",
-    "repository": "https://github.com/jersson-arrivasplata-rojas/STENCIL-PROY-V1-COMPONENTS-S2203.git",
+    "main": "dist/index.cjs.js",
+    "module": "dist/index.js",
+    "es2015": "dist/esm/index.mjs",
+    "es2017": "dist/esm/index.mjs",
+    "collection": "dist/collection/collection-manifest.json",
+    "collection:main": "dist/collection/index.js",
+    "types": "dist/types/index.d.ts",
+    "unpkg": "dist/sami/sami.esm.js",
+    "files": [
+        "dist/",
+        "loader/"
+    ],
     "scripts": {
         "start": "stencil build --dev --watch --serve --port=8015",
         "test": "stencil test --spec --e2e",
@@ -16,10 +24,12 @@
         "prerender": "stencil build --prerender",
         "prerender.dev": "stencil build --dev --prerender",
         "site.structure": "tsc --p ./scripts && node ./scripts/site-structure",
-        "generate": "stencil generate"
+        "generate": "stencil generate",
+        "build:local": "stencil build  --docs"
     },
     "devDependencies": {
         "@ionic-internal/ionic-ds": "4.1.4",
+        "@stencil/angular-output-target": "^0.4.0",
         "@stencil/core": "^2.14.2",
         "@stencil/router": "1.0.1",
         "@stencil/state-tunnel": "1.0.1",
@@ -46,8 +56,15 @@
         "typescript": "^3.9.5",
         "workbox-build": "4.3.1"
     },
+    "author": "Jersson G. Arrivasplata Rojas",
     "license": "MIT",
     "publishConfig": {
-        "registry": "https://npm.pkg.github.com"
-    }
+        "registry": "https://registry.npmjs.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jersson-arrivasplata-rojas/STENCIL-PROY-V1-COMPONENTS-S2203.git"
+    },
+    "homepage": "https://sami.jerssonarrivasplata.com/",
+    "dependencies": {}
 }
