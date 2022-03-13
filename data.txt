@@ -1,8 +1,2 @@
 npm config set strict-ssl false
 npm init stencil
-----------------------------------------------------------------
-npm login --scope=@OWNER --registry=https://npm.pkg.github.com
-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
-
-npm publish --access public
-----------------------------------------------------------------
