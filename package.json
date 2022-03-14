@@ -1,6 +1,6 @@
 {
-    "name": "@sami/core",
-    "version": "0.0.1",
+    "name": "@jersson-arrivasplata-rojas/sami",
+    "version": "0.0.4",
     "description": "Componente de Stencil",
     "main": "dist/index.cjs.js",
     "module": "dist/index.js",
@@ -25,7 +25,8 @@
         "prerender.dev": "stencil build --dev --prerender",
         "site.structure": "tsc --p ./scripts && node ./scripts/site-structure",
         "generate": "stencil generate",
-        "build:local": "stencil build  --docs"
+        "build:local": "stencil build  --docs",
+        "start:local": "stencil build --dev --watch --serve --port=8015"
     },
     "devDependencies": {
         "@ionic-internal/ionic-ds": "4.1.4",

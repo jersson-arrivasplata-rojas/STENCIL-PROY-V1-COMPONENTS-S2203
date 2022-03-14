@@ -37,6 +37,9 @@ npm config set @jersson-arrivasplata-rojas:registry=https://registry.npmjs.com
 npm publish --access=public
 
 
+npm login --registry=https://registry.npmjs.com/ --scope=/@sami
+npm config set @sami:registry=https://registry.npmjs.com
+npm publish --access=public
 
 npm set registry https://registry.npmjs.org/ 
 npm install yargs
@@ -49,6 +52,7 @@ npx -p @angular/cli ng generate library component-library
 npm init stencil components stencil-library
 
 npm install @stencil/angular-output-target --save-dev
+
 
 
 

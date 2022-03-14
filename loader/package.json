@@ -1,5 +1,5 @@
 {
-  "name": "sami-core-loader",
+  "name": "sami-loader",
   "typings": "./index.d.ts",
   "module": "./index.js",
   "main": "./index.cjs.js",
