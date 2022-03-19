@@ -1,8 +1,10 @@
 import { angularOutputTarget } from '@stencil/angular-output-target';
 import { Config } from '@stencil/core';
+import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'sami',
+  globalStyle: 'src/globals/base.scss',
   outputTargets: [
     {
       type: 'dist',
@@ -23,5 +25,14 @@ export const config: Config = {
       directivesProxyFile: '../angular-workspace/projects/component-library/src/lib/stencil-generated/components.ts',
       directivesArrayFile: '../angular-workspace/projects/component-library/src/lib/stencil-generated/index.ts',
     })*/
+  ],
+  plugins: [
+    sass({
+
+      injectGlobalPaths: [
+        'src/globals/variables.scss',
+        'src/globals/mixins.scss'
+      ]
+    })
   ],
 };

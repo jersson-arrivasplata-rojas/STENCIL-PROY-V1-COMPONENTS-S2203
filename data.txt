@@ -55,6 +55,8 @@ npm install @stencil/angular-output-target --save-dev
 
 
 
+----------------------------------------------------------------------------------------
+npm install @stencil/sass --save-dev
 
 
 

@@ -1,0 +1,11 @@
+sami-list-social-media {
+  & ul.sami-list-social-media {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    & li {
+      list-style: none;
+    }
+  }
+}

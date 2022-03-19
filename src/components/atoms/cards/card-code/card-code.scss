@@ -1,0 +1,214 @@
+sami-card-code {
+  & div.sami-card-code.active {
+    & div.sami-card-code___section-one {
+      width: 50px;
+      height: 50px;
+      bottom: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & div.sami-card-code___header {
+        display: none;
+      }
+      & div.sami-card-code___img {
+        & img {
+          width: 50px;
+        }
+        & img.javascript {
+          filter: brightness(0.77) saturate(0.9) contrast(1.2);
+        }
+      }
+    }
+    & div.sami-card-code___section-two {
+      padding-left: 0px;
+    }
+  }
+
+  & div.sami-card-code:not(.active),
+  div.sami-card-code.active {
+    @media (max-width: 550px) {
+      width: 360px;
+
+      margin: auto;
+      & div.sami-card-code___section-two {
+        & p.sami-card-code___title {
+          font-size: 14px;
+        }
+        & p.sami-card-code___subtitle {
+          font-size: 12px;
+        }
+        & div.sami-card-code___content {
+          & pre {
+            & code {
+              font-size: 13px !important;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 385px) {
+      width: 310px;
+      & div.sami-card-code___section-two {
+        & p.sami-card-code___title {
+          font-size: 13px;
+        }
+        & p.sami-card-code___subtitle {
+          font-size: 11px;
+        }
+        & div.sami-card-code___content {
+          & pre {
+            & code {
+              font-size: 12px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  & div.sami-card-code:not(.active) {
+    @media (max-width: 550px) {
+      width: 360px;
+      & div.sami-card-code___section-one {
+        width: 55px;
+        flex-direction: column-reverse;
+        & div.sami-card-code___header {
+          display: none;
+        }
+        & div.sami-card-code___img {
+          & img {
+            width: 55px;
+          }
+        }
+      }
+      & div.sami-card-code___section-two {
+        padding-left: 60px;
+        & div.sami-card-code___content {
+          padding-left: 5px !important;
+          & pre {
+            & code {
+              overflow: hidden;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 385px) {
+      width: 310px;
+      & div.sami-card-code___section-one {
+        width: 50px;
+        & div.sami-card-code___img {
+          & img {
+            width: 50px;
+          }
+        }
+      }
+      & div.sami-card-code___section-two {
+        padding-left: 55px;
+      }
+    }
+  }
+
+  & div.sami-card-code.active {
+    @media (max-width: 550px) {
+      width: 360px;
+      & div.sami-card-code___section-two {
+        padding-left: 0px;
+        & div.sami-card-code___content {
+          padding-left: 5px !important;
+          & pre {
+            & code {
+              overflow: hidden;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 385px) {
+      width: 310px;
+    }
+  }
+  & div.sami-card-code {
+    height: 320px;
+    width: 520px;
+    position: relative;
+    border-style: solid;
+    border-width: 2px;
+    background: $white;
+
+    & div.sami-card-code___section-one {
+      position: absolute;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 125px;
+      height: 100%;
+
+      & div.sami-card-code___header {
+        & p.sami-card-code___title,
+        p.sami-card-code___subtitle {
+          text-align: left;
+          margin: 0;
+          padding-left: 0.4rem;
+        }
+        & p.sami-card-code___title {
+          padding-top: 0.4rem;
+          padding-bottom: 0.4rem;
+          font-size: 14px;
+          color: $white-800;
+          text-transform: uppercase;
+        }
+        & p.sami-card-code___subtitle {
+          font-size: 13px;
+          color: $white-900;
+        }
+      }
+      & div.sami-card-code___img {
+        display: flex;
+        justify-content: end;
+        & img {
+          width: 80px;
+        }
+        & img.javascript {
+          filter: brightness(0.77) saturate(0.9) contrast(1.2);
+        }
+      }
+    }
+    & div.sami-card-code___section-two {
+      padding-left: 125px;
+      & p.sami-card-code___title,
+      p.sami-card-code___subtitle {
+        text-align: center;
+        margin: 0 auto;
+        width: 95%;
+      }
+      & p.sami-card-code___title {
+        font-size: 18px;
+        padding-top: 0.6rem;
+        padding-bottom: 0.2rem;
+      }
+      & p.sami-card-code___subtitle {
+        font-size: 14px;
+        color: $muted;
+      }
+      & p.sami-card-code___author {
+        position: absolute;
+        bottom: 10px;
+        font-size: 10px;
+        right: 10px;
+        margin: 0;
+      }
+      & div.sami-card-code___preview-html {
+        position: absolute;
+      }
+      & pre {
+        /*.sami-card-code___code-html*/
+        line-height: 1.2;
+        & code {
+          background: transparent;
+          padding: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+sami-list-group {
+  & ul.sami-list-group {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    & li {
+      list-style: none;
+    }
+  }
+}
