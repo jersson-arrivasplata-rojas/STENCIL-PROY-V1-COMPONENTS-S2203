@@ -1,5 +1,7 @@
 sami-header-mobile {
+    display: none;
     @media (max-width: 770px) {
+        display: block;
         /* and (min-height: 590px) */
         & div.sami-header-mobile {
             width: 100%;

@@ -115,6 +115,15 @@ export namespace Components {
          */
         "zIndex"?: number;
     }
+    interface SamiFlexCode {
+    }
+    interface SamiFlexCodeView {
+        "carousel": boolean;
+        "identify"?: string;
+    }
+    interface SamiGrid {
+        "padding"?: string;
+    }
     interface SamiHeaderMobile {
         "hyperlinkBackground": string;
         "hyperlinkBackgroundImage": string;
@@ -223,6 +232,9 @@ export namespace Components {
         "close": () => Promise<void>;
         "show": () => Promise<void>;
     }
+    interface SamiMain {
+        "marginLeft"?: string;
+    }
     interface SamiSidebar {
         "background"?: string;
         "boxShadow"?: string;
@@ -242,10 +254,13 @@ export namespace Components {
         "boxShadow"?: string;
         "height"?: string;
         "hyperlinkFilter"?: string;
+        "hyperlinkIconHeight"?: number;
+        "hyperlinkIconPadding"?: string;
+        "hyperlinkIconUrlImage"?: string;
+        "hyperlinkIconWidth"?: number;
         "hyperlinkPadding"?: string;
         "hyperlinkText"?: string;
         "hyperlinkUrl"?: string;
-        "hyperlinkUrlImage"?: string;
         "maxWidth"?: string;
         "position"?: string;
         "top"?: number;
@@ -271,6 +286,24 @@ declare global {
     var HTMLSamiCardTagElement: {
         prototype: HTMLSamiCardTagElement;
         new (): HTMLSamiCardTagElement;
+    };
+    interface HTMLSamiFlexCodeElement extends Components.SamiFlexCode, HTMLStencilElement {
+    }
+    var HTMLSamiFlexCodeElement: {
+        prototype: HTMLSamiFlexCodeElement;
+        new (): HTMLSamiFlexCodeElement;
+    };
+    interface HTMLSamiFlexCodeViewElement extends Components.SamiFlexCodeView, HTMLStencilElement {
+    }
+    var HTMLSamiFlexCodeViewElement: {
+        prototype: HTMLSamiFlexCodeViewElement;
+        new (): HTMLSamiFlexCodeViewElement;
+    };
+    interface HTMLSamiGridElement extends Components.SamiGrid, HTMLStencilElement {
+    }
+    var HTMLSamiGridElement: {
+        prototype: HTMLSamiGridElement;
+        new (): HTMLSamiGridElement;
     };
     interface HTMLSamiHeaderMobileElement extends Components.SamiHeaderMobile, HTMLStencilElement {
     }
@@ -314,6 +347,12 @@ declare global {
         prototype: HTMLSamiLoaderElement;
         new (): HTMLSamiLoaderElement;
     };
+    interface HTMLSamiMainElement extends Components.SamiMain, HTMLStencilElement {
+    }
+    var HTMLSamiMainElement: {
+        prototype: HTMLSamiMainElement;
+        new (): HTMLSamiMainElement;
+    };
     interface HTMLSamiSidebarElement extends Components.SamiSidebar, HTMLStencilElement {
     }
     var HTMLSamiSidebarElement: {
@@ -330,6 +369,9 @@ declare global {
         "sami-card-code": HTMLSamiCardCodeElement;
         "sami-card-image": HTMLSamiCardImageElement;
         "sami-card-tag": HTMLSamiCardTagElement;
+        "sami-flex-code": HTMLSamiFlexCodeElement;
+        "sami-flex-code-view": HTMLSamiFlexCodeViewElement;
+        "sami-grid": HTMLSamiGridElement;
         "sami-header-mobile": HTMLSamiHeaderMobileElement;
         "sami-hyperlink": HTMLSamiHyperlinkElement;
         "sami-hyperlink-icon": HTMLSamiHyperlinkIconElement;
@@ -337,6 +379,7 @@ declare global {
         "sami-list-group": HTMLSamiListGroupElement;
         "sami-list-social-media": HTMLSamiListSocialMediaElement;
         "sami-loader": HTMLSamiLoaderElement;
+        "sami-main": HTMLSamiMainElement;
         "sami-sidebar": HTMLSamiSidebarElement;
         "sami-subscriber": HTMLSamiSubscriberElement;
     }
@@ -451,6 +494,15 @@ declare namespace LocalJSX {
          */
         "zIndex"?: number;
     }
+    interface SamiFlexCode {
+    }
+    interface SamiFlexCodeView {
+        "carousel"?: boolean;
+        "identify"?: string;
+    }
+    interface SamiGrid {
+        "padding"?: string;
+    }
     interface SamiHeaderMobile {
         "hyperlinkBackground"?: string;
         "hyperlinkBackgroundImage"?: string;
@@ -557,6 +609,9 @@ declare namespace LocalJSX {
     }
     interface SamiLoader {
     }
+    interface SamiMain {
+        "marginLeft"?: string;
+    }
     interface SamiSidebar {
         "background"?: string;
         "boxShadow"?: string;
@@ -576,10 +631,13 @@ declare namespace LocalJSX {
         "boxShadow"?: string;
         "height"?: string;
         "hyperlinkFilter"?: string;
+        "hyperlinkIconHeight"?: number;
+        "hyperlinkIconPadding"?: string;
+        "hyperlinkIconUrlImage"?: string;
+        "hyperlinkIconWidth"?: number;
         "hyperlinkPadding"?: string;
         "hyperlinkText"?: string;
         "hyperlinkUrl"?: string;
-        "hyperlinkUrlImage"?: string;
         "maxWidth"?: string;
         "position"?: string;
         "top"?: number;
@@ -590,6 +648,9 @@ declare namespace LocalJSX {
         "sami-card-code": SamiCardCode;
         "sami-card-image": SamiCardImage;
         "sami-card-tag": SamiCardTag;
+        "sami-flex-code": SamiFlexCode;
+        "sami-flex-code-view": SamiFlexCodeView;
+        "sami-grid": SamiGrid;
         "sami-header-mobile": SamiHeaderMobile;
         "sami-hyperlink": SamiHyperlink;
         "sami-hyperlink-icon": SamiHyperlinkIcon;
@@ -597,6 +658,7 @@ declare namespace LocalJSX {
         "sami-list-group": SamiListGroup;
         "sami-list-social-media": SamiListSocialMedia;
         "sami-loader": SamiLoader;
+        "sami-main": SamiMain;
         "sami-sidebar": SamiSidebar;
         "sami-subscriber": SamiSubscriber;
     }
@@ -608,6 +670,9 @@ declare module "@stencil/core" {
             "sami-card-code": LocalJSX.SamiCardCode & JSXBase.HTMLAttributes<HTMLSamiCardCodeElement>;
             "sami-card-image": LocalJSX.SamiCardImage & JSXBase.HTMLAttributes<HTMLSamiCardImageElement>;
             "sami-card-tag": LocalJSX.SamiCardTag & JSXBase.HTMLAttributes<HTMLSamiCardTagElement>;
+            "sami-flex-code": LocalJSX.SamiFlexCode & JSXBase.HTMLAttributes<HTMLSamiFlexCodeElement>;
+            "sami-flex-code-view": LocalJSX.SamiFlexCodeView & JSXBase.HTMLAttributes<HTMLSamiFlexCodeViewElement>;
+            "sami-grid": LocalJSX.SamiGrid & JSXBase.HTMLAttributes<HTMLSamiGridElement>;
             "sami-header-mobile": LocalJSX.SamiHeaderMobile & JSXBase.HTMLAttributes<HTMLSamiHeaderMobileElement>;
             "sami-hyperlink": LocalJSX.SamiHyperlink & JSXBase.HTMLAttributes<HTMLSamiHyperlinkElement>;
             "sami-hyperlink-icon": LocalJSX.SamiHyperlinkIcon & JSXBase.HTMLAttributes<HTMLSamiHyperlinkIconElement>;
@@ -615,6 +680,7 @@ declare module "@stencil/core" {
             "sami-list-group": LocalJSX.SamiListGroup & JSXBase.HTMLAttributes<HTMLSamiListGroupElement>;
             "sami-list-social-media": LocalJSX.SamiListSocialMedia & JSXBase.HTMLAttributes<HTMLSamiListSocialMediaElement>;
             "sami-loader": LocalJSX.SamiLoader & JSXBase.HTMLAttributes<HTMLSamiLoaderElement>;
+            "sami-main": LocalJSX.SamiMain & JSXBase.HTMLAttributes<HTMLSamiMainElement>;
             "sami-sidebar": LocalJSX.SamiSidebar & JSXBase.HTMLAttributes<HTMLSamiSidebarElement>;
             "sami-subscriber": LocalJSX.SamiSubscriber & JSXBase.HTMLAttributes<HTMLSamiSubscriberElement>;
         }

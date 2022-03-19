@@ -1,0 +1,28 @@
+/**,
+html,
+body {
+    height: 100vh;
+    font-size: 18px;
+    background: $screen;
+}*/
+html{
+    font-size: 10pt;
+}
+body{
+    background: $screen;
+}
+sami-main {
+    & div.sami-main {
+        height: 100vh;
+        background: $screen;
+        margin-top: 0;
+        margin-left: 250px;
+    }
+}
+@media (max-width: 769px) {
+    sami-main {
+        & div.sami-main {
+            margin-left: 0px;
+        }
+    }
+}

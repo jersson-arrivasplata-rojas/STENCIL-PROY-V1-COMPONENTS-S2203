@@ -25,15 +25,21 @@ export class Subscriber {
   @Prop() position?: string;
 
 
-  @Prop() hyperlinkUrl?: string;
+  @Prop() hyperlinkUrl?: string = "#";
 
   @Prop() hyperlinkPadding?: string;
 
   @Prop() hyperlinkFilter?: string;
 
-  @Prop() hyperlinkUrlImage?: string;
+  @Prop() hyperlinkIconUrlImage?: string;
 
   @Prop() hyperlinkText?: string;
+
+  @Prop() hyperlinkIconWidth?: number;
+
+  @Prop() hyperlinkIconHeight?: number;
+
+  @Prop() hyperlinkIconPadding?: string;
 
 
 
@@ -63,11 +69,11 @@ export class Subscriber {
     return (
       <div class={{ 'sami-subscriber': true, 'active slide-in': this.isOpen }} >
         <div class='sami-subscriber___hyperlink'>
-          <sami-hyperlink url={this.hyperlinkUrl} target="" text={this.hyperlinkText} padding={this.hyperlinkPadding} onClick={() => this.menu()} ></sami-hyperlink>
+          <sami-hyperlink url={this.hyperlinkUrl} target="_self" text={this.hyperlinkText} padding={this.hyperlinkPadding} onClick={() => this.menu()} ></sami-hyperlink>
         </div>
         <div class='sami-subscriber___div' style={this.getStyles()}>
           <div class='sami-subscriber___close'>
-            <sami-hyperlink url={this.hyperlinkUrl} target="" text="X" padding={this.hyperlinkPadding}  onClick={() => this.menu()} ></sami-hyperlink>
+            <sami-hyperlink-icon url="#" target="_self" width={this.hyperlinkIconWidth} height={this.hyperlinkIconHeight} urlImage={this.hyperlinkIconUrlImage} padding={this.hyperlinkIconPadding} onClick={() => this.menu()} ></sami-hyperlink-icon>
           </div>
           <slot name='form-subscriber'></slot>
         </div>

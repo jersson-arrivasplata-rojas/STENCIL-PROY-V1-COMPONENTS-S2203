@@ -1,4 +1,4 @@
-import { Component, h, Method, Event, EventEmitter, State, Prop } from '@stencil/core';
+import { Component, h, Method, State } from '@stencil/core';
 
 @Component({
   tag: 'sami-loader',
@@ -11,13 +11,13 @@ export class Loader {
   //@Event() open: EventEmitter<boolean>;
 
   @Method() // Con este decorator, exponemos el método al DOM
-  show(): void {
+  async show(){
     this.isOpen = true;
   }
 
 
   @Method() // Con este decorator, exponemos el método al DOM
-  close(): void {
+  async close(){
     this.isOpen = false;
   }
 

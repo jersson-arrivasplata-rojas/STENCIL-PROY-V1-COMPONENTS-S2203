@@ -1,0 +1,29 @@
+sami-flex-code-view {
+    padding-bottom: 3rem;
+    & div.sami-flex-code-view {
+        & div[slot="flex-code-view"] {
+            max-width: 520px;
+            display: flex;
+            height: 320px;
+            & div.slick-list {
+                max-width: 520px;
+                height: 320px;
+                & div.slick-track {
+                    max-width: 520px;
+                    display: flex;
+                    height: 320px;
+                }
+            }
+        }
+    }
+    /* & div.sami-flex-code-view.carousel {
+        & div.sami-flex-code-view {
+            max-width: 520px;
+            display: flex;
+            height: 320px;
+        }
+    }*/
+    /*& div.slick-track{
+        display: flex;
+    }*/
+}
