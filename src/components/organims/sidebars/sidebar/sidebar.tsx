@@ -45,10 +45,14 @@ export class Sidebar {
     this.validateMobile(window);
   }
 
-  
+
   private validateMobile(target: Window) {
-    if (target.outerHeight <= 770) {//600 || target.outerWidth <= 590
-      this.isMenuOpen = false;
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      if (target.outerHeight <= 770) {
+        this.isMenuOpen = false;
+      } else {
+        this.isMenuOpen = true;
+      }
     }else{
       this.isMenuOpen = true;
     }
