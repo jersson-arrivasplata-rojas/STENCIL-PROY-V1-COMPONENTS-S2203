@@ -15,27 +15,27 @@ sami-loader {
     background: $white;
     & span {
       display: inline-block;
-      -webkit-animation: pulse 0.4s alternate infinite ease-in-out;
-      animation: pulse 0.4s alternate infinite ease-in-out;
-    }
+      -webkit-animation: sami-pulse 0.4s alternate infinite ease-in-out;
+      animation: sami-pulse 0.4s alternate infinite ease-in-out;
+}
     & span:nth-child(odd) {
       -webkit-animation-delay: 0.4s;
       animation-delay: 0.4s;
     }
   }
-  & .sami-loader{
+  & .sami-loader {
     display: none;
   }
 }
 
-@-webkit-keyframes pulse {
+@-webkit-keyframes sami-pulse {
   to {
     transform: scale(0.8);
     opacity: 0.5;
   }
 }
 
-@keyframes pulse {
+@keyframes sami-pulse {
   to {
     transform: scale(0.8);
     opacity: 0.5;
