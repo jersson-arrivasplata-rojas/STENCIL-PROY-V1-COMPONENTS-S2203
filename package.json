@@ -11,7 +11,8 @@
     "types": "dist/types/index.d.ts",
     "unpkg": "dist/sami/sami.esm.js",
     "files": [
-        "dist/"
+        "dist/",
+        "loader/"
     ],
     "scripts": {
         "start": "stencil build --dev --watch --serve --port=8015",
@@ -67,9 +68,5 @@
         "url": "git+https://github.com/jersson-arrivasplata-rojas/STENCIL-PROY-V1-COMPONENTS-S2203.git"
     },
     "homepage": "https://sami.jerssonarrivasplata.com/",
-    "dependencies": {},
-    "peerDependencies": {
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2"
-    }
+    "dependencies": {}
 }
