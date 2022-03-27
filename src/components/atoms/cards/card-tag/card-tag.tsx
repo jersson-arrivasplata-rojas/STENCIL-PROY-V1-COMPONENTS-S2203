@@ -73,6 +73,15 @@ export class CardTag {
    * Example: bolder
    */
   @Prop() bottom?: number;
+
+  /**
+ * es: Posición de Abajo del Tag
+ * en: Position Bottom of Tag
+ * Example: bolder
+ */
+  @Prop() top?: number;
+
+
   /**
    * es: Posición Derecha del Tag
    * en: Position Right of Tag
@@ -114,6 +123,7 @@ export class CardTag {
     (this.color) ? styles.color = this.color : delete styles.color;
     (this.background) ? styles.background = this.background : delete styles.background;
     (this.position) ? styles.position = this.position : delete styles.position;
+    (this.top) ? styles.top = this.top : delete styles.top;
     (this.bottom) ? styles.bottom = this.bottom : delete styles.bottom;
     (this.width) ? styles.width = this.width : delete styles.width;
     (this.height) ? styles.height = this.height : delete styles.height;

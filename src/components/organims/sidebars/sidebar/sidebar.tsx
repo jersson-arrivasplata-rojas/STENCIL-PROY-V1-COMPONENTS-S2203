@@ -1,4 +1,4 @@
-import { Component, h, Listen, Prop, State } from '@stencil/core';
+import { Component, h, Prop, State, Listen } from '@stencil/core';
 
 @Component({
   tag: 'sami-sidebar',
@@ -34,26 +34,19 @@ export class Sidebar {
   @Prop() hyperlinkUrlImage?: string;
 
   @Listen('resize', { target: 'window' })
-  handleScroll(e: Event) {
-    const target = e.target as Window;
-    this.validateMobile(target);
+  handleScroll() {//e: Event
+    //const target = e.target as Window;
+    this.validateMenu();//target
   }
-
 
 
   constructor() {
-    this.validateMobile(window);
+    this.validateMenu();//window
   }
 
 
-  private validateMobile(target: Window) {
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-      if (target.outerHeight <= 770) {
-        this.isMenuOpen = false;
-      } else {
-        this.isMenuOpen = true;
-      }
-    }else{
+  private validateMenu() {//target: Window
+    if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
       this.isMenuOpen = true;
     }
   }

@@ -1,16 +1,19 @@
-<!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,
-      minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Assistant&amp;family=Bebas+Neue&amp;family=Poppins&amp;display=swap"
-      rel="stylesheet">
-    <script type="module" src="/build/sami.esm.js"></script>
-    <script nomodule src="/build/sami.js"></script>
-    <style>
+    <head>
+        <meta charset="utf-8">
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0,
+      minimum-scale=1.0, maximum-scale=5.0">
+        <title>Stencil Component Starter</title>
+        <link href="https://fonts.googleapis.com/css2?family=Assistant&family=Bebas+Neue&family=Poppins&display=swap" rel="stylesheet">
+        <script
+            type="module"
+            src="/build/sami.esm.js"></script>
+        <script
+            nomodule
+            src="/build/sami.js"></script>
+        <style>
       *{
            font-family: "Poppins", sans-serif;
       }
@@ -20,112 +23,45 @@
         margin: 0;
       }
     </style>
-  </head>
-  <body>
-    <!--<sami-list-group flex-direction="column" width="350px"></sami-list-group>
-    <script type="text/javascript">
-      const samiListGroup = document.querySelector('sami-list-group');
-      samiListGroup.data = [{"url":"#", "text":"github", "padding":"10px"}, {"url":"#", "text":"linkedin", "padding":"10px"}, {"url":"#", "text":"instagram", "padding":"10px"}, {"url":"#", "text":"facebook", "padding":"10px"}];
-    </script>
-    <sami-sidebar hyperlink-url="#"  hyperlink-padding="12px" hyperlink-filter="opacity(0.9) invert(1)"  hyperlink-url-image="./assets/icon-menu/menu.svg">
-      <sami-hyperlink-image 
-      slot="hyperlink-image"
-        background-image="https://jerssonarrivasplata.com/img/icon.png" url="#"
-        max-width="110px" border-radius="90px"
-        background="#ffffff" ></sami-hyperlink-image>
-      <sami-list-group slot="list-group" flex-direction="column"></sami-list-group>
-      <sami-list-social-media slot="list-social-media" filter="opacity(0.8) invert(1)"></sami-list-social-media>
-    </sami-sidebar>
-
-    <script type="text/javascript">
-      const samiListGroup = document.querySelector('sami-sidebar sami-list-group');
-      samiListGroup.data = [
-        {"url":"#", "text":"Inicio"},
-        {"url":"#", "text":"Herramientas"},
-        {"url":"#", "text":"Documentación"},
-        {"url":"#", "text":"Jersson Arrivasplata"},
-        {"url":"#", "text":"Contactame"},
-        {"url":"#", "text":"Donar"}
-      ];
-
-      const samiListSocialMedia= document.querySelector('sami-sidebar sami-list-social-media');
-      samiListSocialMedia.data = [
-        {"url":"#", "type":"github", "padding":"5px"},
-        {"url":"#", "type":"linkedin", "padding":"5px"},
-        {"url":"#", "type":"instagram", "padding":"5px"},
-        {"url":"#", "type":"facebook", "padding":"5px"}
-      ];
-
- 
-    </script>
-
-     <sami-subscriber hyperlink-url="#"  hyperlink-padding="10px" hyperlink-text="CLICK SUSCRIBETE">
-       <div slot="form-subscriber"></div>
-    </sami-subscriber>
-    <sami-header-mobile
-      hyperlink-background-image="https://jerssonarrivasplata.com/img/icon.png" url="#"
-      hyperlink-max-width="50px" 
-      hyperlink-border-radius="120px"
-      hyperlink-background="#ffffff" 
-      hyperlink-url="#" 
-    ></sami-header-mobile>-->
-    <!--
- <sami-card-code
-      preview="false"
-      author-email="jerssonarrivasplata.com"
-      identify="1"
-      content-title="ES6 - Operador Condicional Ternario"
-      content-subtitle="Condicionales en JavaScript"
-      background-color="#cab500"
-      title-image="LENGUAJE DE PROGRAMACIÓN"
-      subtitle-image="JavaScript"
-      background-image="http://jerssonarrivasplata2.com/img/blog/content-type/js.png"
-      type="javascript">
-      <pre slot="view-html" ><code class="javscript" style="font-size:18px;" >const validateLength = data => {
-  return data.length > 17 ? true: false;
-}
-
-validateLength("pruebapruebaprueba");
-Respuesta: true
-
-validateLength("prueba");
-Respuesta: false</code></pre>
-    </sami-card-code>
-
-    <sami-card-code
-      box="true"
-      author-email="jerssonarrivasplata.com"
-      identify="1"
-      content-title="ES6 - Operador Condicional Ternario"
-      content-subtitle="Condicionales en JavaScript"
-      background-color="#cab500"
-      title-image="LENGUAJE DE PROGRAMACIÓN"
-      subtitle-image="JavaScript"
-      background-image="http://jerssonarrivasplata2.com/img/blog/content-type/js.png"
-      type="javascript">
-    </sami-card-code>
- -->
-    <sami-loader>
-      <div slot="loader"><span>&lt;</span><span>&gt;</span></div>
-    </sami-loader>
-    <script type="text/javascript">
-
-      customElements.whenDefined('sami-loader').then(() => {
-        const load = document.querySelector('sami-loader');
-        load.componentOnReady().then(() => {
-          load.show();
-        });
-      });
-
-
-
-      /* (function(){
-
-          const load = document.querySelector('sami-loader');
-          document.addEventListener('load', function () {
-            load.toggle();
-          });
-       })();*/
-    </script>
-  </body>
+    </head>
+    <body>
+        <!--
+<sami-sidebar-dashboard data=""></sami-sidebar-dashboard>
+        <script type="text/javascript">
+  
+            const samiSidebarDashboard = document.querySelector('sami-sidebar-dashboard');
+            samiSidebarDashboard.data=[
+            {
+                "url": "#",
+                "text": "Prueba",
+                "padding": "10px",
+                "target": "_self"
+            },
+            {
+                "title": "string",
+                "data": [
+                    {
+                "url": "#",
+                "text": "Prueba",
+                "padding": "10px",
+                "target": "_self"
+                    }
+                ]
+            },
+            {
+                "title": "string",
+                "data": [
+                    {
+                "url": "#",
+                "text": "Prueba",
+                "padding": "10px",
+                "target": "_self"
+                    }
+                ]
+            }
+          ];
+        </script>
+        -->
+        
+    </body>
 </html>

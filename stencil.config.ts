@@ -1,4 +1,3 @@
-import { angularOutputTarget } from '@stencil/angular-output-target';
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 
@@ -8,7 +7,7 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'dist',
-      esmLoaderPath: '../loader',
+     // esmLoaderPath: '../loader',
     },
     {
       type: 'dist-custom-elements',

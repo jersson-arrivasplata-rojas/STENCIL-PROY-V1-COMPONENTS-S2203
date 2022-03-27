@@ -103,6 +103,10 @@ export namespace Components {
          */
         "textAlign"?: string;
         /**
+          * es: Posición de Abajo del Tag en: Position Bottom of Tag Example: bolder
+         */
+        "top"?: number;
+        /**
           * es: Transición del Tag en: Transition of Tag Example: filter 200ms linear, transform 200ms linear
          */
         "transition"?: string;
@@ -128,9 +132,11 @@ export namespace Components {
         "hyperlinkBackground": string;
         "hyperlinkBackgroundImage": string;
         "hyperlinkBorderRadius": string;
+        "hyperlinkHeight": string;
         "hyperlinkMaxWidth": string;
         "hyperlinkTarget": string;
         "hyperlinkUrl": string;
+        "hyperlinkWidth": string;
     }
     interface SamiHyperlink {
         "fnClick"?: () => void;
@@ -181,6 +187,7 @@ export namespace Components {
         "background"?: string;
         "backgroundImage"?: string;
         "borderRadius"?: string;
+        "height"?: string;
         "maxWidth"?: string;
         /**
           * es: Ruta que redirige del card image en: Route of redirect card image Example: localhost/css3
@@ -196,6 +203,7 @@ export namespace Components {
           * es: Ruta que redirige del card image en: Route of redirect card image Example: localhost/css3
          */
         "url": string;
+        "width"?: string;
     }
     interface SamiListGroup {
         "classAppend": string;
@@ -482,6 +490,10 @@ declare namespace LocalJSX {
          */
         "textAlign"?: string;
         /**
+          * es: Posición de Abajo del Tag en: Position Bottom of Tag Example: bolder
+         */
+        "top"?: number;
+        /**
           * es: Transición del Tag en: Transition of Tag Example: filter 200ms linear, transform 200ms linear
          */
         "transition"?: string;
@@ -507,9 +519,11 @@ declare namespace LocalJSX {
         "hyperlinkBackground"?: string;
         "hyperlinkBackgroundImage"?: string;
         "hyperlinkBorderRadius"?: string;
+        "hyperlinkHeight"?: string;
         "hyperlinkMaxWidth"?: string;
         "hyperlinkTarget"?: string;
         "hyperlinkUrl"?: string;
+        "hyperlinkWidth"?: string;
     }
     interface SamiHyperlink {
         "fnClick"?: () => void;
@@ -560,6 +574,7 @@ declare namespace LocalJSX {
         "background"?: string;
         "backgroundImage"?: string;
         "borderRadius"?: string;
+        "height"?: string;
         "maxWidth"?: string;
         /**
           * es: Ruta que redirige del card image en: Route of redirect card image Example: localhost/css3
@@ -575,6 +590,7 @@ declare namespace LocalJSX {
           * es: Ruta que redirige del card image en: Route of redirect card image Example: localhost/css3
          */
         "url"?: string;
+        "width"?: string;
     }
     interface SamiListGroup {
         "classAppend"?: string;

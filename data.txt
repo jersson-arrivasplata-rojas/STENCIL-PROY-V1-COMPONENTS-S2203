@@ -59,8 +59,25 @@ npm install @stencil/angular-output-target --save-dev
 npm install @stencil/sass --save-dev
 
 
+----------------------------------------------------------------------------------------
+
+yarn add prismic-dom
+yarn config set "strict-ssl" false
 
 
 
+yarn add @prismicio/client
+----------------------------------------------------------------------------------------
+yarn add prismic-dom
+
+yarn add prismic-javascript
+
+npm cache clean --force
 
 
+
+npm install --registry https://registry.npmjs.org
+
+npm prune
+
+npm cache clean --force

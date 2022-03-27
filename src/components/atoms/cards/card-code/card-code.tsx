@@ -6,7 +6,6 @@ import { Component, h, Prop } from '@stencil/core';
 })
 export class CardCode {
 
-
   @Prop() box?: boolean = false;
 
   @Prop() preview?: boolean = false;
@@ -104,6 +103,7 @@ export class CardCode {
         </div>
 
         <div class={{ 'sami-card-code___section-two': true, 'right': this.directionRight }} style={this.getSectionTwoStyles()}>
+          <slot name="counter"></slot>
           <p class="sami-card-code___title " style={{ 'fontSize': this.contentTitleFontSize }}>
             {this.contentTitle}
           </p>

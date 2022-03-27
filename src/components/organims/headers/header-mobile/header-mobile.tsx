@@ -19,6 +19,10 @@ export class HeaderMobile {
   @Prop() hyperlinkUrl: string;
 
   @Prop() hyperlinkTarget: string;
+
+  @Prop() hyperlinkWidth: string;
+
+  @Prop() hyperlinkHeight: string;
   render() {
     
     return (
@@ -27,6 +31,8 @@ export class HeaderMobile {
           background-image={this.hyperlinkBackgroundImage} 
           url={this.hyperlinkUrl}
           max-width={this.hyperlinkMaxWidth}
+          width={this.hyperlinkWidth}
+          height={this.hyperlinkHeight}
           border-radius={this.hyperlinkBorderRadius}
           background={this.hyperlinkBackground}
           target={this.hyperlinkTarget}

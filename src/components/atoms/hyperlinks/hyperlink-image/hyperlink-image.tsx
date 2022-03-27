@@ -32,6 +32,10 @@ export class HyperlinkImage {
 
   @Prop() maxWidth?: string;
 
+  @Prop() width?: string;
+
+  @Prop() height?: string;
+
   @Prop() background?: string;
 
   @Prop() borderRadius?: string;
@@ -61,6 +65,8 @@ export class HyperlinkImage {
     (this.background) ? styles.background = this.background : delete styles.background;
     (this.maxWidth) ? styles.maxWidth = this.maxWidth : delete styles.maxWidth;
     (this.borderRadius) ? styles.borderRadius = this.borderRadius : delete styles.borderRadius;
+    (this.width) ? styles.width = this.width : delete styles.width;
+    (this.height) ? styles.height = this.height : delete styles.height;
 
     return styles;
   }
@@ -68,7 +74,7 @@ export class HyperlinkImage {
   render() {
     return (
       <a href={this.url} onClick={this.refFunction.bind(this)}  style={this.getHyperlinkStyles()} target={this.target}>
-        <img src={this.backgroundImage} style={this.getImageStyles()}/>
+        <img width={this.width} height={this.height} src={this.backgroundImage} style={this.getImageStyles()}/>
       </a>
     );
   }

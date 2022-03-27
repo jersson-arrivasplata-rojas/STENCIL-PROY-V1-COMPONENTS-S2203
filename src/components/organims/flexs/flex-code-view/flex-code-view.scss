@@ -26,17 +26,22 @@ sami-flex-code-view {
     @media (max-width: 550px) {
         & div.sami-flex-code-view.carousel {
             & div[slot="flex-code-view"] {
-                width: 360px;
+                width: 100%;
+            }
+        }
+        & div.sami-flex-code-view.carousel {
+            & .slick-slider {
+                height: 100%;
             }
         }
     }
-    @media (max-width: 385px) {
+    /* @media (max-width: 385px) {
         & div.sami-flex-code-view.carousel {
             & div[slot="flex-code-view"] {
                 width: 310px;
             }
         }
-    }
+    }*/
     /* & div.sami-flex-code-view.carousel {
         & div.sami-flex-code-view {
             max-width: 520px;
@@ -52,5 +57,18 @@ sami-flex-code-view {
 @media (max-width: 874px) {
     sami-flex-code-view {
         padding-bottom: 5rem;
+    }
+}
+
+@media (max-width: 550px) {
+    sami-flex-code-view {
+        width: 100%;
+    }
+    sami-flex-code-view:not(.carousel) {
+        & sami-card-code {
+            & div.sami-card-code:not(.active) {
+                width: 100%;
+            }
+        }
     }
 }

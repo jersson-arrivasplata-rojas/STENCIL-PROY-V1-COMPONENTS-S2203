@@ -11,8 +11,7 @@
     "types": "dist/types/index.d.ts",
     "unpkg": "dist/sami/sami.esm.js",
     "files": [
-        "dist/",
-        "loader/"
+        "dist/"
     ],
     "scripts": {
         "start": "stencil build --dev --watch --serve --port=8015",
@@ -26,7 +25,7 @@
         "site.structure": "tsc --p ./scripts && node ./scripts/site-structure",
         "generate": "stencil generate",
         "build:local": "stencil build  --docs",
-        "start:local": "stencil build --dev --watch --serve --port=8015"
+        "start:local": "stencil build --dev --watch --serve --port=8016"
     },
     "devDependencies": {
         "@ionic-internal/ionic-ds": "4.1.4",
@@ -51,7 +50,7 @@
         "jest": "^26.1.0",
         "marked": "^0.7.0",
         "node-fetch": "^2.6.1",
-        "prismic-dom": "^2.2.3",
+        "prismic-dom": "^2.2.7",
         "prismic-javascript": "^2.7.1",
         "prismjs": "1.24.0",
         "rollup-plugin-dotenv": "^0.3.0",
@@ -68,5 +67,9 @@
         "url": "git+https://github.com/jersson-arrivasplata-rojas/STENCIL-PROY-V1-COMPONENTS-S2203.git"
     },
     "homepage": "https://sami.jerssonarrivasplata.com/",
-    "dependencies": {}
+    "dependencies": {},
+    "peerDependencies": {
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    }
 }

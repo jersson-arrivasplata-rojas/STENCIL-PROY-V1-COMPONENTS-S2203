@@ -1,0 +1,33 @@
+[
+    {
+        "url": "string",
+        "text": "string",
+        "padding": "string",
+        "target": "string",
+        "fnClick": "() => void"
+    },
+    {
+        "title": "string",
+        "data": [
+            {
+                "url": "string",
+                "text": "string",
+                "padding": "string",
+                "target": "string",
+                "fnClick": "() => void"
+            }
+        ]
+    },
+    {
+        "title": "string",
+        "data": [
+            {
+                "url": "string",
+                "text": "string",
+                "padding": "string",
+                "target": "string",
+                "fnClick": "() => void"
+            }
+        ]
+    }
+]
