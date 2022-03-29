@@ -5,7 +5,22 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { hyperLinkInterface } from "./components/organims/sidebars/interfaces/hyperlink.interface";
 export namespace Components {
+    interface MyComponent {
+        /**
+          * The first name
+         */
+        "first": string;
+        /**
+          * The last name
+         */
+        "last": string;
+        /**
+          * The middle name
+         */
+        "middle": string;
+    }
     interface SamiCardCode {
         "author"?: string;
         "authorEmail"?: string;
@@ -257,6 +272,14 @@ export namespace Components {
         "width"?: string;
         "zIndex"?: number;
     }
+    interface SamiSidebarDashboard {
+        "data": Array<hyperLinkInterface | 
+  { 
+    title: string; 
+    data: Array<hyperLinkInterface>;
+  }
+  >;
+    }
     interface SamiSubscriber {
         "background"?: string;
         "boxShadow"?: string;
@@ -277,6 +300,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    }
+    var HTMLMyComponentElement: {
+        prototype: HTMLMyComponentElement;
+        new (): HTMLMyComponentElement;
+    };
     interface HTMLSamiCardCodeElement extends Components.SamiCardCode, HTMLStencilElement {
     }
     var HTMLSamiCardCodeElement: {
@@ -367,6 +396,12 @@ declare global {
         prototype: HTMLSamiSidebarElement;
         new (): HTMLSamiSidebarElement;
     };
+    interface HTMLSamiSidebarDashboardElement extends Components.SamiSidebarDashboard, HTMLStencilElement {
+    }
+    var HTMLSamiSidebarDashboardElement: {
+        prototype: HTMLSamiSidebarDashboardElement;
+        new (): HTMLSamiSidebarDashboardElement;
+    };
     interface HTMLSamiSubscriberElement extends Components.SamiSubscriber, HTMLStencilElement {
     }
     var HTMLSamiSubscriberElement: {
@@ -374,6 +409,7 @@ declare global {
         new (): HTMLSamiSubscriberElement;
     };
     interface HTMLElementTagNameMap {
+        "my-component": HTMLMyComponentElement;
         "sami-card-code": HTMLSamiCardCodeElement;
         "sami-card-image": HTMLSamiCardImageElement;
         "sami-card-tag": HTMLSamiCardTagElement;
@@ -389,10 +425,25 @@ declare global {
         "sami-loader": HTMLSamiLoaderElement;
         "sami-main": HTMLSamiMainElement;
         "sami-sidebar": HTMLSamiSidebarElement;
+        "sami-sidebar-dashboard": HTMLSamiSidebarDashboardElement;
         "sami-subscriber": HTMLSamiSubscriberElement;
     }
 }
 declare namespace LocalJSX {
+    interface MyComponent {
+        /**
+          * The first name
+         */
+        "first"?: string;
+        /**
+          * The last name
+         */
+        "last"?: string;
+        /**
+          * The middle name
+         */
+        "middle"?: string;
+    }
     interface SamiCardCode {
         "author"?: string;
         "authorEmail"?: string;
@@ -642,6 +693,14 @@ declare namespace LocalJSX {
         "width"?: string;
         "zIndex"?: number;
     }
+    interface SamiSidebarDashboard {
+        "data"?: Array<hyperLinkInterface | 
+  { 
+    title: string; 
+    data: Array<hyperLinkInterface>;
+  }
+  >;
+    }
     interface SamiSubscriber {
         "background"?: string;
         "boxShadow"?: string;
@@ -661,6 +720,7 @@ declare namespace LocalJSX {
         "zIndex"?: number;
     }
     interface IntrinsicElements {
+        "my-component": MyComponent;
         "sami-card-code": SamiCardCode;
         "sami-card-image": SamiCardImage;
         "sami-card-tag": SamiCardTag;
@@ -676,6 +736,7 @@ declare namespace LocalJSX {
         "sami-loader": SamiLoader;
         "sami-main": SamiMain;
         "sami-sidebar": SamiSidebar;
+        "sami-sidebar-dashboard": SamiSidebarDashboard;
         "sami-subscriber": SamiSubscriber;
     }
 }
@@ -683,6 +744,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "sami-card-code": LocalJSX.SamiCardCode & JSXBase.HTMLAttributes<HTMLSamiCardCodeElement>;
             "sami-card-image": LocalJSX.SamiCardImage & JSXBase.HTMLAttributes<HTMLSamiCardImageElement>;
             "sami-card-tag": LocalJSX.SamiCardTag & JSXBase.HTMLAttributes<HTMLSamiCardTagElement>;
@@ -698,6 +760,7 @@ declare module "@stencil/core" {
             "sami-loader": LocalJSX.SamiLoader & JSXBase.HTMLAttributes<HTMLSamiLoaderElement>;
             "sami-main": LocalJSX.SamiMain & JSXBase.HTMLAttributes<HTMLSamiMainElement>;
             "sami-sidebar": LocalJSX.SamiSidebar & JSXBase.HTMLAttributes<HTMLSamiSidebarElement>;
+            "sami-sidebar-dashboard": LocalJSX.SamiSidebarDashboard & JSXBase.HTMLAttributes<HTMLSamiSidebarDashboardElement>;
             "sami-subscriber": LocalJSX.SamiSubscriber & JSXBase.HTMLAttributes<HTMLSamiSubscriberElement>;
         }
     }

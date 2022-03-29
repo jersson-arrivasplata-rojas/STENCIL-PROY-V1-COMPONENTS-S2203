@@ -1,73 +1,19 @@
+<!DOCTYPE html>
 <html dir="ltr" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0,
-      minimum-scale=1.0, maximum-scale=5.0">
-        <title>Stencil Component Starter</title>
-        <link href="https://fonts.googleapis.com/css2?family=Assistant&family=Bebas+Neue&family=Poppins&display=swap" rel="stylesheet">
-        <script
-            type="module"
-            src="/build/sami.esm.js"></script>
-        <script
-            nomodule
-            src="/build/sami.js"></script>
-        <style>
-      *{
-           font-family: "Poppins", sans-serif;
-      }
-      body{
-        height: 100vh;
-        width: 100%;
-        margin: 0;
-      }
-    </style>
-    </head>
-    <body>
-        <sami-list-group flex-direction="column" width="350px"></sami-list-group>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/sami.esm.js"></script>
+    <script nomodule src="/build/sami.js"></script>
+  </head>
+  <body>
+    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <sami-list-group flex-direction="column" width="350px"></sami-list-group>
     <script type="text/javascript">
       const samiListGroup = document.querySelector('sami-list-group');
-    //  samiListGroup.data = [{"url":"#", "text":"github", "padding":"10px"}, {"url":"#", "text":"linkedin", "padding":"10px"}, {"url":"#", "text":"instagram", "padding":"10px"}, {"url":"#", "text":"facebook", "padding":"10px"}];
+      samiListGroup.data = [{"url":"#", "text":"github", "padding":"10px"}, {"url":"#", "text":"linkedin", "padding":"10px"}, {"url":"#", "text":"instagram", "padding":"10px"}, {"url":"#", "text":"facebook", "padding":"10px"}];
     </script>
-        <!--
-        
-
-        <script type="text/javascript">
-  
-            const samiSidebarDashboard = document.querySelector('sami-sidebar-dashboard');
-            samiSidebarDashboard.data=[
-            {
-                "url": "#",
-                "text": "Prueba",
-                "padding": "10px",
-                "target": "_self"
-            },
-            {
-                "title": "string",
-                "data": [
-                    {
-                "url": "#",
-                "text": "Prueba",
-                "padding": "10px",
-                "target": "_self"
-                    }
-                ]
-            },
-            {
-                "title": "string",
-                "data": [
-                    {
-                "url": "#",
-                "text": "Prueba",
-                "padding": "10px",
-                "target": "_self"
-                    }
-                ]
-            }
-          ];
-        </script>
-        -->
-        
-    </body>
+  </body>
 </html>

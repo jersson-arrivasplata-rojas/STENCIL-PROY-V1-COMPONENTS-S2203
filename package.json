@@ -1,72 +1,43 @@
 {
-    "name": "@jersson-arrivasplata-rojas/sami",
-    "version": "0.0.4",
-    "description": "Componente de Stencil",
-    "main": "dist/index.cjs.js",
-    "module": "dist/index.js",
-    "es2015": "dist/esm/index.mjs",
-    "es2017": "dist/esm/index.mjs",
-    "collection": "dist/collection/collection-manifest.json",
-    "collection:main": "dist/collection/index.js",
-    "types": "dist/types/index.d.ts",
-    "unpkg": "dist/sami/sami.esm.js",
-    "files": [
-        "dist/",
-        "loader/"
-    ],
-    "scripts": {
-        "start": "stencil build --dev --watch --serve --port=8015",
-        "test": "stencil test --spec --e2e",
-        "test.watch": "stencil test --spec --e2e --watchAll",
-        "build": "npm run site.structure && npm run docs && stencil build --prerender",
-        "build.ci": "npm run site.structure && npm run docs && stencil build --ci --prerender",
-        "docs": "tsc --p ./scripts && node ./scripts/markdown-to-html && node ./scripts/blog-list",
-        "prerender": "stencil build --prerender",
-        "prerender.dev": "stencil build --dev --prerender",
-        "site.structure": "tsc --p ./scripts && node ./scripts/site-structure",
-        "generate": "stencil generate",
-        "build:local": "stencil build  --docs",
-        "start:local": "stencil build --dev --watch --serve --port=8016"
-    },
-    "devDependencies": {
-        "@ionic-internal/ionic-ds": "4.1.4",
-        "@stencil/angular-output-target": "^0.4.0",
-        "@stencil/core": "^2.14.2",
-        "@stencil/router": "1.0.1",
-        "@stencil/sass": "^1.5.2",
-        "@stencil/state-tunnel": "1.0.1",
-        "@types/fs-extra": "^9.0.1",
-        "@types/glob": "^7.1.2",
-        "@types/jest": "^27.4.1",
-        "@types/marked": "^0.7.4",
-        "@types/node": "^14.0.14",
-        "@types/prismic-dom": "^2.1.1",
-        "@types/prismjs": "^1.16.1",
-        "algoliasearch": "^4.3.0",
-        "copy-text-to-clipboard": "^2.2.0",
-        "dotenv": "^8.2.0",
-        "front-matter": "^3.2.1",
-        "fs-extra": "^9.0.1",
-        "glob": "^7.1.6",
-        "jest": "^26.1.0",
-        "marked": "^0.7.0",
-        "node-fetch": "^2.6.1",
-        "prismic-dom": "^2.2.7",
-        "prismic-javascript": "^2.7.1",
-        "prismjs": "1.24.0",
-        "rollup-plugin-dotenv": "^0.3.0",
-        "typescript": "^3.9.5",
-        "workbox-build": "4.3.1"
-    },
-    "author": "Jersson G. Arrivasplata Rojas",
-    "license": "MIT",
-    "publishConfig": {
-        "registry": "https://registry.npmjs.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/jersson-arrivasplata-rojas/STENCIL-PROY-V1-COMPONENTS-S2203.git"
-    },
-    "homepage": "https://sami.jerssonarrivasplata.com/",
-    "dependencies": {}
+  "name": "@jersson-arrivasplata-rojas/sami",
+  "version": "0.0.4",
+  "description": "Componente de Stencil",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/components.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/sami/sami.esm.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve --port=8016",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "jest": "^27.4.5",
+    "jest-cli": "^27.4.5",
+    "puppeteer": "^10.0.0"
+  },
+  "author": "Jersson G. Arrivasplata Rojas",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jersson-arrivasplata-rojas/STENCIL-PROY-V1-COMPONENTS-S2203.git"
+  },
+  "homepage": "https://sami.jerssonarrivasplata.com/",
+  "dependencies": {
+    "@stencil/core": "^2.13.0"
+  }
 }

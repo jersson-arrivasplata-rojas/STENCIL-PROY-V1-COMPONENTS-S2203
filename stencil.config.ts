@@ -3,11 +3,20 @@ import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'sami',
-  globalStyle: 'src/globals/base.scss',
+  srcDir: 'src',
+  globalStyle: 'src/global/base.scss',
+  plugins: [
+    sass({
+      injectGlobalPaths: [
+        'src/global/variables.scss',
+        'src/global/mixins.scss'
+      ]
+    })
+  ],
   outputTargets: [
     {
       type: 'dist',
-     // esmLoaderPath: '../loader',
+      esmLoaderPath: '../loader',
     },
     {
       type: 'dist-custom-elements',
@@ -18,20 +27,6 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null, // disable service workers
-    }/*,
-    angularOutputTarget({
-      componentCorePackage: 'sami',
-      directivesProxyFile: '../angular-workspace/projects/component-library/src/lib/stencil-generated/components.ts',
-      directivesArrayFile: '../angular-workspace/projects/component-library/src/lib/stencil-generated/index.ts',
-    })*/
-  ],
-  plugins: [
-    sass({
-
-      injectGlobalPaths: [
-        'src/globals/variables.scss',
-        'src/globals/mixins.scss'
-      ]
-    })
+    },
   ],
 };
