@@ -16,7 +16,9 @@
   ],
   "scripts": {
     "build": "stencil build --docs",
-    "start": "stencil build --dev --watch --serve --port=8016",
+    "start:max": "node --max_old_space_size=4096 ./node_modules/@stencil/core/bin/stencil build --dev --watch --serve --port=8016 --verbose --log",
+    "start": "stencil build --dev --watch --serve --port=8016 --verbose --log",
+    "prerender": "stencil build --prerender --dev --watch --serve --port=8016",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate"

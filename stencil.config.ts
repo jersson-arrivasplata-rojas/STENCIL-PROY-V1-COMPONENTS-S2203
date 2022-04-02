@@ -26,6 +26,8 @@ export const config: Config = {
     },
     {
       type: 'www',
+      baseUrl: 'http://localhost:8016/',
+      prerenderConfig: './prerender.config.ts',
       serviceWorker: null, // disable service workers
     },
   ],

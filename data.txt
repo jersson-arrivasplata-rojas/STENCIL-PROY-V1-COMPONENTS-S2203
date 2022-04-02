@@ -1,0 +1,87 @@
+npm config set strict-ssl false
+npm init stencil
+
+npm config set registry=https://npm.pkg.github.com/@jersson-arrivasplata-rojas
+npm install @jersson-arrivasplata-rojas/sami@0.0.1
+npm install sami@0.0.1
+
+
+
+
+npm config set registry=https://npm.pkg.github.com/
+
+npm install @jersson-arrivasplata-rojas/sami@0.0.2
+
+------------------------------------------------------------------------------------------------
+github
+https://docs.github.com/en/packages/quickstart
+
+ npm config set @jersson-arrivasplata-rojas:registry=https://npm.pkg.github.com
+
+npm login --registry=https://npm.pkg.github.com --scope=/@jersson-arrivasplata-rojas
+npm publish
+
+npm i https://github.com/jersson-arrivasplata-rojas/@jersson-arrivasplata-rojas/sami
+
+
+
+npm i https://github.com/jersson-arrivasplata-rojas/sami
+
+
+
+-----------------------------------------------------------------------------------
+
+npm login --registry=https://registry.npmjs.com/ --scope=/@jersson-arrivasplata-rojas
+
+npm config set @jersson-arrivasplata-rojas:registry=https://registry.npmjs.com
+npm publish --access=public
+
+
+npm login --registry=https://registry.npmjs.com/ --scope=/@sami
+npm config set @sami:registry=https://registry.npmjs.com
+npm publish --access=public
+
+npm set registry https://registry.npmjs.org/ 
+npm install yargs
+
+
+---------------------------------------------------------------------------------------
+npx -p @angular/cli ng new angular-workspace --no-create-application
+
+npx -p @angular/cli ng generate library component-library
+npm init stencil components stencil-library
+
+npm install @stencil/angular-output-target --save-dev
+
+
+
+----------------------------------------------------------------------------------------
+npm install @stencil/sass --save-dev
+
+
+----------------------------------------------------------------------------------------
+
+yarn add prismic-dom
+yarn config set "strict-ssl" false
+
+
+
+yarn add @prismicio/client
+----------------------------------------------------------------------------------------
+yarn add prismic-dom
+
+yarn add prismic-javascript
+
+npm cache clean --force
+
+
+
+npm install --registry https://registry.npmjs.org
+
+npm prune
+
+npm cache clean --force
+---------------------------------------------------------------------
+export NODE_TLS_REJECT_UNAUTHORIZED=0
+
+STENCIL-PROY-V1-SAMI-DASHBOARD-REACT-S2203
