@@ -133,7 +133,7 @@ sami-card-code {
     position: relative;
     border-style: solid;
     border-width: 2px;
-    background: $white;
+    background: $sami-white;
 
     & div.sami-card-code___section-one {
       position: absolute;
@@ -155,12 +155,12 @@ sami-card-code {
           padding-top: 0.4rem;
           padding-bottom: 0.4rem;
           font-size: 14px;
-          color: $white-800;
+          color: $sami-white-800;
           text-transform: uppercase;
         }
         & p.sami-card-code___subtitle {
           font-size: 13px;
-          color: $white-900;
+          color: $sami-white-900;
         }
       }
       & div.sami-card-code___img {
@@ -189,7 +189,7 @@ sami-card-code {
       }
       & p.sami-card-code___subtitle {
         font-size: 14px;
-        color: $muted;
+        color: $sami-muted;
       }
       & p.sami-card-code___author {
         position: absolute;

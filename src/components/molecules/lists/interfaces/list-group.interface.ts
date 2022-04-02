@@ -1,8 +1,7 @@
-export interface IHyperLink {
+export interface IListGroup {
   url: string;
   text: string;
   padding: string;
   target: string;
-  active: boolean;
   fnClick?: () => void;
 }

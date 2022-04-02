@@ -3,9 +3,9 @@ sami-grid {
     & div.sami-grid {
         background: transparent;
         display: grid;
-        grid-column-gap: $spacing-l;
-        grid-row-gap: $spacing-l;
-        /*max-width: $width-container;*/
+        grid-column-gap: $sami-spacing-l;
+        grid-row-gap: $sami-spacing-l;
+        /*max-width: $sami-width-container;*/
         width: 100%;
         grid-template-columns: repeat(4, 1fr);
     }

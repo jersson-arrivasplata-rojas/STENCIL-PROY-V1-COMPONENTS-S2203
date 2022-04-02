@@ -1,22 +1,45 @@
 /* COLORS - Variable Assignation */
-$screen: #0652dd;
-$primary: #0d6efd;
-$secondary: #6610f2;
-$success: #20c997;
-$danger: #dc3545;
-$warning: #ffc107;
-$info: #0dcaf0;
-$light: #adb5bd;
-$dark: #000000;
-$white: #ffffff;
-$white-900: rgba(255, 255, 255, 0.9);
-$white-800: rgba(255, 255, 255, 0.8);
-$white-500: rgba(255, 255, 255, 0.5);
-$spacing-s: 8px;
-$spacing-m: 16px;
-$spacing-l: 24px;
-$spacing-xl: 32px;
-$spacing-xxl: 64px;
-$width-container: 1200px;
-$muted:#6c757d;
 
+$sami-screen: #0652dd;
+$sami-primary: #0d6efd;
+$sami-secondary: #6610f2;
+$sami-success: #20c997;
+$sami-danger: #dc3545;
+$sami-warning: #ffc107;
+$sami-info: #0dcaf0;
+$sami-light: #adb5bd;
+$sami-dark: #000000;
+$sami-white: #ffffff;
+$sami-white-900: rgba(255, 255, 255, 0.9);
+$sami-white-800: rgba(255, 255, 255, 0.8);
+$sami-white-500: rgba(255, 255, 255, 0.5);
+$sami-spacing-s: 8px;
+$sami-spacing-m: 16px;
+$sami-spacing-l: 24px;
+$sami-spacing-xl: 32px;
+$sami-spacing-xxl: 64px;
+$sami-width-container: 1200px;
+$sami-muted: #6c757d;
+
+:root {
+  --sami-screen: $sami-screen;
+  --sami-primary: $sami-primary;
+  --sami-secondary: $sami-secondary;
+  --sami-success: $sami-success;
+  --sami-danger: $sami-danger;
+  --sami-warning: $sami-warning;
+  --sami-info: $sami-info;
+  --sami-light: $sami-light;
+  --sami-dark: $sami-dark;
+  --sami-white: $sami-white;
+  --sami-white-900: rgba($sami-white, 0.9);
+  --sami-white-800: rgba($sami-white, 0.8);
+  --sami-white-500: rgba($sami-white, 0.5);
+  --sami-spacing-s: $sami-spacing-s;
+  --sami-spacing-m: $sami-spacing-m;
+  --sami-spacing-l: $sami-spacing-l;
+  --sami-spacing-xl: $sami-spacing-xl;
+  --sami-spacing-xxl: $sami-spacing-xxl;
+  --sami-width-container: $sami-width-container;
+  --sami-muted: $sami-muted;
+}

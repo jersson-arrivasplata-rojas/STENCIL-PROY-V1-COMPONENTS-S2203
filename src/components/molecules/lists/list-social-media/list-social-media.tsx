@@ -1,4 +1,5 @@
 import { Component, h, Prop, Watch } from '@stencil/core';
+import { IListSocialMedia } from '../interfaces/list-social-media.interface';
 
 @Component({
   tag: 'sami-list-social-media',
@@ -18,14 +19,7 @@ export class ListSocialMedia {
   * Example: localhost/css3
   */
   /**/
-  @Prop({ mutable: true }) data: Array<{
-    url: string;
-    type: string;
-    padding: string;
-    target: string;
-    urlImage: string;
-    fnClick?: () => void;
-  }> = [];
+  @Prop({ mutable: true }) data: Array<IListSocialMedia> = [];
 
   @Watch('data')
   parseDataProp(newValue) {

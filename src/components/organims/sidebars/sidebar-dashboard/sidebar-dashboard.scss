@@ -1,0 +1,83 @@
+$padding: 10px 10px 10px 35px;
+$border-right-color: darken($sami-white, 10%);
+
+sami-sidebar-dashboard {
+  height: 100%;
+  display: block;
+  width: 320px;
+  background-color: $sami-white;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba($sami-dark, 0.5);
+  /* & ul.sami-sidebar-dashboard___ul.sami-sidebar-dashboard___main:hover {
+    overflow-y: scroll;
+  }*/
+
+
+
+  & ul.sami-sidebar-dashboard___ul {
+
+    text-transform: capitalize;
+    margin: 0px;
+    padding: 0px;
+    & li.sami-sidebar-dashboard___section {
+      & ul {
+        & li {
+          & a {
+            padding: 10px 10px 10px 55px;
+          }
+        }
+      }
+    }
+    & li {
+      & a {
+        font-size: 14px;
+        text-decoration: none;
+        color: $sami-dark;
+        padding: $padding;
+        height: 50px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+      }
+
+      & div {
+        padding: 15px 35px 15px 35px;
+        & span {
+          color: rgba($sami-dark, 0.5);
+          border-bottom-style: solid;
+          border-bottom-width: 1px;
+          border-bottom-color: rgba($sami-dark, 0.2);
+          display: block;
+          padding-bottom: 10px;
+          font-size: 12px;
+        }
+      }
+    }
+    &
+      li.sami-sidebar-dashboard___li:hover:not(.sami-sidebar-dashboard___section):not(.sami-sidebar-dashboard___active) {
+      background-color: darken($sami-screen, 5%); /*rgba($sami-screen, 1) */
+    }
+    & li.sami-sidebar-dashboard___active {
+      background-color: darken($sami-screen, 5%);
+    }
+
+    & li.sami-sidebar-dashboard___active,
+    li.sami-sidebar-dashboard___li:hover:not(.sami-sidebar-dashboard___section):not(.sami-sidebar-dashboard___active) {
+      border-right-style: solid;
+      border-right-width: 4px;
+      border-right-color: $border-right-color;
+      & a {
+        color: $sami-white;
+      }
+    }
+  }
+}
+sami-sidebar-dashboard:hover {
+  /* overflow-y: scroll;*/
+}
+/*
+rgba($sami-screen, 0.8)
+*/

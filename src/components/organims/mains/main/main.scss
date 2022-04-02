@@ -3,26 +3,28 @@ html,
 body {
     height: 100vh;
     font-size: 18px;
-    background: $screen;
+    background: $sami-screen;
 }*/
-html{
-    font-size: 10pt;
+html {
+  font-size: 10pt;
 }
-body{
-    background: $screen;
+body {
+  background: $sami-screen;
 }
 sami-main {
-    & div.sami-main {
-        height: 100vh;
-        background: $screen;
-        margin-top: 0;
-        margin-left: 250px;
-    }
+  & div.sami-main {
+    height: 100vh;
+    background: $sami-screen;
+    margin-top: 0;
+    width: calc(100% - 250px);
+    float: right;
+    margin-left: 0px;
+  }
 }
 @media (max-width: 769px) {
-    sami-main {
-        & div.sami-main {
-            margin-left: 0px;
-        }
+  sami-main {
+    & div.sami-main {
+      width: calc(100%) !important;
     }
+  }
 }

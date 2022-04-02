@@ -1,8 +1,8 @@
-export interface IHyperLink {
+export interface IListSocialMedia {
   url: string;
-  text: string;
+  type: string;
   padding: string;
   target: string;
-  active: boolean;
+  urlImage: string;
   fnClick?: () => void;
 }

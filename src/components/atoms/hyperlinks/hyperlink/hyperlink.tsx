@@ -13,6 +13,8 @@ export class Hyperlink {
    */
   @Prop() padding?: string;
 
+  @Prop() width?: string;
+
   /**
    * es: Ruta que redirige del card image
    * en: Route of redirect card image
@@ -38,6 +40,7 @@ export class Hyperlink {
   private getStyles() {
     const styles = Object.assign({});
     (this.padding) ? styles.padding = this.padding : delete styles.padding;
+    (this.width) ? styles.width = this.width : delete styles.width;
 
     return styles;
   }

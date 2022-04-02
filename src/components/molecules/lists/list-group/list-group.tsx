@@ -1,4 +1,5 @@
 import { Component, h, Prop, Watch } from '@stencil/core';
+import { IListGroup } from '../interfaces/list-group.interface';
 
 @Component({
   tag: 'sami-list-group',
@@ -18,13 +19,7 @@ export class ListGroup {
   * Example: localhost/css3
   */
   /**/
-  @Prop({ mutable: true }) data: Array<{
-    url: string;
-    text: string;
-    padding: string;
-    target: string;
-    fnClick?: () => void;
-  }> = [];
+  @Prop({ mutable: true }) data: Array<IListGroup>;
 
   @Watch('data')
   parseDataProp(newValue) {
@@ -32,6 +27,8 @@ export class ListGroup {
 
   }
 
+  @Prop() display?: string;
+  @Prop() border?: boolean=false;
   @Prop() flexDirection?: string;
 
   @Prop() width?: string;
@@ -45,6 +42,7 @@ export class ListGroup {
    */
   private getStyles() {
     const styles = Object.assign({});
+    (this.display) ? styles.display = this.display : delete styles.display;
     (this.flexDirection) ? styles.flexDirection = this.flexDirection : delete styles.flexDirection;
     (this.width) ? styles.width = this.width : delete styles.width;
     return styles;
@@ -61,6 +59,9 @@ export class ListGroup {
           this.data ?
             this.data.map(x => {
               return (<li>
+                {
+                  this.border ? <div class='sami-list-group___border'></div>:[]
+                }
                 <sami-hyperlink text={x.text} url={x.url} target={x.target} fnClick={x.fnClick} padding={x.padding}></sami-hyperlink>
               </li>);
             }) :

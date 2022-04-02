@@ -5,6 +5,9 @@ sami-list-group {
     margin: 0;
     padding: 0;
     & li {
+     & div.sami-list-group___border{
+       display: none;
+     }
       list-style: none;
     }
   }

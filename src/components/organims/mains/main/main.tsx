@@ -6,16 +6,16 @@ import { Component, h, Prop } from '@stencil/core';
 })
 export class Main {
 
-  @Prop() marginLeft?: string;
+  @Prop() width?: string;
 
   private getStyles() {
     const styles = Object.assign({});
-    (this.marginLeft) ? styles.marginLeft = this.marginLeft : delete styles.marginLeft;
+    (this.width) ? styles.width = this.width : delete styles.width;
 
     return styles;
   }
   render() {
-    
+
     return (
       <div class='sami-main' style={this.getStyles()}>
         <slot name="main"></slot>

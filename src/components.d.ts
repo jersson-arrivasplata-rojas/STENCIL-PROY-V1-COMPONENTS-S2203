@@ -5,7 +5,9 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { hyperLinkInterface } from "./components/organims/sidebars/interfaces/hyperlink.interface";
+import { IListGroup } from "./components/molecules/lists/interfaces/list-group.interface";
+import { IListSocialMedia } from "./components/molecules/lists/interfaces/list-social-media.interface";
+import { IHyperLink } from "./components/organims/sidebars/interfaces/hyperlink.interface";
 export namespace Components {
     interface MyComponent {
         /**
@@ -134,6 +136,13 @@ export namespace Components {
          */
         "zIndex"?: number;
     }
+    interface SamiDropdown {
+        "border"?: boolean;
+        "data": string | Array<IListGroup>;
+        "right": string;
+        "text": string;
+        "width": string;
+    }
     interface SamiFlexCode {
     }
     interface SamiFlexCodeView {
@@ -142,6 +151,29 @@ export namespace Components {
     }
     interface SamiGrid {
         "padding"?: string;
+    }
+    interface SamiHeader {
+        "backgroundColor": string;
+        "boxShadow": string;
+        "desktop": boolean;
+        "dropdownBorder": boolean;
+        "dropdownListGroupData": string | Array<IListGroup>;
+        "dropdownRight": string;
+        "dropdownTitle": string;
+        "dropdownWidth": string;
+        "flexGrow": boolean;
+        "hyperlinkBackground": string;
+        "hyperlinkBackgroundImage": string;
+        "hyperlinkBorderRadius": string;
+        "hyperlinkHeight": string;
+        "hyperlinkMaxWidth": string;
+        "hyperlinkTarget": string;
+        "hyperlinkUrl": string;
+        "hyperlinkWidth": string;
+        "justifyContent": string;
+        "justifyContentMobile": string;
+        "listGroupData": string | Array<IListGroup>;
+        "listSocialMediaData": string | Array<IListSocialMedia>;
     }
     interface SamiHeaderMobile {
         "hyperlinkBackground": string;
@@ -168,6 +200,7 @@ export namespace Components {
           * es: Ruta que redirige del card image en: Route of redirect card image Example: localhost/css3
          */
         "url": string;
+        "width"?: string;
     }
     interface SamiHyperlinkIcon {
         /**
@@ -221,17 +254,13 @@ export namespace Components {
         "width"?: string;
     }
     interface SamiListGroup {
+        "border"?: boolean;
         "classAppend": string;
         /**
           * @State () data: Array<{ url: string; type: string; }> = [];  es: Ruta que redirige del card image en: Route of redirect card image Example: localhost/css3
          */
-        "data": Array<{
-    url: string;
-    text: string;
-    padding: string;
-    target: string;
-    fnClick?: () => void;
-  }>;
+        "data": Array<IListGroup>;
+        "display"?: string;
         "flexDirection"?: string;
         "width"?: string;
     }
@@ -240,14 +269,7 @@ export namespace Components {
         /**
           * @State () data: Array<{ url: string; type: string; }> = [];  es: Ruta que redirige del card image en: Route of redirect card image Example: localhost/css3
          */
-        "data": Array<{
-    url: string;
-    type: string;
-    padding: string;
-    target: string;
-    urlImage: string;
-    fnClick?: () => void;
-  }>;
+        "data": Array<IListSocialMedia>;
         "filter"?: string;
         "flexDirection"?: string;
     }
@@ -256,7 +278,7 @@ export namespace Components {
         "show": () => Promise<void>;
     }
     interface SamiMain {
-        "marginLeft"?: string;
+        "width"?: string;
     }
     interface SamiSidebar {
         "background"?: string;
@@ -273,12 +295,12 @@ export namespace Components {
         "zIndex"?: number;
     }
     interface SamiSidebarDashboard {
-        "data": Array<hyperLinkInterface | 
-  { 
-    title: string; 
-    data: Array<hyperLinkInterface>;
-  }
-  >;
+        "data": Array<IHyperLink |
+    {
+      title: string;
+      data: Array<IHyperLink>;
+    }
+    >;
     }
     interface SamiSubscriber {
         "background"?: string;
@@ -324,6 +346,12 @@ declare global {
         prototype: HTMLSamiCardTagElement;
         new (): HTMLSamiCardTagElement;
     };
+    interface HTMLSamiDropdownElement extends Components.SamiDropdown, HTMLStencilElement {
+    }
+    var HTMLSamiDropdownElement: {
+        prototype: HTMLSamiDropdownElement;
+        new (): HTMLSamiDropdownElement;
+    };
     interface HTMLSamiFlexCodeElement extends Components.SamiFlexCode, HTMLStencilElement {
     }
     var HTMLSamiFlexCodeElement: {
@@ -341,6 +369,12 @@ declare global {
     var HTMLSamiGridElement: {
         prototype: HTMLSamiGridElement;
         new (): HTMLSamiGridElement;
+    };
+    interface HTMLSamiHeaderElement extends Components.SamiHeader, HTMLStencilElement {
+    }
+    var HTMLSamiHeaderElement: {
+        prototype: HTMLSamiHeaderElement;
+        new (): HTMLSamiHeaderElement;
     };
     interface HTMLSamiHeaderMobileElement extends Components.SamiHeaderMobile, HTMLStencilElement {
     }
@@ -413,9 +447,11 @@ declare global {
         "sami-card-code": HTMLSamiCardCodeElement;
         "sami-card-image": HTMLSamiCardImageElement;
         "sami-card-tag": HTMLSamiCardTagElement;
+        "sami-dropdown": HTMLSamiDropdownElement;
         "sami-flex-code": HTMLSamiFlexCodeElement;
         "sami-flex-code-view": HTMLSamiFlexCodeViewElement;
         "sami-grid": HTMLSamiGridElement;
+        "sami-header": HTMLSamiHeaderElement;
         "sami-header-mobile": HTMLSamiHeaderMobileElement;
         "sami-hyperlink": HTMLSamiHyperlinkElement;
         "sami-hyperlink-icon": HTMLSamiHyperlinkIconElement;
@@ -557,6 +593,13 @@ declare namespace LocalJSX {
          */
         "zIndex"?: number;
     }
+    interface SamiDropdown {
+        "border"?: boolean;
+        "data"?: string | Array<IListGroup>;
+        "right"?: string;
+        "text"?: string;
+        "width"?: string;
+    }
     interface SamiFlexCode {
     }
     interface SamiFlexCodeView {
@@ -565,6 +608,29 @@ declare namespace LocalJSX {
     }
     interface SamiGrid {
         "padding"?: string;
+    }
+    interface SamiHeader {
+        "backgroundColor"?: string;
+        "boxShadow"?: string;
+        "desktop"?: boolean;
+        "dropdownBorder"?: boolean;
+        "dropdownListGroupData"?: string | Array<IListGroup>;
+        "dropdownRight"?: string;
+        "dropdownTitle"?: string;
+        "dropdownWidth"?: string;
+        "flexGrow"?: boolean;
+        "hyperlinkBackground"?: string;
+        "hyperlinkBackgroundImage"?: string;
+        "hyperlinkBorderRadius"?: string;
+        "hyperlinkHeight"?: string;
+        "hyperlinkMaxWidth"?: string;
+        "hyperlinkTarget"?: string;
+        "hyperlinkUrl"?: string;
+        "hyperlinkWidth"?: string;
+        "justifyContent"?: string;
+        "justifyContentMobile"?: string;
+        "listGroupData"?: string | Array<IListGroup>;
+        "listSocialMediaData"?: string | Array<IListSocialMedia>;
     }
     interface SamiHeaderMobile {
         "hyperlinkBackground"?: string;
@@ -591,6 +657,7 @@ declare namespace LocalJSX {
           * es: Ruta que redirige del card image en: Route of redirect card image Example: localhost/css3
          */
         "url"?: string;
+        "width"?: string;
     }
     interface SamiHyperlinkIcon {
         /**
@@ -644,17 +711,13 @@ declare namespace LocalJSX {
         "width"?: string;
     }
     interface SamiListGroup {
+        "border"?: boolean;
         "classAppend"?: string;
         /**
           * @State () data: Array<{ url: string; type: string; }> = [];  es: Ruta que redirige del card image en: Route of redirect card image Example: localhost/css3
          */
-        "data"?: Array<{
-    url: string;
-    text: string;
-    padding: string;
-    target: string;
-    fnClick?: () => void;
-  }>;
+        "data"?: Array<IListGroup>;
+        "display"?: string;
         "flexDirection"?: string;
         "width"?: string;
     }
@@ -663,21 +726,14 @@ declare namespace LocalJSX {
         /**
           * @State () data: Array<{ url: string; type: string; }> = [];  es: Ruta que redirige del card image en: Route of redirect card image Example: localhost/css3
          */
-        "data"?: Array<{
-    url: string;
-    type: string;
-    padding: string;
-    target: string;
-    urlImage: string;
-    fnClick?: () => void;
-  }>;
+        "data"?: Array<IListSocialMedia>;
         "filter"?: string;
         "flexDirection"?: string;
     }
     interface SamiLoader {
     }
     interface SamiMain {
-        "marginLeft"?: string;
+        "width"?: string;
     }
     interface SamiSidebar {
         "background"?: string;
@@ -694,12 +750,12 @@ declare namespace LocalJSX {
         "zIndex"?: number;
     }
     interface SamiSidebarDashboard {
-        "data"?: Array<hyperLinkInterface | 
-  { 
-    title: string; 
-    data: Array<hyperLinkInterface>;
-  }
-  >;
+        "data"?: Array<IHyperLink |
+    {
+      title: string;
+      data: Array<IHyperLink>;
+    }
+    >;
     }
     interface SamiSubscriber {
         "background"?: string;
@@ -724,9 +780,11 @@ declare namespace LocalJSX {
         "sami-card-code": SamiCardCode;
         "sami-card-image": SamiCardImage;
         "sami-card-tag": SamiCardTag;
+        "sami-dropdown": SamiDropdown;
         "sami-flex-code": SamiFlexCode;
         "sami-flex-code-view": SamiFlexCodeView;
         "sami-grid": SamiGrid;
+        "sami-header": SamiHeader;
         "sami-header-mobile": SamiHeaderMobile;
         "sami-hyperlink": SamiHyperlink;
         "sami-hyperlink-icon": SamiHyperlinkIcon;
@@ -748,9 +806,11 @@ declare module "@stencil/core" {
             "sami-card-code": LocalJSX.SamiCardCode & JSXBase.HTMLAttributes<HTMLSamiCardCodeElement>;
             "sami-card-image": LocalJSX.SamiCardImage & JSXBase.HTMLAttributes<HTMLSamiCardImageElement>;
             "sami-card-tag": LocalJSX.SamiCardTag & JSXBase.HTMLAttributes<HTMLSamiCardTagElement>;
+            "sami-dropdown": LocalJSX.SamiDropdown & JSXBase.HTMLAttributes<HTMLSamiDropdownElement>;
             "sami-flex-code": LocalJSX.SamiFlexCode & JSXBase.HTMLAttributes<HTMLSamiFlexCodeElement>;
             "sami-flex-code-view": LocalJSX.SamiFlexCodeView & JSXBase.HTMLAttributes<HTMLSamiFlexCodeViewElement>;
             "sami-grid": LocalJSX.SamiGrid & JSXBase.HTMLAttributes<HTMLSamiGridElement>;
+            "sami-header": LocalJSX.SamiHeader & JSXBase.HTMLAttributes<HTMLSamiHeaderElement>;
             "sami-header-mobile": LocalJSX.SamiHeaderMobile & JSXBase.HTMLAttributes<HTMLSamiHeaderMobileElement>;
             "sami-hyperlink": LocalJSX.SamiHyperlink & JSXBase.HTMLAttributes<HTMLSamiHyperlinkElement>;
             "sami-hyperlink-icon": LocalJSX.SamiHyperlinkIcon & JSXBase.HTMLAttributes<HTMLSamiHyperlinkIconElement>;

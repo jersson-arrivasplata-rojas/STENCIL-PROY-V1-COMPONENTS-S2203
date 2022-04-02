@@ -28,7 +28,7 @@
       samiListGroup.data = [{"url":"#", "text":"github", "padding":"10px"}, {"url":"#", "text":"linkedin", "padding":"10px"}, {"url":"#", "text":"instagram", "padding":"10px"}, {"url":"#", "text":"facebook", "padding":"10px"}];
     </script>
     <sami-sidebar hyperlink-url="#"  hyperlink-padding="12px" hyperlink-filter="opacity(0.9) invert(1)"  hyperlink-url-image="./assets/icon-menu/menu.svg">
-      <sami-hyperlink-image 
+      <sami-hyperlink-image
       slot="hyperlink-image"
         background-image="https://jerssonarrivasplata.com/img/icon.png" url="#"
         max-width="110px" border-radius="90px"
@@ -56,7 +56,7 @@
         {"url":"#", "type":"facebook", "padding":"5px"}
       ];
 
- 
+
     </script>
 
      <sami-subscriber hyperlink-url="#"  hyperlink-padding="10px" hyperlink-text="CLICK SUSCRIBETE">
@@ -64,10 +64,10 @@
     </sami-subscriber>
     <sami-header
       hyperlink-background-image="https://jerssonarrivasplata.com/img/icon.png" url="#"
-      hyperlink-max-width="50px" 
+      hyperlink-max-width="50px"
       hyperlink-border-radius="120px"
-      hyperlink-background="#ffffff" 
-      hyperlink-url="#" 
+      hyperlink-background="#ffffff"
+      hyperlink-url="#"
     ></sami-header>-->
     <!--
  <sami-card-code
@@ -130,11 +130,40 @@ Respuesta: false</code></pre>
 
     <script type="text/javascript">
 
-      customElements.whenDefined('sami-loader').then(() => {
-        const load = document.querySelector('sami-loader');
-        load.componentOnReady().then(() => {
-          load.show();
-        });
+      customElements.whenDefined('sami-sidebar-dashboard').then(() => {
+     const samiSidebarDashboard = document.querySelector('sami-sidebar-dashboard');
+            samiSidebarDashboard.data=[
+            {
+                "url": "#",
+                "text": "Prueba",
+                "target": "_self"
+            },
+            {
+                "title": "string",
+                "data": [
+                    {
+                "url": "#",
+                "text": "Prueba",
+                "target": "_self"
+                    },
+                     {
+                  "url": "#",
+                  "text": "Prueba",
+                  "target": "_self"
+                    }
+                ]
+            },
+            {
+                "title": "string",
+                "data": [
+                    {
+                "url": "#",
+                "text": "Prueba",
+                "target": "_self"
+                    }
+                ]
+            }
+          ];
       });
       </script>
   </body>
