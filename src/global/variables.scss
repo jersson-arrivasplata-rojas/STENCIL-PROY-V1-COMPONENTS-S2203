@@ -1,7 +1,13 @@
 /* COLORS - Variable Assignation */
-$sami-screen: #0652dd;
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+$sami-screen:#0652dd;
+$sami-border:#0652dd;
+$sami-border-900: rgba($sami-border, 0.9);
 $sami-primary: #0d6efd;
-$sami-secondary: #6610f2;
+$sami-secondary: #6610f2; 
 $sami-success: #20c997;
 $sami-danger: #dc3545;
 $sami-warning: #ffc107;
@@ -9,9 +15,9 @@ $sami-info: #0dcaf0;
 $sami-light: #adb5bd;
 $sami-dark: #000000;
 $sami-white: #ffffff;
-$sami-white-900: rgba(255, 255, 255, 0.9);
-$sami-white-800: rgba(255, 255, 255, 0.8);
-$sami-white-500: rgba(255, 255, 255, 0.5);
+$sami-white-900: rgba($sami-white, 0.9);
+$sami-white-800: rgba($sami-white, 0.8);
+$sami-white-500: rgba($sami-white, 0.5);
 $sami-spacing-s: 8px;
 $sami-spacing-m: 16px;
 $sami-spacing-l: 24px;
@@ -20,24 +26,72 @@ $sami-spacing-xxl: 64px;
 $sami-width-container: 1200px;
 $sami-muted:#6c757d;
 /*
-:root {
-  --sami-screen: $sami-screen;
-  --sami-primary: $sami-primary;
-  --sami-secondary: $sami-secondary;
-  --sami-success: $sami-success;
-  --sami-danger: $sami-danger;
-  --sami-warning: $sami-warning;
-  --sami-info: $sami-info;
-  --sami-light: $sami-light;
-  --sami-dark: $sami-dark;
-  --sami-white: $sami-white;
-  --sami-spacing-s: $sami-spacing-s;
-  --sami-spacing-m: $sami-spacing-m;
-  --sami-spacing-l: $sami-spacing-l;
-  --sami-spacing-xl: $sami-spacing-xl;
-  --sami-spacing-xxl: $sami-spacing-xxl;
-  --sami-width-container: $sami-width-container;
-  --sami-muted: $sami-muted;
-}
 */
 
+:root {
+  --sami-screen: #{hexToRGB($sami-screen)};
+  --sami-border: #{hexToRGB($sami-border)};
+  --sami-border-900: #{hexToRGB($sami-border-900)};
+  --sami-primary: #{hexToRGB($sami-primary)};
+  --sami-secondary: #{hexToRGB($sami-secondary)};
+  --sami-success: #{hexToRGB($sami-success)};
+  --sami-danger: #{hexToRGB($sami-danger)};
+  --sami-warning: #{hexToRGB($sami-warning)};
+  --sami-info: #{hexToRGB($sami-info)};
+  --sami-light: #{hexToRGB($sami-light)};
+  --sami-dark: #{hexToRGB($sami-dark)};
+  --sami-white: #{hexToRGB($sami-white)};
+  --sami-white-900: #{hexToRGB($sami-white-900)};
+  --sami-white-800: #{hexToRGB($sami-white-800)};
+  --sami-white-500: #{hexToRGB($sami-white-500)};
+  --sami-spacing-s: #{$sami-spacing-s};
+  --sami-spacing-m: #{$sami-spacing-m};
+  --sami-spacing-l: #{$sami-spacing-l};
+  --sami-spacing-xl: #{$sami-spacing-xl};
+  --sami-spacing-xxl: #{$sami-spacing-xxl};
+  --sami-width-container: #{$sami-width-container};
+  --sami-muted: #{hexToRGB($sami-muted)};
+}
+/*
+Opacity %   255 Step        2 digit HEX prefix
+0%          0.00            00
+5%          12.75           0C
+10%         25.50           19
+15%         38.25           26
+20%         51.00           33
+25%         63.75           3F
+30%         76.50           4C
+35%         89.25           59
+40%         102.00          66
+45%         114.75          72
+50%         127.50          7F
+55%         140.25          8C
+60%         153.00          99
+65%         165.75          A5
+70%         178.50          B2
+75%         191.25          BF
+80%         204.00          CC
+85%         216.75          D8
+90%         229.50          E5
+95%         242.25          F2
+100%        255.00          FF
+
+  --sami-screen: rgb(#{hexToRGB($sami-screen)});
+  --sami-primary: rgb(#{hexToRGB($sami-primary)});
+  --sami-secondary: rgb(#{hexToRGB($sami-secondary)});
+  --sami-success: rgb(#{hexToRGB($sami-success)});
+  --sami-danger: rgb(#{hexToRGB($sami-danger)});
+  --sami-warning: rgb(#{hexToRGB($sami-warning)});
+  --sami-info: rgb(#{hexToRGB($sami-info)});
+  --sami-light: rgb(#{hexToRGB($sami-light)});
+  --sami-dark: rgb(#{hexToRGB($sami-dark)});
+  --sami-white: rgb(#{hexToRGB($sami-white)});
+  --sami-spacing-s: #{$sami-spacing-s};
+  --sami-spacing-m: #{$sami-spacing-m};
+  --sami-spacing-l: #{$sami-spacing-l};
+  --sami-spacing-xl: #{$sami-spacing-xl};
+  --sami-spacing-xxl: #{$sami-spacing-xxl};
+  --sami-width-container: #{$sami-width-container};
+  --sami-muted: rgb(#{hexToRGB($sami-muted)});
+
+*/

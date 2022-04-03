@@ -29,6 +29,7 @@ export class ListSocialMedia {
 
   @Prop() flexDirection?: string;
 
+
   @Prop() filter?: string;
 
   @Prop() classAppend: string = '';
@@ -64,7 +65,7 @@ export class ListSocialMedia {
           this.data ?
             this.data.map(x => {
               return (<li>
-                <sami-hyperlink-icon onClick={x.fnClick} url={x.url} type={x.type} padding={x.padding} target={x.target} url-image={x.urlImage}></sami-hyperlink-icon>
+                <sami-hyperlink-icon onClick={x.fnClick} width={x.width} url={x.url} type={x.type} padding={x.padding} target={x.target} url-image={x.urlImage}></sami-hyperlink-icon>
               </li>);
             }) :
             []

@@ -1,20 +1,11 @@
-/**,
-html,
-body {
-    height: 100vh;
-    font-size: 18px;
-    background: $sami-screen;
-}*/
+
 html {
   font-size: 10pt;
-}
-body {
-  background: $sami-screen;
 }
 sami-main {
   & div.sami-main {
     height: 100vh;
-    background: $sami-screen;
+    background: rgb(var(--sami-screen));
     margin-top: 0;
     width: calc(100% - 250px);
     float: right;

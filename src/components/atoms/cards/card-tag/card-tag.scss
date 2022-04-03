@@ -1,7 +1,7 @@
 sami-card-tag {
   & div {
-    background: $sami-white-900;
-    color: $sami-dark;
+    background: rgb(var(--sami-white-900));
+    color: rgb(var(--sami-dark));
     position: absolute;
     bottom: 0px;
     width: 40px;

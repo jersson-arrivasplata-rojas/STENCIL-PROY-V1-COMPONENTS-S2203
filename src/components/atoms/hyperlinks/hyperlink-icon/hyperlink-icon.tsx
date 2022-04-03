@@ -18,7 +18,7 @@ export class HyperlinkIcon {
  * Example: localhost/css3
  */
   @Prop() filter?: string;
-  
+
   /**
    * es: Ruta que redirige del card image
    * en: Route of redirect card image
@@ -38,14 +38,15 @@ export class HyperlinkIcon {
    * en: Route of redirect card image
    * Example: localhost/css3
    */
-  @Prop() width: number = 26;
+  @Prop() widthImage: number = 26;
 
+  @Prop() width?: string;
   /**
    * es: Ruta que redirige del card image
    * en: Route of redirect card image
    * Example: localhost/css3
    */
-  @Prop() height: number = 26;
+  @Prop() heightImage: number = 26;
 
   @Prop() target: string = "_blank";
 
@@ -65,13 +66,19 @@ export class HyperlinkIcon {
 
     return styles;
   }
+  private getImageStyles() {
+    const styles = Object.assign({});
+    (this.width) ? styles.width = this.width : delete styles.width;
+
+    return styles;
+  }
 
 
   
   render() {//${this.getSvgMedia()
     return (
       <a href={this.url} onClick={this.fnClick.bind(this)} style={this.getStyles()} target={this.target}>
-        <img src={this.urlImage} width={this.width} height={this.height}/>
+        <img src={this.urlImage} width={this.widthImage} height={this.heightImage} style={this.getImageStyles()}/>
       </a>
     );
   }

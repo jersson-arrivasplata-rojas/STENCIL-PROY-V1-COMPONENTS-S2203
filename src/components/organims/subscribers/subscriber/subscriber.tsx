@@ -73,7 +73,7 @@ export class Subscriber {
         </div>
         <div class='sami-subscriber___div' style={this.getStyles()}>
           <div class='sami-subscriber___close'>
-            <sami-hyperlink-icon url="#" target="_self" width={this.hyperlinkIconWidth} height={this.hyperlinkIconHeight} urlImage={this.hyperlinkIconUrlImage} padding={this.hyperlinkIconPadding} onClick={() => this.menu()} ></sami-hyperlink-icon>
+            <sami-hyperlink-icon url="#" target="_self" width-image={this.hyperlinkIconWidth} height-image={this.hyperlinkIconHeight} urlImage={this.hyperlinkIconUrlImage} padding={this.hyperlinkIconPadding} onClick={() => this.menu()} ></sami-hyperlink-icon>
           </div>
           <slot name='form-subscriber'></slot>
         </div>

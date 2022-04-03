@@ -35,12 +35,12 @@ export class SidebarDashboard {
   }
 
   private listOfHyperLink(x: IHyperLink) {
-    return (<li class={{ 'sami-sidebar-dashboard___li': true, 'sami-sidebar-dashboard___active':x.active}}>
+    return (<li class={{ 'sami-sidebar-dashboard___li': true, 'sami-sidebar-dashboard___active': x.active }}>
       <sami-hyperlink text={x.text} url={x.url} target={x.target} fnClick={x.fnClick} padding={x.padding}></sami-hyperlink>
     </li>);
   }
 
-  private ArrayOfListOfHyperlink(data: Array<IHyperLink>){
+  private ArrayOfListOfHyperlink(data: Array<IHyperLink>) {
     data.map((response, index) => {
       data[index] = this.listOfHyperLink(response);
     });
@@ -70,11 +70,14 @@ export class SidebarDashboard {
 
   render() {
     return (
-      <ul class="sami-sidebar-dashboard___ul sami-sidebar-dashboard___main">
-        {
-          this.data ? this.listOfArrayData(this.data) : []
-        }
-      </ul>
+      <div>
+        <div class="sami-sidebar-dashboard___border"></div>
+        <ul class="sami-sidebar-dashboard___ul sami-sidebar-dashboard___main">
+          {
+            this.data ? this.listOfArrayData(this.data) : []
+          }
+        </ul>
+      </div>
     );
   }
 

@@ -9,7 +9,7 @@ sami-card-image {
       position: absolute;
       background-size: cover;
       background-position: center;
-      border-radius: $sami-spacing-l;
+      border-radius: rgb(var(--sami-spacing-l));
       filter: brightness(0.75) saturate(1.2) contrast(0.85);
       transform-origin: center;
       transition: filter 200ms linear, transform 200ms linear;
@@ -17,27 +17,27 @@ sami-card-image {
       top: 0;
       bottom: 0;
       left: 0;
-      -webkit-border-radius: $sami-spacing-l;
-      -moz-border-radius: $sami-spacing-l;
-      -ms-border-radius: $sami-spacing-l;
-      -o-border-radius: $sami-spacing-l;
+      -webkit-border-radius: rgb(var(--sami-spacing-l));
+      -moz-border-radius: rgb(var(--sami-spacing-l));
+      -ms-border-radius: rgb(var(--sami-spacing-l));
+      -o-border-radius: rgb(var(--sami-spacing-l));
     }
 
     & div.sami-card-image___content {
-      padding: $sami-spacing-l;
+      padding: rgb(var(--sami-spacing-l));
       position: absolute;
       top: 0;
       left: 0;
 
       & p.sami-card-image___subtitle {
-        color: $sami-white-500;
+        color: rgb(var(--sami-white-500));
         font-size: 0.9rem;
-        margin-bottom: $sami-spacing-s;
+        margin-bottom: rgb(var(--sami-spacing-s));
         text-transform: uppercase;
       }
 
       & p.sami-card-image___title {
-        color: $sami-white-900;
+        color: rgb(var(--sami-white-900));
         font-size: 1.9rem;
         text-shadow: 2px 2px 20px rgb(0 0 0 / 20%);
         line-height: 1.4;

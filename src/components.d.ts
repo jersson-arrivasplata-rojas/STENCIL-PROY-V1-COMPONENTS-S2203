@@ -211,7 +211,7 @@ export namespace Components {
         /**
           * es: Ruta que redirige del card image en: Route of redirect card image Example: localhost/css3
          */
-        "height": number;
+        "heightImage": number;
         /**
           * es: Ruta que redirige del card image en: Route of redirect card image Example: localhost/css3
          */
@@ -226,10 +226,11 @@ export namespace Components {
          */
         "url": string;
         "urlImage": string;
+        "width"?: string;
         /**
           * es: Ruta que redirige del card image en: Route of redirect card image Example: localhost/css3
          */
-        "width": number;
+        "widthImage": number;
     }
     interface SamiHyperlinkImage {
         "background"?: string;
@@ -668,7 +669,7 @@ declare namespace LocalJSX {
         /**
           * es: Ruta que redirige del card image en: Route of redirect card image Example: localhost/css3
          */
-        "height"?: number;
+        "heightImage"?: number;
         /**
           * es: Ruta que redirige del card image en: Route of redirect card image Example: localhost/css3
          */
@@ -683,10 +684,11 @@ declare namespace LocalJSX {
          */
         "url"?: string;
         "urlImage"?: string;
+        "width"?: string;
         /**
           * es: Ruta que redirige del card image en: Route of redirect card image Example: localhost/css3
          */
-        "width"?: number;
+        "widthImage"?: number;
     }
     interface SamiHyperlinkImage {
         "background"?: string;

@@ -1,16 +1,17 @@
 $img-height: 70px;
+$img-width: 70px;
 sami-header {
   & div.sami-header {
     display: none;
     width: 100%;
     height: 80px;
     z-index: 0;
-    /*background: $sami-screen;*/
 
     box-shadow: 4px 9px 8px 0 rgb(0 0 0 / 20%);
     & sami-hyperlink-image {
       & a {
         margin-left: 80px;
+        width:$img-width;
         & img {
           height: $img-height;
         }
@@ -23,7 +24,7 @@ sami-header {
         display: flex;
         justify-content: center;
         align-items: center;
-        color: $sami-dark;
+        color: rgb(var(--sami-dark));
         text-decoration: none;
         height: 80px;
       }
@@ -60,12 +61,12 @@ sami-header {
             display: block;
             border-top-style: solid;
             border-top-width: 2px;
-            border-color: $sami-white;
+            border-color: rgb(var(--sami-screen));
           }
         }
         & li:hover {
           & div.sami-list-group___border {
-            border-color: $sami-screen;
+            border-color: rgb(var(--sami-border));
           }
         }
       }

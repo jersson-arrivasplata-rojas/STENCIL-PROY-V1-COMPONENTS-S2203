@@ -4,5 +4,6 @@ export interface IListSocialMedia {
   padding: string;
   target: string;
   urlImage: string;
+  width?: string;
   fnClick?: () => void;
 }

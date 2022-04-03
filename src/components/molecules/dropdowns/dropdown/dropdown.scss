@@ -9,17 +9,18 @@ sami-dropdown {
       display: block;
       border-top-style: solid;
       border-top-width: 2px;
-      border-color: $sami-white;
+      border-color: rgb(var(--sami-border));
     }
     & div.sami-dropdown___content {
       display: none;
       position: absolute;
-      background-color: darken($sami-white, 3%);
+      background-color:  rgba(var(--sami-white),3%);
+      /*darken($sami-white, 3%);*/
       min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba($sami-dark, 0.2);
+      box-shadow: 0px 8px 16px 0px rgba(var(--sami-dark), 0.2);
       z-index: 1;
       & a {
-        color: $sami-dark;
+        color: rgb(var(--sami-dark));
         padding: 12px 16px;
         text-decoration: none;
         display: block;
@@ -29,7 +30,8 @@ sami-dropdown {
       }
       & a:hover {
         /*background-color: #f1f1f1;*/
-        background-color: darken($sami-white, 5%);
+        background-color: rgba(var(--sami-white),5%);
+        /*darken($sami-white, 5%);*/
       }
     }
     & div.sami-dropdown___content:hover {
@@ -41,7 +43,7 @@ sami-dropdown {
       display: block;
     }
     & div.sami-dropdown___border {
-      border-color: $sami-screen;
+      border-color: rgb(var(--sami-border));
     }
 
     /*
