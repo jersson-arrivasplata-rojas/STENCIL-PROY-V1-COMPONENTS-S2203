@@ -25,7 +25,7 @@ export class Loader {
 
   render() {
     return (
-      <div class={{'sami-loader':true, 'active':this.isOpen}}>
+      <div class={{'sami-loader':true, 'sami-loader___active':this.isOpen}}>
         <slot name="loader"></slot>
       </div>
     );

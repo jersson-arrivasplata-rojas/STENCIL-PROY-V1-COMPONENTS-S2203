@@ -1,11 +1,11 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { Hyperlink } from '../hyperlink';
+import { HyperlinkImage } from '../hyperlink-image';
 
 describe('@CardTag', () => {
 
   it('#should render a square avatar', async () => {
     const page = await newSpecPage({
-      components: [Hyperlink],
+      components: [HyperlinkImage],
       html: `<sami-card-tag></sami-card-tag>`
     });
 

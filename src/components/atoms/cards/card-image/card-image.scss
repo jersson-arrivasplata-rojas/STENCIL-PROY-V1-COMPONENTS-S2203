@@ -9,7 +9,7 @@ sami-card-image {
       position: absolute;
       background-size: cover;
       background-position: center;
-      border-radius: rgb(var(--sami-spacing-l));
+      border-radius: var(--sami-spacing-l);
       filter: brightness(0.75) saturate(1.2) contrast(0.85);
       transform-origin: center;
       transition: filter 200ms linear, transform 200ms linear;
@@ -17,14 +17,14 @@ sami-card-image {
       top: 0;
       bottom: 0;
       left: 0;
-      -webkit-border-radius: rgb(var(--sami-spacing-l));
-      -moz-border-radius: rgb(var(--sami-spacing-l));
-      -ms-border-radius: rgb(var(--sami-spacing-l));
-      -o-border-radius: rgb(var(--sami-spacing-l));
+      -webkit-border-radius: var(--sami-spacing-l);
+      -moz-border-radius: var(--sami-spacing-l);
+      -ms-border-radius: var(--sami-spacing-l);
+      -o-border-radius: var(--sami-spacing-l);
     }
 
     & div.sami-card-image___content {
-      padding: rgb(var(--sami-spacing-l));
+      padding: var(--sami-spacing-l);
       position: absolute;
       top: 0;
       left: 0;
@@ -32,7 +32,7 @@ sami-card-image {
       & p.sami-card-image___subtitle {
         color: rgb(var(--sami-white-500));
         font-size: 0.9rem;
-        margin-bottom: rgb(var(--sami-spacing-s));
+        margin-bottom: var(--sami-spacing-s);
         text-transform: uppercase;
       }
 

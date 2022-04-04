@@ -1,6 +1,6 @@
 sami-loader {
-  & .sami-loader.active {
-    color: $sami-screen;
+  & .sami-loader.sami-loader___active {
+    color: rgb(var(--sami-screen));
     top: 0;
     font-weight: bold;
     font-size: 30vh;

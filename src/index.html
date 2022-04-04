@@ -10,82 +10,21 @@
     <script nomodule src="/build/sami.js"></script>
   </head>
   <body>
-    <sami-header
-      flex-grow="true"
-      desktop="true"
-      hyperlink-background-image="https://jerssonarrivasplata.com/img/icon.png"
-      url="#"
-      hyperlink-border-radius="120px"
-      hyperlink-background="#ffffff"
-      hyperlink-url="#"
-      list-group-data='[
-      {" url" :" #" ,"text" :" jerssonarrivasplata.com" },
-      {"url" :" #" ,"text" :" Documentación" },
-      {" url" :" #" ,"text" :" Blog" },
-      {"url" :" #" ,"text" :" Blog" }
-      ]'
-      list-social-media-data='[
-      {" url" :" #" ,"type" :" github" },
-      {" url" :" #" ,"type" :" linkedin" },
-      {" url" :" #" ,"type" :" instagram" },
-      {" url" :" #" ,"type" :" facebook" }
-      ]'
-      dropdown-title="Menu"
-      dropdown-list-group-data='[
-      {" url" :" #" ,"text" :" jerssonarrivasplata.com" },
-      {"url" :" #" ,"text" :" Documentación" },
-      {" url" :" #" ,"text" :" Blog" },
-      {"url" :" #" ,"text" :" Blog" }
-      ]'
-      dropdown-width="100px"
-      dropdown-right="8px"
-      justify-content-mobile="center"
-      dropdown-border="true"
-      ></sami-header>
-    <sami-sidebar-dashboard></sami-sidebar-dashboard>
-    <script type="text/javascript">
-
-      customElements.whenDefined('sami-sidebar-dashboard').then(() => {
-     const samiSidebarDashboard = document.querySelector('sami-sidebar-dashboard');
-            samiSidebarDashboard.data=[
-            {
-                "url": "#",
-                "text": "Prueba",
-                "target": "_self",
-                "active": true
-            },
-            {
-                "title": "string",
-                "data": [
-                    {
-                      "url": "#",
-                      "text": "Prueba",
-                      "target": "_self"
-                    },
-                    {
-                      "url": "#",
-                      "text": "Prueba",
-                      "target": "_self"
-                    },
-                    {
-                      "url": "#",
-                      "text": "Prueba",
-                      "target": "_self"
-                    }
-                ]
-            },
-            {
-                "title": "string",
-                "data": [
-                    {
-                "url": "#",
-                "text": "Prueba",
-                "target": "_self"
-                    }
-                ]
-            }
-          ];
-      });
-      </script>
+    <sami-card
+    max-width="250px"
+    card-title="Tipos de Formularios en Angular"
+    card-subtitle="Angular"
+    card-resume="Se implementa formularios de angular y Se implementa formularios de angular y Se implementa formularios de angular"
+    image-src="http://proyects.jerssonarrivasplata2.com/proyects/angular/ANGULAR-PROY-V1-IMPLEMENTATION-ANGULAR-FORMS-S2201/image/angular-proy-v1-implementation-angular-forms-s2201.png"
+    image-max-width="250px"
+    image-max-height="150px"
+    image-object-fit="cover"
+    list-social-media-data='[
+    {" url" :" #" ,"type" :" github" },
+    {" url" :" #" ,"type" :" linkedin" },
+    {" url" :" #" ,"type" :" instagram" },
+    {" url" :" #" ,"type" :" facebook" }
+    ]'
+    ></sami-card>
   </body>
 </html>

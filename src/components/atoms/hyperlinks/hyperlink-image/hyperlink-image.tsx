@@ -13,6 +13,7 @@ export class HyperlinkImage {
    */
   @Prop() padding?: string;
 
+  @Prop() filter?: string;
   /**
    * es: Ruta que redirige del card image
    * en: Route of redirect card image
@@ -67,7 +68,9 @@ export class HyperlinkImage {
     (this.borderRadius) ? styles.borderRadius = this.borderRadius : delete styles.borderRadius;
     (this.width) ? styles.width = this.width : delete styles.width;
     (this.height) ? styles.height = this.height : delete styles.height;
+    (this.filter) ? styles.filter = this.filter : delete styles.filter;
 
+    
     return styles;
   }
 

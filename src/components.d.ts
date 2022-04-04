@@ -5,8 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { IListGroup } from "./components/molecules/lists/interfaces/list-group.interface";
 import { IListSocialMedia } from "./components/molecules/lists/interfaces/list-social-media.interface";
+import { IListGroup } from "./components/molecules/lists/interfaces/list-group.interface";
 import { IHyperLink } from "./components/organims/sidebars/interfaces/hyperlink.interface";
 export namespace Components {
     interface MyComponent {
@@ -22,6 +22,41 @@ export namespace Components {
           * The middle name
          */
         "middle": string;
+    }
+    interface SamiCard {
+        /**
+          * es: Sub título del card image en: Subtitle of card image Example: Css3
+         */
+        "background": string;
+        "backgroundColor": string;
+        "borderColor": string;
+        "borderRadius": string;
+        "cardResume": string;
+        /**
+          * es: Sub título del card image en: Subtitle of card image Example: Css3
+         */
+        "cardSubtitle": string;
+        "cardTag"?: HTMLElement;
+        /**
+          * es: Título del card image en: Title of card image Example: Estilos
+         */
+        "cardTitle": string;
+        "footerJustifyContent": string;
+        "imageHeight": string;
+        "imageMaxHeight": string;
+        "imageMaxWidth": string;
+        "imageObjectFit": string;
+        "imageSrc": string;
+        "imageWidth": string;
+        "listGroupData": string | Array<IListGroup>;
+        "listSocialMediaData": string | Array<IListSocialMedia>;
+        "margin": string;
+        "marginBottom": string;
+        "maxWidth": string;
+        /**
+          * es: Ruta que redirige del card image en: Route of redirect card image Example: localhost/css3
+         */
+        "url": string;
     }
     interface SamiCardCode {
         "author"?: string;
@@ -236,6 +271,7 @@ export namespace Components {
         "background"?: string;
         "backgroundImage"?: string;
         "borderRadius"?: string;
+        "filter"?: string;
         "height"?: string;
         "maxWidth"?: string;
         /**
@@ -328,6 +364,12 @@ declare global {
     var HTMLMyComponentElement: {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
+    };
+    interface HTMLSamiCardElement extends Components.SamiCard, HTMLStencilElement {
+    }
+    var HTMLSamiCardElement: {
+        prototype: HTMLSamiCardElement;
+        new (): HTMLSamiCardElement;
     };
     interface HTMLSamiCardCodeElement extends Components.SamiCardCode, HTMLStencilElement {
     }
@@ -445,6 +487,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "sami-card": HTMLSamiCardElement;
         "sami-card-code": HTMLSamiCardCodeElement;
         "sami-card-image": HTMLSamiCardImageElement;
         "sami-card-tag": HTMLSamiCardTagElement;
@@ -480,6 +523,41 @@ declare namespace LocalJSX {
           * The middle name
          */
         "middle"?: string;
+    }
+    interface SamiCard {
+        /**
+          * es: Sub título del card image en: Subtitle of card image Example: Css3
+         */
+        "background"?: string;
+        "backgroundColor"?: string;
+        "borderColor"?: string;
+        "borderRadius"?: string;
+        "cardResume"?: string;
+        /**
+          * es: Sub título del card image en: Subtitle of card image Example: Css3
+         */
+        "cardSubtitle"?: string;
+        "cardTag"?: HTMLElement;
+        /**
+          * es: Título del card image en: Title of card image Example: Estilos
+         */
+        "cardTitle"?: string;
+        "footerJustifyContent"?: string;
+        "imageHeight"?: string;
+        "imageMaxHeight"?: string;
+        "imageMaxWidth"?: string;
+        "imageObjectFit"?: string;
+        "imageSrc"?: string;
+        "imageWidth"?: string;
+        "listGroupData"?: string | Array<IListGroup>;
+        "listSocialMediaData"?: string | Array<IListSocialMedia>;
+        "margin"?: string;
+        "marginBottom"?: string;
+        "maxWidth"?: string;
+        /**
+          * es: Ruta que redirige del card image en: Route of redirect card image Example: localhost/css3
+         */
+        "url"?: string;
     }
     interface SamiCardCode {
         "author"?: string;
@@ -694,6 +772,7 @@ declare namespace LocalJSX {
         "background"?: string;
         "backgroundImage"?: string;
         "borderRadius"?: string;
+        "filter"?: string;
         "height"?: string;
         "maxWidth"?: string;
         /**
@@ -779,6 +858,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "sami-card": SamiCard;
         "sami-card-code": SamiCardCode;
         "sami-card-image": SamiCardImage;
         "sami-card-tag": SamiCardTag;
@@ -805,6 +885,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "sami-card": LocalJSX.SamiCard & JSXBase.HTMLAttributes<HTMLSamiCardElement>;
             "sami-card-code": LocalJSX.SamiCardCode & JSXBase.HTMLAttributes<HTMLSamiCardCodeElement>;
             "sami-card-image": LocalJSX.SamiCardImage & JSXBase.HTMLAttributes<HTMLSamiCardImageElement>;
             "sami-card-tag": LocalJSX.SamiCardTag & JSXBase.HTMLAttributes<HTMLSamiCardTagElement>;

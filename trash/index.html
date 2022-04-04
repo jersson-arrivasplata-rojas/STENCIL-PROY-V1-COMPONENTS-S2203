@@ -22,7 +22,86 @@
     </style>
   </head>
   <body>
-    <!--<sami-list-group flex-direction="column" width="350px"></sami-list-group>
+    <!--
+      <sami-header
+      flex-grow="true"
+      desktop="true"
+      hyperlink-background-image="https://jerssonarrivasplata.com/img/icon.png"
+      url="#"
+      hyperlink-border-radius="120px"
+      hyperlink-background="#ffffff"
+      hyperlink-url="#"
+      list-group-data='[
+      {" url" :" #" ,"text" :" jerssonarrivasplata.com" },
+      {"url" :" #" ,"text" :" Documentación" },
+      {" url" :" #" ,"text" :" Blog" },
+      {"url" :" #" ,"text" :" Blog" }
+      ]'
+      list-social-media-data='[
+      {" url" :" #" ,"type" :" github" },
+      {" url" :" #" ,"type" :" linkedin" },
+      {" url" :" #" ,"type" :" instagram" },
+      {" url" :" #" ,"type" :" facebook" }
+      ]'
+      dropdown-title="Menu"
+      dropdown-list-group-data='[
+      {" url" :" #" ,"text" :" jerssonarrivasplata.com" },
+      {"url" :" #" ,"text" :" Documentación" },
+      {" url" :" #" ,"text" :" Blog" },
+      {"url" :" #" ,"text" :" Blog" }
+      ]'
+      dropdown-width="100px"
+      dropdown-right="8px"
+      justify-content-mobile="center"
+      dropdown-border="true"
+      ></sami-header>
+    <sami-sidebar-dashboard></sami-sidebar-dashboard>
+    <script type="text/javascript">
+
+      customElements.whenDefined('sami-sidebar-dashboard').then(() => {
+     const samiSidebarDashboard = document.querySelector('sami-sidebar-dashboard');
+            samiSidebarDashboard.data=[
+            {
+                "url": "#",
+                "text": "Prueba",
+                "target": "_self",
+                "active": true
+            },
+            {
+                "title": "string",
+                "data": [
+                    {
+                      "url": "#",
+                      "text": "Prueba",
+                      "target": "_self"
+                    },
+                    {
+                      "url": "#",
+                      "text": "Prueba",
+                      "target": "_self"
+                    },
+                    {
+                      "url": "#",
+                      "text": "Prueba",
+                      "target": "_self"
+                    }
+                ]
+            },
+            {
+                "title": "string",
+                "data": [
+                    {
+                "url": "#",
+                "text": "Prueba",
+                "target": "_self"
+                    }
+                ]
+            }
+          ];
+      });
+      </script>
+      
+      <sami-list-group flex-direction="column" width="350px"></sami-list-group>
     <script type="text/javascript">
       const samiListGroup = document.querySelector('sami-list-group');
       samiListGroup.data = [{"url":"#", "text":"github", "padding":"10px"}, {"url":"#", "text":"linkedin", "padding":"10px"}, {"url":"#", "text":"instagram", "padding":"10px"}, {"url":"#", "text":"facebook", "padding":"10px"}];
