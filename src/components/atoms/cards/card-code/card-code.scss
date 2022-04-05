@@ -27,8 +27,9 @@ sami-card-code {
   & div.sami-card-code:not(.active),
   div.sami-card-code.active {
     @media (max-width: 550px) {
-      width: 360px;
+      /*width: 360px;*/
 
+      width: 100%;
       margin: auto;
       & div.sami-card-code___section-two {
         & p.sami-card-code___title {
@@ -47,7 +48,7 @@ sami-card-code {
       }
     }
     @media (max-width: 385px) {
-      width: 310px;
+      /*width: 310px;*/
       & div.sami-card-code___section-two {
         & p.sami-card-code___title {
           font-size: 13px;
@@ -67,7 +68,8 @@ sami-card-code {
   }
   & div.sami-card-code:not(.active) {
     @media (max-width: 550px) {
-      width: 360px;
+      /*width: 360px;*/
+       width: 100%;
       & div.sami-card-code___section-one {
         width: 55px;
         flex-direction: column-reverse;
@@ -93,7 +95,7 @@ sami-card-code {
       }
     }
     @media (max-width: 385px) {
-      width: 310px;
+      /*width: 310px;*/
       & div.sami-card-code___section-one {
         width: 50px;
         & div.sami-card-code___img {
@@ -110,7 +112,8 @@ sami-card-code {
 
   & div.sami-card-code.active {
     @media (max-width: 550px) {
-      width: 360px;
+       /*width: 360px;*/
+       width: 100%;
       & div.sami-card-code___section-two {
         padding-left: 0px;
         & div.sami-card-code___content {
@@ -124,7 +127,7 @@ sami-card-code {
       }
     }
     @media (max-width: 385px) {
-      width: 310px;
+     /* width: 310px;*/
     }
   }
   & div.sami-card-code {

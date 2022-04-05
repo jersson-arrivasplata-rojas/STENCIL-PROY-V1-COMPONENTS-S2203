@@ -5,7 +5,7 @@ sami-grid {
         display: grid;
         grid-column-gap: var(--sami-spacing-l);
         grid-row-gap:var(--sami-spacing-l);
-        width: 100%;
+        /*width: 100%;*/
         grid-template-columns: repeat(4, 1fr);
     }
 

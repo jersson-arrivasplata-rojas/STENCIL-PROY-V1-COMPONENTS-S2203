@@ -4,7 +4,7 @@ html {
 }
 sami-main {
   & div.sami-main {
-    height: 100vh;
+    height: 100%;
     background: rgb(var(--sami-screen));
     margin-top: 0;
     width: calc(100% - 250px);
