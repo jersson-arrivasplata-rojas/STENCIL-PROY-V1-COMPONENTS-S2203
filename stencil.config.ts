@@ -23,6 +23,12 @@ export const config: Config = {
     },
     {
       type: 'docs-readme',
+      dir: 'output',
+      strict: true
+    },
+    {
+      type: 'docs-json',
+      file: 'path/to/docs.json'
     },
     {
       type: 'www',

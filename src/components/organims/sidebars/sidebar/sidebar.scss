@@ -1,6 +1,6 @@
 $box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 sami-sidebar {
-    & div.sami-sidebar:not(.active) {
+    & div.sami-sidebar:not(.sami-sidebar___active) {
         & div.sami-sidebar___hyperlink-menu {
             left: 0px;
             transition: all 1s;
@@ -19,7 +19,7 @@ sami-sidebar {
             -o-transition: all 1s;
         }
     }
-    & div.sami-sidebar.active {
+    & div.sami-sidebar.sami-sidebar___active {
         & div.sami-sidebar___hyperlink-menu {
             transition: all 1s;
             -webkit-transition: all 1s;
@@ -45,7 +45,7 @@ sami-sidebar {
     @media (max-width: 770px) {
         /*and (min-height: 590px)*/
 
-        & div.sami-sidebar.active::before {
+        & div.sami-sidebar.sami-sidebar___active::before {
             position: fixed;
             content: "";
             width: 100%;

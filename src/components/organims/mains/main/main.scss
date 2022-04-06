@@ -16,6 +16,10 @@ sami-main {
   sami-main {
     & div.sami-main {
       width: calc(100%) !important;
+      position: absolute;
+      /*margin: auto;
+      margin-right: 15px;
+      margin-left: 15px;*/
     }
   }
 }

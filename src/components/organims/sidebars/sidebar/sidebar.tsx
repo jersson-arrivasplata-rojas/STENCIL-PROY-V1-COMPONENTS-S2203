@@ -75,7 +75,7 @@ export class Sidebar {
 
   render() {
     return (
-      <div class={{ 'sami-sidebar': true, 'active slide-in': this.isMenuOpen }} >
+      <div class={{ 'sami-sidebar': true, 'sami-sidebar___active': this.isMenuOpen }} >
         <div class='sami-sidebar___hyperlink-menu'>
           <sami-hyperlink-icon url={this.hyperlinkUrl} target="" type="menu" padding={this.hyperlinkPadding} filter={this.hyperlinkFilter} onClick={() => this.menu()} url-image={this.hyperlinkUrlImage}></sami-hyperlink-icon>
         </div>

@@ -16,6 +16,8 @@
   ],
   "scripts": {
     "build": "stencil build --docs",
+    "doc:readme": "stencil build --docs-readme",
+    "docs:data": "stencil build --docs-json path/to/docs.json",
     "start:max": "node --max_old_space_size=4096 ./node_modules/@stencil/core/bin/stencil build --dev --watch --serve --port=8016 --verbose --log",
     "start": "stencil build --dev --watch --serve --port=8017 --verbose --log",
     "prerender": "stencil build --prerender --dev --watch --serve --port=8016",

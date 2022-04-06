@@ -338,6 +338,11 @@ export namespace Components {
       data: Array<IHyperLink>;
     }
     >;
+        "hyperlinkFilter"?: string;
+        "hyperlinkPadding"?: string;
+        "hyperlinkUrl"?: string;
+        "hyperlinkUrlImage"?: string;
+        "menuLeft"?: string;
     }
     interface SamiSubscriber {
         "background"?: string;
@@ -837,6 +842,11 @@ declare namespace LocalJSX {
       data: Array<IHyperLink>;
     }
     >;
+        "hyperlinkFilter"?: string;
+        "hyperlinkPadding"?: string;
+        "hyperlinkUrl"?: string;
+        "hyperlinkUrlImage"?: string;
+        "menuLeft"?: string;
     }
     interface SamiSubscriber {
         "background"?: string;
