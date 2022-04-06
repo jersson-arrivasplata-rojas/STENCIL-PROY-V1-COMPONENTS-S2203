@@ -8,6 +8,8 @@ import { IListSocialMedia } from '../../../molecules/lists/interfaces/list-socia
 })
 export class Header {
 
+  @Prop() zIndex: string;
+
   @Prop() position: string;
 
   @Prop() top: string;
@@ -117,6 +119,7 @@ export class Header {
     (this.boxShadow) ? styles.boxShadow = this.boxShadow : delete styles.boxShadow;
     (this.position) ? styles.position = this.position : delete styles.position;
     (this.top) ? styles.top = this.top : delete styles.top;
+    (this.zIndex) ? styles.zIndex = this.zIndex : delete styles.zIndex;
     return styles;
   }
 

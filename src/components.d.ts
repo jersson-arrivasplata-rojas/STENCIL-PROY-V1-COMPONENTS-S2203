@@ -209,6 +209,9 @@ export namespace Components {
         "justifyContentMobile": string;
         "listGroupData": string | Array<IListGroup>;
         "listSocialMediaData": string | Array<IListSocialMedia>;
+        "position": string;
+        "top": string;
+        "zIndex": string;
     }
     interface SamiHeaderMobile {
         "hyperlinkBackground": string;
@@ -715,6 +718,9 @@ declare namespace LocalJSX {
         "justifyContentMobile"?: string;
         "listGroupData"?: string | Array<IListGroup>;
         "listSocialMediaData"?: string | Array<IListSocialMedia>;
+        "position"?: string;
+        "top"?: string;
+        "zIndex"?: string;
     }
     interface SamiHeaderMobile {
         "hyperlinkBackground"?: string;
