@@ -133,19 +133,24 @@ export class Header {
   }
 
   render() {
-    return (
-      <div class={{ 'sami-header': true, 'sami-header___desktop': this.desktop }} style={this.getStyles()}>
-        <div style={this.getHyperLinkImageStyles()}>
-          <sami-hyperlink-image
-            background-image={this.hyperlinkBackgroundImage}
-            url={this.hyperlinkUrl}
-            max-width={this.hyperlinkMaxWidth}
+    /*
+    max-width={this.hyperlinkMaxWidth}
             width={this.hyperlinkWidth}
             height={this.hyperlinkHeight}
             border-radius={this.hyperlinkBorderRadius}
             background={this.hyperlinkBackground}
+
+
+            <sami-hyperlink
+            url-image={this.hyperlinkBackgroundImage}
+            url={this.hyperlinkUrl}
             target={this.hyperlinkTarget}
-          ></sami-hyperlink-image>
+          ></sami-hyperlink>
+    */
+    return (
+      <div class={{ 'sami-header': true, 'sami-header___desktop': this.desktop }} style={this.getStyles()}>
+        <div style={this.getHyperLinkImageStyles()}>
+          
         </div>
         {
           (this.listGroupData)? (

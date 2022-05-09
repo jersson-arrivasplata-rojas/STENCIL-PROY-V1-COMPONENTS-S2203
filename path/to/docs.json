@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-04-05T13:40:35",
+  "timestamp": "2022-05-05T20:24:51",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.2",
@@ -7,63 +7,15 @@
   },
   "components": [
     {
-      "filePath": "./src/components/my-component/my-component.tsx",
-      "encapsulation": "shadow",
-      "tag": "my-component",
-      "readme": "# my-component\r\n\r\n\r\n\r",
+      "filePath": "./src/components/molecules/cards/card/card.tsx",
+      "encapsulation": "none",
+      "tag": "sami-card",
       "docs": "",
       "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "first",
-          "type": "string",
-          "mutable": false,
-          "attr": "first",
-          "reflectToAttr": false,
-          "docs": "The first name",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "last",
-          "type": "string",
-          "mutable": false,
-          "attr": "last",
-          "reflectToAttr": false,
-          "docs": "The last name",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "middle",
-          "type": "string",
-          "mutable": false,
-          "attr": "middle",
-          "reflectToAttr": false,
-          "docs": "The middle name",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
+      "usage": {
+        "angular": "```html\r\n<!-- Tag Card With Number -->\r\n<sami-card-tag text=\"1\"></sami-card-tag>\r\n```\r\n"
+      },
+      "props": [],
       "methods": [],
       "events": [],
       "listeners": [],
@@ -75,405 +27,9 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/atoms/cards/card/card.tsx",
-      "encapsulation": "none",
-      "tag": "sami-card",
-      "readme": "# sami-card\n\n\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {
-        "angular": "```html\r\n<!-- Tag Card With Number -->\r\n<sami-card-tag text=\"1\"></sami-card-tag>\r\n```\r\n"
-      },
-      "props": [
-        {
-          "name": "background",
-          "type": "string",
-          "mutable": false,
-          "attr": "background",
-          "reflectToAttr": false,
-          "docs": "es: Sub título del card image\r\nen: Subtitle of card image\r\nExample: Css3",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "backgroundColor",
-          "type": "string",
-          "mutable": false,
-          "attr": "background-color",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "borderColor",
-          "type": "string",
-          "mutable": false,
-          "attr": "border-color",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "borderRadius",
-          "type": "string",
-          "mutable": false,
-          "attr": "border-radius",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "cardResume",
-          "type": "string",
-          "mutable": false,
-          "attr": "card-resume",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "cardSubtitle",
-          "type": "string",
-          "mutable": false,
-          "attr": "card-subtitle",
-          "reflectToAttr": false,
-          "docs": "es: Sub título del card image\r\nen: Subtitle of card image\r\nExample: Css3",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "cardTag",
-          "type": "HTMLElement",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "HTMLElement"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "cardTitle",
-          "type": "string",
-          "mutable": false,
-          "attr": "card-title",
-          "reflectToAttr": false,
-          "docs": "es: Título del card image\r\nen: Title of card image\r\nExample: Estilos",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "footerJustifyContent",
-          "type": "string",
-          "mutable": false,
-          "attr": "footer-justify-content",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "imageHeight",
-          "type": "string",
-          "mutable": false,
-          "attr": "image-height",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "imageMaxHeight",
-          "type": "string",
-          "mutable": false,
-          "attr": "image-max-height",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "imageMaxWidth",
-          "type": "string",
-          "mutable": false,
-          "attr": "image-max-width",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "imageObjectFit",
-          "type": "string",
-          "mutable": false,
-          "attr": "image-object-fit",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "imageSrc",
-          "type": "string",
-          "mutable": false,
-          "attr": "image-src",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "imageWidth",
-          "type": "string",
-          "mutable": false,
-          "attr": "image-width",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "listGroupData",
-          "type": "IListGroup[] | string",
-          "mutable": true,
-          "attr": "list-group-data",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "IListGroup[]"
-            },
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "listSocialMediaData",
-          "type": "IListSocialMedia[] | string",
-          "mutable": true,
-          "attr": "list-social-media-data",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "IListSocialMedia[]"
-            },
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "margin",
-          "type": "string",
-          "mutable": false,
-          "attr": "margin",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "marginBottom",
-          "type": "string",
-          "mutable": false,
-          "attr": "margin-bottom",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "maxWidth",
-          "type": "string",
-          "mutable": false,
-          "attr": "max-width",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "url",
-          "type": "string",
-          "mutable": false,
-          "attr": "url",
-          "reflectToAttr": false,
-          "docs": "es: Ruta que redirige del card image\r\nen: Route of redirect card image\r\nExample: localhost/css3",
-          "docsTags": [],
-          "default": "'#'",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [
-        "sami-list-social-media",
-        "sami-list-group"
-      ],
-      "dependencyGraph": {
-        "sami-card": [
-          "sami-list-social-media",
-          "sami-list-group"
-        ],
-        "sami-list-social-media": [
-          "sami-hyperlink-icon"
-        ],
-        "sami-list-group": [
-          "sami-hyperlink"
-        ]
-      }
-    },
-    {
-      "filePath": "./src/components/atoms/cards/card-code/card-code.tsx",
+      "filePath": "./src/components/molecules/cards/card-code/card-code.tsx",
       "encapsulation": "none",
       "tag": "sami-card-code",
-      "readme": "# sami-card-code\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
@@ -862,10 +418,9 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/atoms/cards/card-image/card-image.tsx",
+      "filePath": "./src/components/molecules/cards/card-image/card-image.tsx",
       "encapsulation": "none",
       "tag": "sami-card-image",
-      "readme": "# sami-card-image\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
@@ -873,78 +428,12 @@
       },
       "props": [
         {
-          "name": "backgroundImage",
-          "type": "string",
-          "mutable": false,
-          "attr": "background-image",
-          "reflectToAttr": false,
-          "docs": "es: Sub título del card image\r\nen: Subtitle of card image\r\nExample: Css3",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "cardSubtitle",
-          "type": "string",
-          "mutable": false,
-          "attr": "card-subtitle",
-          "reflectToAttr": false,
-          "docs": "es: Sub título del card image\r\nen: Subtitle of card image\r\nExample: Css3",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "cardTag",
-          "type": "HTMLElement",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "HTMLElement"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "cardTitle",
-          "type": "string",
-          "mutable": false,
-          "attr": "card-title",
-          "reflectToAttr": false,
-          "docs": "es: Título del card image\r\nen: Title of card image\r\nExample: Estilos",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
           "name": "url",
           "type": "string",
           "mutable": false,
           "attr": "url",
           "reflectToAttr": false,
-          "docs": "es: Ruta que redirige del card image\r\nen: Route of redirect card image\r\nExample: localhost/css3",
+          "docs": "",
           "docsTags": [],
           "default": "'#'",
           "values": [
@@ -967,307 +456,9 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/atoms/cards/card-tag/card-tag.tsx",
-      "encapsulation": "none",
-      "tag": "sami-card-tag",
-      "readme": "# sami-card-tag\n\n\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {
-        "angular": "```html\r\n<!-- Tag Card With Number -->\r\n<sami-card-tag text=\"1\"></sami-card-tag>\r\n```\r\n"
-      },
-      "props": [
-        {
-          "name": "background",
-          "type": "string",
-          "mutable": false,
-          "attr": "background",
-          "reflectToAttr": false,
-          "docs": "es: Fondo del Tag\r\nen: Background of Tag\r\nExample: #000",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "borderRadius",
-          "type": "string",
-          "mutable": false,
-          "attr": "border-radius",
-          "reflectToAttr": false,
-          "docs": "es: Radio del borde del Tag\r\nen: Border Radius of Tag\r\nExample: none",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "bottom",
-          "type": "number",
-          "mutable": false,
-          "attr": "bottom",
-          "reflectToAttr": false,
-          "docs": "es: Posición de Abajo del Tag\r\nen: Position Bottom of Tag\r\nExample: bolder",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "class",
-          "type": "string",
-          "mutable": false,
-          "attr": "class",
-          "reflectToAttr": false,
-          "docs": "es: Transición del Tag\r\nen: Transition of Tag\r\nExample: filter 200ms linear, transform 200ms linear",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "color",
-          "type": "string",
-          "mutable": false,
-          "attr": "color",
-          "reflectToAttr": false,
-          "docs": "es: Color del Tag\r\nen: Color of Tag\r\nExample: 1",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "fontWeight",
-          "type": "string",
-          "mutable": false,
-          "attr": "font-weight",
-          "reflectToAttr": false,
-          "docs": "es: Estilo de Pso del texto del Tag\r\nen: Font Weigth about text of Tag\r\nExample: #fff",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "height",
-          "type": "string",
-          "mutable": false,
-          "attr": "height",
-          "reflectToAttr": false,
-          "docs": "es: Alto del Tag\r\nen: Height of Tag\r\nExample: 40px",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "left",
-          "type": "string",
-          "mutable": false,
-          "attr": "left",
-          "reflectToAttr": false,
-          "docs": "es: Posición Izquierda del Tag\r\nen: Position Left of Tag\r\nExample: 0px",
-          "docsTags": [],
-          "default": "'initial'",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "lineHeight",
-          "type": "number",
-          "mutable": false,
-          "attr": "line-height",
-          "reflectToAttr": false,
-          "docs": "es: Alto de la linea de texto del Tag\r\nen: Line Height of Tag\r\nExample: center",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "position",
-          "type": "string",
-          "mutable": false,
-          "attr": "position",
-          "reflectToAttr": false,
-          "docs": "es: Posición del Tag\r\nen: Position of Tag\r\nExample: #fff",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "right",
-          "type": "number",
-          "mutable": false,
-          "attr": "right",
-          "reflectToAttr": false,
-          "docs": "es: Posición Derecha del Tag\r\nen: Position Right of Tag\r\nExample: 0px",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "text",
-          "type": "string",
-          "mutable": false,
-          "attr": "text",
-          "reflectToAttr": false,
-          "docs": "es: Texto del Tag\r\nen: Text of Tag\r\nExample: #fff",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "textAlign",
-          "type": "string",
-          "mutable": false,
-          "attr": "text-align",
-          "reflectToAttr": false,
-          "docs": "es: Alineamiento de texto del Tag\r\nen: Text Align of Tag\r\nExample: 2",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "top",
-          "type": "number",
-          "mutable": false,
-          "attr": "top",
-          "reflectToAttr": false,
-          "docs": "es: Posición de Abajo del Tag\r\nen: Position Bottom of Tag\r\nExample: bolder",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "transition",
-          "type": "string",
-          "mutable": false,
-          "attr": "transition",
-          "reflectToAttr": false,
-          "docs": "es: Transición del Tag\r\nen: Transition of Tag\r\nExample: filter 200ms linear, transform 200ms linear",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "width",
-          "type": "string",
-          "mutable": false,
-          "attr": "width",
-          "reflectToAttr": false,
-          "docs": "es: Ancho del Tag\r\nen: Width of Tag\r\nExample: absolute",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "zIndex",
-          "type": "number",
-          "mutable": false,
-          "attr": "z-index",
-          "reflectToAttr": false,
-          "docs": "es: z-index del Tag\r\nen: z-index of Tag\r\nExample: 25px",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": true,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
       "filePath": "./src/components/molecules/dropdowns/dropdown/dropdown.tsx",
       "encapsulation": "none",
       "tag": "sami-dropdown",
-      "readme": "# sami-dropdown\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
@@ -1371,18 +562,8 @@
       "dependents": [
         "sami-header"
       ],
-      "dependencies": [
-        "sami-hyperlink",
-        "sami-list-group"
-      ],
+      "dependencies": [],
       "dependencyGraph": {
-        "sami-dropdown": [
-          "sami-hyperlink",
-          "sami-list-group"
-        ],
-        "sami-list-group": [
-          "sami-hyperlink"
-        ],
         "sami-header": [
           "sami-dropdown"
         ]
@@ -1392,7 +573,6 @@
       "filePath": "./src/components/organims/flexs/flex-code/flex-code.tsx",
       "encapsulation": "none",
       "tag": "sami-flex-code",
-      "readme": "# sami-flex-code\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
@@ -1413,7 +593,6 @@
       "filePath": "./src/components/organims/flexs/flex-code-view/flex-code-view.tsx",
       "encapsulation": "none",
       "tag": "sami-flex-code-view",
-      "readme": "# sami-flex-code-view\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
@@ -1466,10 +645,49 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "./src/components/atoms/footer/footer.tsx",
+      "encapsulation": "none",
+      "tag": "sami-footer",
+      "docs": "",
+      "docsTags": [],
+      "usage": {
+        "angular": "```html\r\n<!-- Tag Card With Number -->\r\n<sami-card-tag text=\"1\"></sami-card-tag>\r\n```\r\n"
+      },
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/atoms/form/form.tsx",
+      "encapsulation": "none",
+      "tag": "sami-form",
+      "docs": "",
+      "docsTags": [],
+      "usage": {
+        "angular": "```html\r\n<!-- Tag Card With Number -->\r\n<sami-card-tag text=\"1\"></sami-card-tag>\r\n```\r\n"
+      },
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
       "filePath": "./src/components/organims/grids/grid/grid.tsx",
       "encapsulation": "none",
       "tag": "sami-grid",
-      "readme": "# sami-grid\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
@@ -1507,7 +725,6 @@
       "filePath": "./src/components/organims/headers/header/header.tsx",
       "encapsulation": "none",
       "tag": "sami-header",
-      "readme": "# sami-header\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
@@ -1859,6 +1076,54 @@
           ],
           "optional": false,
           "required": false
+        },
+        {
+          "name": "position",
+          "type": "string",
+          "mutable": false,
+          "attr": "position",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "top",
+          "type": "string",
+          "mutable": false,
+          "attr": "top",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "zIndex",
+          "type": "string",
+          "mutable": false,
+          "attr": "z-index",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
         }
       ],
       "methods": [],
@@ -1869,27 +1134,11 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
-        "sami-hyperlink-image",
-        "sami-list-group",
-        "sami-list-social-media",
         "sami-dropdown"
       ],
       "dependencyGraph": {
         "sami-header": [
-          "sami-hyperlink-image",
-          "sami-list-group",
-          "sami-list-social-media",
           "sami-dropdown"
-        ],
-        "sami-list-group": [
-          "sami-hyperlink"
-        ],
-        "sami-list-social-media": [
-          "sami-hyperlink-icon"
-        ],
-        "sami-dropdown": [
-          "sami-hyperlink",
-          "sami-list-group"
         ]
       }
     },
@@ -1897,7 +1146,6 @@
       "filePath": "./src/components/organims/headers/header-mobile/header-mobile.tsx",
       "encapsulation": "none",
       "tag": "sami-header-mobile",
-      "readme": "# sami-header-mobile\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
@@ -1905,131 +1153,20 @@
       },
       "props": [
         {
-          "name": "hyperlinkBackground",
+          "name": "position",
           "type": "string",
           "mutable": false,
-          "attr": "hyperlink-background",
+          "attr": "position",
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
+          "default": "'fixed'",
           "values": [
             {
               "type": "string"
             }
           ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "hyperlinkBackgroundImage",
-          "type": "string",
-          "mutable": false,
-          "attr": "hyperlink-background-image",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "hyperlinkBorderRadius",
-          "type": "string",
-          "mutable": false,
-          "attr": "hyperlink-border-radius",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "hyperlinkHeight",
-          "type": "string",
-          "mutable": false,
-          "attr": "hyperlink-height",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "hyperlinkMaxWidth",
-          "type": "string",
-          "mutable": false,
-          "attr": "hyperlink-max-width",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "hyperlinkTarget",
-          "type": "string",
-          "mutable": false,
-          "attr": "hyperlink-target",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "hyperlinkUrl",
-          "type": "string",
-          "mutable": false,
-          "attr": "hyperlink-url",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "hyperlinkWidth",
-          "type": "string",
-          "mutable": false,
-          "attr": "hyperlink-width",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
+          "optional": true,
           "required": false
         }
       ],
@@ -2040,361 +1177,13 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "sami-hyperlink-image"
-      ],
-      "dependencyGraph": {
-        "sami-header-mobile": [
-          "sami-hyperlink-image"
-        ]
-      }
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/atoms/hyperlinks/hyperlink/hyperlink.tsx",
       "encapsulation": "none",
       "tag": "sami-hyperlink",
-      "readme": "# sami-hyperlink\n\n\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {
-        "angular": "```html\r\n<!-- Tag Card With Number -->\r\n<sami-card-tag text=\"1\"></sami-card-tag>\r\n```\r\n"
-      },
-      "props": [
-        {
-          "name": "fnClick",
-          "type": "() => void",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "() => { }",
-          "values": [
-            {
-              "type": "() => void"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "padding",
-          "type": "string",
-          "mutable": false,
-          "attr": "padding",
-          "reflectToAttr": false,
-          "docs": "es: Ruta que redirige del card image\r\nen: Route of redirect card image\r\nExample: localhost/css3",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "target",
-          "type": "string",
-          "mutable": false,
-          "attr": "target",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "\"_self\"",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "text",
-          "type": "string",
-          "mutable": false,
-          "attr": "text",
-          "reflectToAttr": false,
-          "docs": "es: Ruta que redirige del card image\r\nen: Route of redirect card image\r\nExample: localhost/css3",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "url",
-          "type": "string",
-          "mutable": false,
-          "attr": "url",
-          "reflectToAttr": false,
-          "docs": "es: Ruta que redirige del card image\r\nen: Route of redirect card image\r\nExample: localhost/css3",
-          "docsTags": [],
-          "default": "'#'",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "width",
-          "type": "string",
-          "mutable": false,
-          "attr": "width",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [
-        "sami-dropdown",
-        "sami-list-group",
-        "sami-sidebar-dashboard",
-        "sami-subscriber"
-      ],
-      "dependencies": [],
-      "dependencyGraph": {
-        "sami-dropdown": [
-          "sami-hyperlink"
-        ],
-        "sami-list-group": [
-          "sami-hyperlink"
-        ],
-        "sami-sidebar-dashboard": [
-          "sami-hyperlink"
-        ],
-        "sami-subscriber": [
-          "sami-hyperlink"
-        ]
-      }
-    },
-    {
-      "filePath": "./src/components/atoms/hyperlinks/hyperlink-icon/hyperlink-icon.tsx",
-      "encapsulation": "none",
-      "tag": "sami-hyperlink-icon",
-      "readme": "# sami-hyperlink-icon\n\n\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {
-        "angular": "```html\r\n<!-- Tag Card With Number -->\r\n<sami-card-tag text=\"1\"></sami-card-tag>\r\n```\r\n"
-      },
-      "props": [
-        {
-          "name": "filter",
-          "type": "string",
-          "mutable": false,
-          "attr": "filter",
-          "reflectToAttr": false,
-          "docs": "es: Ruta que redirige del card image\r\nen: Route of redirect card image\r\nExample: localhost/css3",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "fnClick",
-          "type": "() => void",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "() => { }",
-          "values": [
-            {
-              "type": "() => void"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "heightImage",
-          "type": "number",
-          "mutable": false,
-          "attr": "height-image",
-          "reflectToAttr": false,
-          "docs": "es: Ruta que redirige del card image\r\nen: Route of redirect card image\r\nExample: localhost/css3",
-          "docsTags": [],
-          "default": "26",
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "padding",
-          "type": "string",
-          "mutable": false,
-          "attr": "padding",
-          "reflectToAttr": false,
-          "docs": "es: Ruta que redirige del card image\r\nen: Route of redirect card image\r\nExample: localhost/css3",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "target",
-          "type": "string",
-          "mutable": false,
-          "attr": "target",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "\"_blank\"",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "type",
-          "type": "string",
-          "mutable": false,
-          "attr": "type",
-          "reflectToAttr": false,
-          "docs": "es: Ruta que redirige del card image\r\nen: Route of redirect card image\r\nExample: localhost/css3",
-          "docsTags": [],
-          "default": "'github'",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "url",
-          "type": "string",
-          "mutable": false,
-          "attr": "url",
-          "reflectToAttr": false,
-          "docs": "es: Ruta que redirige del card image\r\nen: Route of redirect card image\r\nExample: localhost/css3",
-          "docsTags": [],
-          "default": "'#'",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "urlImage",
-          "type": "string",
-          "mutable": false,
-          "attr": "url-image",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "\"\"",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "width",
-          "type": "string",
-          "mutable": false,
-          "attr": "width",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "widthImage",
-          "type": "number",
-          "mutable": false,
-          "attr": "width-image",
-          "reflectToAttr": false,
-          "docs": "es: Ruta que redirige del card image\r\nen: Route of redirect card image\r\nExample: localhost/css3",
-          "docsTags": [],
-          "default": "26",
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [
-        "sami-list-social-media",
-        "sami-sidebar",
-        "sami-subscriber"
-      ],
-      "dependencies": [],
-      "dependencyGraph": {
-        "sami-list-social-media": [
-          "sami-hyperlink-icon"
-        ],
-        "sami-sidebar": [
-          "sami-hyperlink-icon"
-        ],
-        "sami-subscriber": [
-          "sami-hyperlink-icon"
-        ]
-      }
-    },
-    {
-      "filePath": "./src/components/atoms/hyperlinks/hyperlink-image/hyperlink-image.tsx",
-      "encapsulation": "none",
-      "tag": "sami-hyperlink-image",
-      "readme": "# sami-hyperlink-image\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
@@ -2409,6 +1198,7 @@
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
+          "default": "''",
           "values": [
             {
               "type": "string"
@@ -2418,10 +1208,170 @@
           "required": false
         },
         {
-          "name": "backgroundImage",
+          "name": "borderStyle",
           "type": "string",
           "mutable": false,
-          "attr": "background-image",
+          "attr": "border-style",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "borderWidth",
+          "type": "string",
+          "mutable": false,
+          "attr": "border-width",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "decoration",
+          "type": "string",
+          "mutable": false,
+          "attr": "decoration",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "hyperlinkType",
+          "type": "string",
+          "mutable": false,
+          "attr": "hyperlink-type",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "onlyDesktop",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "only-desktop",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "position",
+          "type": "string",
+          "mutable": false,
+          "attr": "position",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'relative'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/atoms/icon/icon.tsx",
+      "encapsulation": "none",
+      "tag": "sami-icon",
+      "docs": "",
+      "docsTags": [],
+      "usage": {
+        "angular": "```html\r\n<!-- Tag Card With Number -->\r\n<sami-card-tag text=\"1\"></sami-card-tag>\r\n```\r\n"
+      },
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/atoms/img/img.tsx",
+      "encapsulation": "none",
+      "tag": "sami-img",
+      "docs": "",
+      "docsTags": [],
+      "usage": {
+        "angular": "```html\r\n<!-- Tag Card With Number -->\r\n<sami-card-tag text=\"1\"></sami-card-tag>\r\n```\r\n"
+      },
+      "props": [
+        {
+          "name": "alt",
+          "type": "string",
+          "mutable": false,
+          "attr": "alt",
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
@@ -2434,29 +1384,14 @@
           "required": false
         },
         {
-          "name": "borderRadius",
+          "name": "filterInvert",
           "type": "string",
           "mutable": false,
-          "attr": "border-radius",
+          "attr": "filter-invert",
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "filter",
-          "type": "string",
-          "mutable": false,
-          "attr": "filter",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
+          "default": "'0'",
           "values": [
             {
               "type": "string"
@@ -2482,13 +1417,14 @@
           "required": false
         },
         {
-          "name": "maxWidth",
+          "name": "objectFit",
           "type": "string",
           "mutable": false,
-          "attr": "max-width",
+          "attr": "object-fit",
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
+          "default": "'cover'",
           "values": [
             {
               "type": "string"
@@ -2498,13 +1434,14 @@
           "required": false
         },
         {
-          "name": "padding",
+          "name": "opacity",
           "type": "string",
           "mutable": false,
-          "attr": "padding",
+          "attr": "opacity",
           "reflectToAttr": false,
-          "docs": "es: Ruta que redirige del card image\r\nen: Route of redirect card image\r\nExample: localhost/css3",
+          "docs": "",
           "docsTags": [],
+          "default": "'0'",
           "values": [
             {
               "type": "string"
@@ -2514,70 +1451,19 @@
           "required": false
         },
         {
-          "name": "refFunction",
-          "type": "() => void",
+          "name": "src",
+          "type": "string",
           "mutable": false,
+          "attr": "src",
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "default": "()=>{}",
           "values": [
             {
-              "type": "() => void"
+              "type": "string"
             }
           ],
           "optional": true,
-          "required": false
-        },
-        {
-          "name": "target",
-          "type": "string",
-          "mutable": false,
-          "attr": "target",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "\"_self\"",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "text",
-          "type": "string",
-          "mutable": false,
-          "attr": "text",
-          "reflectToAttr": false,
-          "docs": "es: Ruta que redirige del card image\r\nen: Route of redirect card image\r\nExample: localhost/css3",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "url",
-          "type": "string",
-          "mutable": false,
-          "attr": "url",
-          "reflectToAttr": false,
-          "docs": "es: Ruta que redirige del card image\r\nen: Route of redirect card image\r\nExample: localhost/css3",
-          "docsTags": [],
-          "default": "'#'",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
           "required": false
         },
         {
@@ -2603,25 +1489,14 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "sami-header",
-        "sami-header-mobile"
-      ],
+      "dependents": [],
       "dependencies": [],
-      "dependencyGraph": {
-        "sami-header": [
-          "sami-hyperlink-image"
-        ],
-        "sami-header-mobile": [
-          "sami-hyperlink-image"
-        ]
-      }
+      "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/molecules/lists/list-group/list-group.tsx",
+      "filePath": "./src/components/atoms/inputs/input/input.tsx",
       "encapsulation": "none",
-      "tag": "sami-list-group",
-      "readme": "# sami-list-group\n\n\n",
+      "tag": "sami-input",
       "docs": "",
       "docsTags": [],
       "usage": {
@@ -2629,27 +1504,10 @@
       },
       "props": [
         {
-          "name": "border",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "border",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "classAppend",
+          "name": "align",
           "type": "string",
           "mutable": false,
-          "attr": "class-append",
+          "attr": "align",
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
@@ -2659,37 +1517,18 @@
               "type": "string"
             }
           ],
-          "optional": false,
+          "optional": true,
           "required": false
         },
         {
-          "name": "data",
-          "type": "IListGroup[]",
-          "mutable": true,
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [
-            {
-              "name": "State",
-              "text": "() data: Array<{\r\nurl: string;\r\ntype: string;\r\n}> = [];\r\n\r\nes: Ruta que redirige del card image\r\nen: Route of redirect card image\r\nExample: localhost/css3"
-            }
-          ],
-          "values": [
-            {
-              "type": "IListGroup[]"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "display",
+          "name": "inputType",
           "type": "string",
           "mutable": false,
-          "attr": "display",
+          "attr": "input-type",
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
+          "default": "''",
           "values": [
             {
               "type": "string"
@@ -2699,29 +1538,14 @@
           "required": false
         },
         {
-          "name": "flexDirection",
+          "name": "type",
           "type": "string",
           "mutable": false,
-          "attr": "flex-direction",
+          "attr": "type",
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "width",
-          "type": "string",
-          "mutable": false,
-          "attr": "width",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
+          "default": "''",
           "values": [
             {
               "type": "string"
@@ -2737,34 +1561,14 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "sami-card",
-        "sami-dropdown",
-        "sami-header"
-      ],
-      "dependencies": [
-        "sami-hyperlink"
-      ],
-      "dependencyGraph": {
-        "sami-list-group": [
-          "sami-hyperlink"
-        ],
-        "sami-card": [
-          "sami-list-group"
-        ],
-        "sami-dropdown": [
-          "sami-list-group"
-        ],
-        "sami-header": [
-          "sami-list-group"
-        ]
-      }
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/molecules/lists/list-social-media/list-social-media.tsx",
+      "filePath": "./src/components/atoms/lists/list/list.tsx",
       "encapsulation": "none",
-      "tag": "sami-list-social-media",
-      "readme": "# sami-list-social-media\n\n\n",
+      "tag": "sami-list",
       "docs": "",
       "docsTags": [],
       "usage": {
@@ -2772,51 +1576,14 @@
       },
       "props": [
         {
-          "name": "classAppend",
+          "name": "filterInvert",
           "type": "string",
           "mutable": false,
-          "attr": "class-append",
+          "attr": "filter-invert",
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "data",
-          "type": "IListSocialMedia[]",
-          "mutable": true,
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [
-            {
-              "name": "State",
-              "text": "() data: Array<{\r\nurl: string;\r\ntype: string;\r\n}> = [];\r\n\r\nes: Ruta que redirige del card image\r\nen: Route of redirect card image\r\nExample: localhost/css3"
-            }
-          ],
-          "default": "[]",
-          "values": [
-            {
-              "type": "IListSocialMedia[]"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "filter",
-          "type": "string",
-          "mutable": false,
-          "attr": "filter",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
+          "default": "'0'",
           "values": [
             {
               "type": "string"
@@ -2826,13 +1593,48 @@
           "required": false
         },
         {
-          "name": "flexDirection",
+          "name": "listStyle",
           "type": "string",
           "mutable": false,
-          "attr": "flex-direction",
+          "attr": "list-style",
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
+          "default": "'none'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "opacity",
+          "type": "string",
+          "mutable": false,
+          "attr": "opacity",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'0'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'unorder'",
           "values": [
             {
               "type": "string"
@@ -2848,36 +1650,76 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "sami-card",
-        "sami-header"
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/atoms/lists/list-item/list-item.tsx",
+      "encapsulation": "none",
+      "tag": "sami-list-item",
+      "docs": "",
+      "docsTags": [],
+      "usage": {
+        "angular": "```html\r\n<!-- Tag Card With Number -->\r\n<sami-card-tag text=\"1\"></sami-card-tag>\r\n```\r\n"
+      },
+      "props": [
+        {
+          "name": "type",
+          "type": "string",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'unorder'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
       ],
-      "dependencies": [
-        "sami-hyperlink-icon"
-      ],
-      "dependencyGraph": {
-        "sami-list-social-media": [
-          "sami-hyperlink-icon"
-        ],
-        "sami-card": [
-          "sami-list-social-media"
-        ],
-        "sami-header": [
-          "sami-list-social-media"
-        ]
-      }
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/atoms/loaders/loader/loader.tsx",
       "encapsulation": "none",
       "tag": "sami-loader",
-      "readme": "# sami-loader\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
         "angular": "```html\r\n<!-- Tag Card With Number -->\r\n<sami-card-tag text=\"1\"></sami-card-tag>\r\n```\r\n"
       },
-      "props": [],
+      "props": [
+        {
+          "name": "type",
+          "type": "string",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
       "methods": [
         {
           "name": "close",
@@ -2915,7 +1757,6 @@
       "filePath": "./src/components/organims/mains/main/main.tsx",
       "encapsulation": "none",
       "tag": "sami-main",
-      "readme": "# sami-main\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
@@ -2950,10 +1791,9 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/organims/sidebars/sidebar/sidebar.tsx",
+      "filePath": "./src/components/atoms/paragraph/paragraph.tsx",
       "encapsulation": "none",
-      "tag": "sami-sidebar",
-      "readme": "# sami-sidebar\n\n\n",
+      "tag": "sami-paragraph",
       "docs": "",
       "docsTags": [],
       "usage": {
@@ -2961,13 +1801,14 @@
       },
       "props": [
         {
-          "name": "background",
+          "name": "align",
           "type": "string",
           "mutable": false,
-          "attr": "background",
+          "attr": "align",
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
+          "default": "''",
           "values": [
             {
               "type": "string"
@@ -2977,13 +1818,14 @@
           "required": false
         },
         {
-          "name": "boxShadow",
+          "name": "color",
           "type": "string",
           "mutable": false,
-          "attr": "box-shadow",
+          "attr": "color",
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
+          "default": "''",
           "values": [
             {
               "type": "string"
@@ -2993,19 +1835,167 @@
           "required": false
         },
         {
-          "name": "height",
+          "name": "decoration",
           "type": "string",
           "mutable": false,
-          "attr": "height",
+          "attr": "decoration",
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
+          "default": "''",
           "values": [
             {
               "type": "string"
             }
           ],
           "optional": true,
+          "required": false
+        },
+        {
+          "name": "heading",
+          "type": "string",
+          "mutable": false,
+          "attr": "heading",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "transform",
+          "type": "string",
+          "mutable": false,
+          "attr": "transform",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "weigth",
+          "type": "string",
+          "mutable": false,
+          "attr": "weigth",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/organims/sidebars/sidebar/sidebar.tsx",
+      "encapsulation": "none",
+      "tag": "sami-sidebar",
+      "docs": "",
+      "docsTags": [],
+      "usage": {
+        "angular": "```html\r\n<!-- Tag Card With Number -->\r\n<sami-card-tag text=\"1\"></sami-card-tag>\r\n```\r\n"
+      },
+      "props": [],
+      "methods": [
+        {
+          "name": "show",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "show() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [],
+      "listeners": [
+        {
+          "event": "resize",
+          "target": "window",
+          "capture": false,
+          "passive": true
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/organims/sidebars/sidebar-dashboard/sidebar-dashboard.tsx",
+      "encapsulation": "none",
+      "tag": "sami-sidebar-dashboard",
+      "docs": "",
+      "docsTags": [],
+      "usage": {
+        "sidebar-dashboard": "```html\r\n<!-- Tag Card With Number -->\r\n<sami-card-tag text=\"1\"></sami-card-tag>\r\n```\r\n"
+      },
+      "props": [
+        {
+          "name": "data",
+          "type": "(IHyperLink | { title: string; data: IHyperLink[]; })[]",
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "(IHyperLink"
+            },
+            {
+              "type": "{ title: string; data: IHyperLink[]; })[]"
+            }
+          ],
+          "optional": false,
           "required": false
         },
         {
@@ -3073,80 +2063,16 @@
           "required": false
         },
         {
-          "name": "maxWidth",
+          "name": "menuLeft",
           "type": "string",
           "mutable": false,
-          "attr": "max-width",
+          "attr": "menu-left",
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
           "values": [
             {
               "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "position",
-          "type": "string",
-          "mutable": false,
-          "attr": "position",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "top",
-          "type": "number",
-          "mutable": false,
-          "attr": "top",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "width",
-          "type": "string",
-          "mutable": false,
-          "attr": "width",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "zIndex",
-          "type": "number",
-          "mutable": false,
-          "attr": "z-index",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "number"
             }
           ],
           "optional": true,
@@ -3167,39 +2093,101 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "sami-hyperlink-icon"
-      ],
-      "dependencyGraph": {
-        "sami-sidebar": [
-          "sami-hyperlink-icon"
-        ]
-      }
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/organims/sidebars/sidebar-dashboard/sidebar-dashboard.tsx",
+      "filePath": "./src/components/atoms/span/span.tsx",
       "encapsulation": "none",
-      "tag": "sami-sidebar-dashboard",
-      "readme": "# sami-sidebar-dashboard\n\n\n",
+      "tag": "sami-span",
       "docs": "",
       "docsTags": [],
       "usage": {
-        "sidebar-dashboard": "```html\r\n<!-- Tag Card With Number -->\r\n<sami-card-tag text=\"1\"></sami-card-tag>\r\n```\r\n"
+        "angular": "```html\r\n<!-- Tag Card With Number -->\r\n<sami-card-tag text=\"1\"></sami-card-tag>\r\n```\r\n"
+      },
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/organims/subscribers/subscriber/subscriber.tsx",
+      "encapsulation": "none",
+      "tag": "sami-subscriber",
+      "docs": "",
+      "docsTags": [],
+      "usage": {
+        "angular": "```html\r\n<!-- Tag Card With Number -->\r\n<sami-card-tag text=\"1\"></sami-card-tag>\r\n```\r\n"
       },
       "props": [
         {
-          "name": "data",
-          "type": "(IHyperLink | { title: string; data: IHyperLink[]; })[]",
-          "mutable": true,
+          "name": "toggle",
+          "type": "(e: MouseEvent) => void",
+          "mutable": false,
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
           "values": [
             {
-              "type": "(IHyperLink"
+              "type": "(e: MouseEvent) => void"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "show",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "show() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/molecules/tabs/tab/tab.tsx",
+      "encapsulation": "none",
+      "tag": "sami-tab",
+      "docs": "",
+      "docsTags": [],
+      "usage": {
+        "angular": "```html\r\n<!-- Tag Card With Number -->\r\n<sami-card-tag text=\"1\"></sami-card-tag>\r\n```\r\n"
+      },
+      "props": [
+        {
+          "name": "listGroupData",
+          "type": "IListGroup[] | string",
+          "mutable": true,
+          "attr": "list-group-data",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "IListGroup[]"
             },
             {
-              "type": "{ title: string; data: IHyperLink[]; })[]"
+              "type": "string"
             }
           ],
           "optional": false,
@@ -3213,284 +2201,19 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "sami-hyperlink"
-      ],
-      "dependencyGraph": {
-        "sami-sidebar-dashboard": [
-          "sami-hyperlink"
-        ]
-      }
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/organims/subscribers/subscriber/subscriber.tsx",
+      "filePath": "./src/components/atoms/tag/tag.tsx",
       "encapsulation": "none",
-      "tag": "sami-subscriber",
-      "readme": "# sami-subscriber\n\n\n",
+      "tag": "sami-tag",
       "docs": "",
       "docsTags": [],
       "usage": {
         "angular": "```html\r\n<!-- Tag Card With Number -->\r\n<sami-card-tag text=\"1\"></sami-card-tag>\r\n```\r\n"
       },
-      "props": [
-        {
-          "name": "background",
-          "type": "string",
-          "mutable": false,
-          "attr": "background",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "boxShadow",
-          "type": "string",
-          "mutable": false,
-          "attr": "box-shadow",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "height",
-          "type": "string",
-          "mutable": false,
-          "attr": "height",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "hyperlinkFilter",
-          "type": "string",
-          "mutable": false,
-          "attr": "hyperlink-filter",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "hyperlinkIconHeight",
-          "type": "number",
-          "mutable": false,
-          "attr": "hyperlink-icon-height",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "hyperlinkIconPadding",
-          "type": "string",
-          "mutable": false,
-          "attr": "hyperlink-icon-padding",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "hyperlinkIconUrlImage",
-          "type": "string",
-          "mutable": false,
-          "attr": "hyperlink-icon-url-image",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "hyperlinkIconWidth",
-          "type": "number",
-          "mutable": false,
-          "attr": "hyperlink-icon-width",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "hyperlinkPadding",
-          "type": "string",
-          "mutable": false,
-          "attr": "hyperlink-padding",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "hyperlinkText",
-          "type": "string",
-          "mutable": false,
-          "attr": "hyperlink-text",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "hyperlinkUrl",
-          "type": "string",
-          "mutable": false,
-          "attr": "hyperlink-url",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "\"#\"",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "maxWidth",
-          "type": "string",
-          "mutable": false,
-          "attr": "max-width",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "position",
-          "type": "string",
-          "mutable": false,
-          "attr": "position",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "top",
-          "type": "number",
-          "mutable": false,
-          "attr": "top",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "width",
-          "type": "string",
-          "mutable": false,
-          "attr": "width",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "zIndex",
-          "type": "number",
-          "mutable": false,
-          "attr": "z-index",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": true,
-          "required": false
-        }
-      ],
+      "props": [],
       "methods": [],
       "events": [],
       "listeners": [],
@@ -3498,16 +2221,8 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "sami-hyperlink",
-        "sami-hyperlink-icon"
-      ],
-      "dependencyGraph": {
-        "sami-subscriber": [
-          "sami-hyperlink",
-          "sami-hyperlink-icon"
-        ]
-      }
+      "dependencies": [],
+      "dependencyGraph": {}
     }
   ]
 }

@@ -247,3 +247,19 @@ Respuesta: false</code></pre>
       </script>
   </body>
 </html>
+
+<script type="text/javascript">
+
+  customElements.whenDefined('sami-card').then(() => {
+    if (document.querySelector("#sami-card-one")) {
+      const style = document.createElement('style');
+      style.textContent = `
+            :host div.sami-card {
+              display: contents!important;
+            }
+        `;
+      document.querySelector("#sami-card-one").shadowRoot.appendChild(style);
+    }
+  });
+
+</script>

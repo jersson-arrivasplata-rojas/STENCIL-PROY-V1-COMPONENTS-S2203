@@ -1,0 +1,13 @@
+@import "../../../global/base.scss";
+$wrap: "sami-footer";
+
+#{$wrap} {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--sami-dark);
+  color: var(--sami-white);
+  & .#{$wrap} {
+    margin: 10px 0px 10px 0px;
+  }
+}

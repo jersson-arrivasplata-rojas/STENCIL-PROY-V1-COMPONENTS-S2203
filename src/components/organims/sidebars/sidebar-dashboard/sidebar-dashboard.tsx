@@ -38,7 +38,7 @@ export class SidebarDashboard {
 
 
   constructor() {
-    this.validateMenu();//window
+    this.validateMenu();
   }
 
 
@@ -53,29 +53,28 @@ export class SidebarDashboard {
     return 'url' in object;
   }
 
-  private listOfHyperLink(x: IHyperLink, pos: number) {
+  private listOfHyperLink(x: IHyperLink) {
+    //<sami-hyperlink text={x.text} url={x.url} target={x.target} fnClick={x.fnClick}></sami-hyperlink>
     return (<li class={{ 'sami-sidebar-dashboard___li': true, 'sami-sidebar-dashboard___active': x.active }}>
-      <sami-hyperlink text={x.text} url={x.url} target={x.target} fnClick={x.fnClick} padding={x.padding}></sami-hyperlink>
+      
     </li>);
   }
 
-  private ArrayOfListOfHyperlink(data: Array<IHyperLink>, pos: number) {
+  private ArrayOfListOfHyperlink(data: Array<IHyperLink>) {
     const array = [];
-    data.map((response, index) => {
-      //this.arrayHyperLink.push(this.listOfHyperLink(response))
-      array.push(this.listOfHyperLink(response, index))
-      //data[pos] = this.listOfHyperLink(response,index);
+    data.map((response) => {
+      array.push(this.listOfHyperLink(response))
     });
     return array;
   }
 
-  private listWithTitle(x: { title: string; data: Array<IHyperLink>; }, pos: number) {
+  private listWithTitle(x: { title: string; data: Array<IHyperLink>; }) {
 
     return (<li class={`sami-sidebar-dashboard___li sami-sidebar-dashboard___section`}>
       <div class='sami-sidebar-dashboard___title'><span>{x.title}</span></div>
       <ul class="sami-sidebar-dashboard___ul">
         {
-          this.ArrayOfListOfHyperlink(x.data, pos)
+          this.ArrayOfListOfHyperlink(x.data)
         }
       </ul>
     </li>)
@@ -85,14 +84,14 @@ export class SidebarDashboard {
     data.map((x, index) => {
       if (this.instanceOfIHyperLink(x)) {
         (this.arrayHyperLink[index]) ? 
-        this.arrayHyperLink[index] = this.listOfHyperLink({ ...x }, index) : 
-        this.arrayHyperLink.push(this.listOfHyperLink({ ...x }, index));
+        this.arrayHyperLink[index] = this.listOfHyperLink({ ...x }) : 
+        this.arrayHyperLink.push(this.listOfHyperLink({ ...x }));
 
       }
       else{ 
         (this.arrayHyperLink[index]) ? 
-        this.arrayHyperLink[index] = this.listWithTitle({ ...x }, index) : 
-        this.arrayHyperLink.push(this.listWithTitle({ ...x }, index));
+        this.arrayHyperLink[index] = this.listWithTitle({ ...x }) : 
+        this.arrayHyperLink.push(this.listWithTitle({ ...x }));
       }
     })
     return this.arrayHyperLink;
@@ -102,10 +101,6 @@ export class SidebarDashboard {
   handleScroll() {//e: Event
     //const target = e.target as Window;
     this.validateMenu();//target
-  }
-
-  private menu() {
-    this.isMenuOpen = !this.isMenuOpen;
   }
   private validateMenu() {//target: Window
     if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
@@ -119,11 +114,12 @@ export class SidebarDashboard {
     return styles;
   }
   render() {
+    // <sami-hyperlink-icon url={this.hyperlinkUrl} target="" type="menu" padding={this.hyperlinkPadding} filter={this.hyperlinkFilter} onClick={() => this.menu()} url-image={this.hyperlinkUrlImage}></sami-hyperlink-icon>
+  
     return (
       <div class={{ 'sami-sidebar-dashboard': true, 'sami-sidebar-dashboard___active': this.isMenuOpen }} >
         <div class='sami-sidebar-dashboard___hyperlink-menu' style={this.getMenuStyles()}>
-          <sami-hyperlink-icon url={this.hyperlinkUrl} target="" type="menu" padding={this.hyperlinkPadding} filter={this.hyperlinkFilter} onClick={() => this.menu()} url-image={this.hyperlinkUrlImage}></sami-hyperlink-icon>
-        </div>
+               </div>
         <div class="sami-sidebar-dashboard___body">
           <ul class="sami-sidebar-dashboard___ul sami-sidebar-dashboard___main">
             {

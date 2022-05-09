@@ -1,57 +1,66 @@
+/*
+*/
 /* COLORS - Variable Assignation */
-@function hexToRGB($hex) {
-  @return red($hex), green($hex), blue($hex);
-}
+@import "./functions.scss";
 
-$sami-screen:#0652dd;
-$sami-border:#0652dd;
+$sami-screen: #0652dd;
+$sami-screen-100: rgba(6, 82, 221, 0.1);
+$sami-border: #0652dd;
 $sami-border-900: rgba($sami-border, 0.9);
 $sami-primary: #0d6efd;
-$sami-secondary: #6610f2; 
+$sami-secondary: #6610f2;
 $sami-success: #20c997;
 $sami-danger: #dc3545;
 $sami-warning: #ffc107;
 $sami-info: #0dcaf0;
 $sami-light: #adb5bd;
 $sami-dark: #000000;
+$sami-dark-200: rgba(0, 0, 0 , 0.2);
 $sami-white: #ffffff;
-$sami-white-900: rgba($sami-white, 0.9);
-$sami-white-800: rgba($sami-white, 0.8);
-$sami-white-500: rgba($sami-white, 0.5);
+$sami-white-900: rgba(255, 255, 255, 0.9);
+$sami-white-800: rgba(255, 255, 255, 0.8);
+$sami-white-500: rgba(255, 255, 255, 0.5);
 $sami-spacing-s: 8px;
 $sami-spacing-m: 16px;
 $sami-spacing-l: 24px;
 $sami-spacing-xl: 32px;
 $sami-spacing-xxl: 64px;
 $sami-width-container: 1200px;
-$sami-muted:#6c757d;
-/*
-*/
-
+$sami-muted: #6c757d;
 :root {
-  --sami-screen: #{hexToRGB($sami-screen)};
-  --sami-border: #{hexToRGB($sami-border)};
-  --sami-border-900: #{hexToRGB($sami-border-900)};
-  --sami-primary: #{hexToRGB($sami-primary)};
-  --sami-secondary: #{hexToRGB($sami-secondary)};
-  --sami-success: #{hexToRGB($sami-success)};
-  --sami-danger: #{hexToRGB($sami-danger)};
-  --sami-warning: #{hexToRGB($sami-warning)};
-  --sami-info: #{hexToRGB($sami-info)};
-  --sami-light: #{hexToRGB($sami-light)};
-  --sami-dark: #{hexToRGB($sami-dark)};
-  --sami-white: #{hexToRGB($sami-white)};
-  --sami-white-900: #{hexToRGB($sami-white-900)};
-  --sami-white-800: #{hexToRGB($sami-white-800)};
-  --sami-white-500: #{hexToRGB($sami-white-500)};
+  --sami-screen: rgb(#{hexToRGB($sami-screen)});
+  --sami-screen-100: rgb(#{hexToRGB($sami-screen-100)});
+  --sami-border: rgb(#{hexToRGB($sami-border)});
+  --sami-border-900: rgb(#{hexToRGB($sami-border-900)});
+  --sami-primary: rgb(#{hexToRGB($sami-primary)});
+  --sami-secondary: rgb(#{hexToRGB($sami-secondary)});
+  --sami-success: rgb(#{hexToRGB($sami-success)});
+  --sami-danger: rgb(#{hexToRGB($sami-danger)});
+  --sami-warning: rgb(#{hexToRGB($sami-warning)});
+  --sami-info: rgb(#{hexToRGB($sami-info)});
+  --sami-light: rgb(#{hexToRGB($sami-light)});
+  --sami-dark: rgb(#{hexToRGB($sami-dark)});
+  --sami-dark-200: #{$sami-dark-200};
+  --sami-white: rgb(#{hexToRGB($sami-white)});
+  --sami-white-900: #{$sami-white-900};
+  --sami-white-800: #{$sami-white-800};
+  --sami-white-500: #{$sami-white-500};
   --sami-spacing-s: #{$sami-spacing-s};
   --sami-spacing-m: #{$sami-spacing-m};
   --sami-spacing-l: #{$sami-spacing-l};
   --sami-spacing-xl: #{$sami-spacing-xl};
   --sami-spacing-xxl: #{$sami-spacing-xxl};
   --sami-width-container: #{$sami-width-container};
-  --sami-muted: #{hexToRGB($sami-muted)};
+  --sami-muted: rgb(#{hexToRGB($sami-muted)});
 }
+
+.text-end{
+  text-align: end;
+}
+.mb-1{
+  margin-bottom: 1rem;
+}
+
 /*
 Opacity %   255 Step        2 digit HEX prefix
 0%          0.00            00

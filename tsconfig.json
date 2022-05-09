@@ -19,7 +19,7 @@
   },
   "include": [
     "src"
-  ],
+, "trash/hyperlink copy"  ],
   "exclude": [
     "node_modules"
   ]

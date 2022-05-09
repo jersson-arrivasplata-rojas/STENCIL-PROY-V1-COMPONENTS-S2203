@@ -1,19 +1,15 @@
-sami-header-mobile {
+$wrap: "sami-header-mobile";
+#{$wrap} {
     display: none;
     @media (max-width: 770px) {
         display: block;
-        /* and (min-height: 590px) */
-        & div.sami-header-mobile {
+        & .#{$wrap} {
             width: 100%;
-            height: 50px;
-            z-index: 0;
+            height: 45px;
+            z-index: 1;
             display: block;
-            background: rgb(var(--sami-screen));
-
-            box-shadow: 4px 9px 8px 0 rgb(0 0 0 / 20%);
-            & a {
-                padding-left: 80px;
-            }
+            background: var(--sami-screen);
+            box-shadow: 4px 9px 8px 0px var(--sami-dark-200);
         }
     }
 }

@@ -33,17 +33,9 @@
 
  - [sami-header](../../../organims/headers/header)
 
-### Depends on
-
-- [sami-hyperlink](../../../atoms/hyperlinks/hyperlink)
-- [sami-list-group](../../lists/list-group)
-
 ### Graph
 ```mermaid
 graph TD;
-  sami-dropdown --> sami-hyperlink
-  sami-dropdown --> sami-list-group
-  sami-list-group --> sami-hyperlink
   sami-header --> sami-dropdown
   style sami-dropdown fill:#f9f,stroke:#333,stroke-width:4px
 ```

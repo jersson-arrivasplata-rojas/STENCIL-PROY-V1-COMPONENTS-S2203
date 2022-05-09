@@ -1,43 +1,50 @@
-sami-loader {
-  & .sami-loader.sami-loader___active {
-    color: rgb(var(--sami-screen));
-    top: 0;
-    font-weight: bold;
-    font-size: 30vh;
-    opacity: 0.8;
+@import "../../../../global/base.scss";
+$wrap: "sami-loader";
+
+#{$wrap} {
+  & .#{$wrap}.#{$wrap}___active {
     position: fixed;
-    z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
+    top: 0;
     width: 100%;
     height: 100%;
-    background: $sami-white;
-    & span {
-      display: inline-block;
-      -webkit-animation: sami-pulse 0.4s alternate infinite ease-in-out;
+    background: var(--sami-white);
+    z-index: 9999;
+    font-weight: bold;
+    font-size: 30vh;
+    opacity: 0.8;
+    color: var(--sami-screen);
+    font-style: auto;
+  }
+  & span {
+    display: inline-block;
+  }
+  & .#{$wrap} {
+    display: none;
+  }
+
+  & .#{$wrap}.sami-loader___pulse {
+    & sami-span span {
       animation: sami-pulse 0.4s alternate infinite ease-in-out;
-}
-    & span:nth-child(odd) {
-      -webkit-animation-delay: 0.4s;
+    }
+    & sami-span:nth-child(odd) span {
       animation-delay: 0.4s;
     }
   }
-  & .sami-loader {
-    display: none;
-  }
-}
 
-@-webkit-keyframes sami-pulse {
-  to {
-    transform: scale(0.8);
-    opacity: 0.5;
+  @-webkit-keyframes sami-pulse {
+    to {
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
   }
-}
 
-@keyframes sami-pulse {
-  to {
-    transform: scale(0.8);
-    opacity: 0.5;
+  @keyframes sami-pulse {
+    to {
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
   }
 }

@@ -1,5 +1,71 @@
-sami-hyperlink {
-  & a {
+@import "../../../../global/base.scss";
+$wrap: "sami-hyperlink";
+
+#{$wrap} {
+
+  & .#{$wrap} {
+    & .#{$wrap}___block {
+      display: none;
+    }
+  }
+  
+  & .#{$wrap}.border-color-white-900 {
+    border-color: var(--sami-white-900);
+  }
+
+    /*Button back*/
+  & .#{$wrap}-back::before {
+    content: "";
+  }
+  & .#{$wrap}-back span {
     display: block;
   }
+  & .#{$wrap}-back {
+    padding: 0.5rem;
+  }
+  @media (max-width: 770px) {
+    & .#{$wrap}-back {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    & .#{$wrap}-back::before {
+      content: "<";
+    }
+    & .#{$wrap}-back span {
+      display: none;
+    }
+  }
+  /*Button back fin*/
+  /* .#{$wrap}-outline-danger */
+
+  & .#{$wrap}-outline-danger {
+    height: 35px;
+    outline: none;
+    border-style: solid;
+    border-color: var(--sami-screen);
+    background: var(--sami-white);
+    color: var(--sami-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
+  & .#{$wrap}-outline-danger:hover {
+    & .#{$wrap}___block {
+      background: var(--sami-screen);
+      height: 100%;
+      position: absolute;
+      opacity: 0.2;
+      display: block;
+      width: -webkit-fill-available;
+      display: block;
+    }
+  }
+
+  @media (max-width: 770px) {
+    .#{$wrap}.sami-hyperlink-only-desktop{
+      display: none!important;
+    }
+  }
+
 }

@@ -18,23 +18,15 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                                                       | Default     |
-| -------- | --------- | ----------- | ---------------------------------------------------------- | ----------- |
-| `data`   | --        |             | `(IHyperLink \| { title: string; data: IHyperLink[]; })[]` | `undefined` |
+| Property            | Attribute             | Description | Type                                                       | Default     |
+| ------------------- | --------------------- | ----------- | ---------------------------------------------------------- | ----------- |
+| `data`              | --                    |             | `(IHyperLink \| { title: string; data: IHyperLink[]; })[]` | `[]`        |
+| `hyperlinkFilter`   | `hyperlink-filter`    |             | `string`                                                   | `undefined` |
+| `hyperlinkPadding`  | `hyperlink-padding`   |             | `string`                                                   | `undefined` |
+| `hyperlinkUrl`      | `hyperlink-url`       |             | `string`                                                   | `undefined` |
+| `hyperlinkUrlImage` | `hyperlink-url-image` |             | `string`                                                   | `undefined` |
+| `menuLeft`          | `menu-left`           |             | `string`                                                   | `undefined` |
 
-
-## Dependencies
-
-### Depends on
-
-- [sami-hyperlink](../../../atoms/hyperlinks/hyperlink)
-
-### Graph
-```mermaid
-graph TD;
-  sami-sidebar-dashboard --> sami-hyperlink
-  style sami-sidebar-dashboard fill:#f9f,stroke:#333,stroke-width:4px
-```
 
 ----------------------------------------------
 

@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,
-      minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
 
-    <script type="module" src="/build/sami.esm.js"></script>
-    <script nomodule src="/build/sami.js"></script>
-  </head>
-  <body>
-    <sami-card
-    max-width="250px"
-    card-title="Tipos de Formularios en Angular"
-    card-subtitle="Angular"
-    card-resume="Se implementa formularios de angular y Se implementa formularios de angular y Se implementa formularios de angular"
-    image-src="http://proyects.jerssonarrivasplata2.com/proyects/angular/ANGULAR-PROY-V1-IMPLEMENTATION-ANGULAR-FORMS-S2201/image/angular-proy-v1-implementation-angular-forms-s2201.png"
-    image-max-width="250px"
-    image-max-height="150px"
-    image-object-fit="cover"
-    list-social-media-data='[
-    {" url" :" #" ,"type" :" github" },
-    {" url" :" #" ,"type" :" linkedin" },
-    {" url" :" #" ,"type" :" instagram" },
-    {" url" :" #" ,"type" :" facebook" }
-    ]'
-    ></sami-card>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,
+      minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/sami.esm.js"></script>
+  <script nomodule src="/build/sami.js"></script>
+
+  <style>
+    #sami-tag {
+      --sami-tag-background: red;
+      --sami-tag-right: 30px;
+    }
+    *, body{
+      background: #b61332;
+    }
+  </style>
+</head>
+
+<body>
+  <sami-hyperlink color="white" class="border-solid border-width-2 border-color-white-900 text-decoration-none p-1 right-0 position-absolute" href="#" target="_self" onclick="subscriberToggle()">
+    CLICK SUSCRIBETE
+</sami-hyperlink>
+</body>
+
 </html>

@@ -1,0 +1,10 @@
+@import "../../../global/base.scss";
+$wrap: "sami-tag";
+
+#{$wrap} {
+  .#{$wrap}{
+    /*display: flex;
+    justify-content: center;
+    align-items: center;*/
+  }
+}

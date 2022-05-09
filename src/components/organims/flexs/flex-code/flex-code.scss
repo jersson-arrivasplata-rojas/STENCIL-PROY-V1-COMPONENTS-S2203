@@ -1,8 +1,9 @@
-sami-flex-code {
+$wrap: "sami-flex-code";
+#{$wrap} {
     /*& div.slick-track{
         display: flex;
     }*/
-    & div.sami-flex-code {
+    & div.#{$wrap} {
         & div[slot="flex-code"] {
             display: grid;
             grid-template-columns: repeat(2, 1fr);

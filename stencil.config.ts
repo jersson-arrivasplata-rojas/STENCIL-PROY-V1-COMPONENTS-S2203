@@ -5,6 +5,13 @@ export const config: Config = {
   namespace: 'sami',
   srcDir: 'src',
   globalStyle: 'src/global/base.scss',
+	globalScript: 'src/global/app.ts',
+  bundles: [
+    { components: ['sami-img'] },
+    { components: ['sami-paragraph'] },
+    { components: ['sami-tag'] },
+    { components: ['sami-card-image'] }
+  ],
   plugins: [
     sass({
       injectGlobalPaths: [

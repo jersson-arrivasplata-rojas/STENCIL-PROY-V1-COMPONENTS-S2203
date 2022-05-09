@@ -1,107 +1,88 @@
-$box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+@import url("../../../../global/base.scss");
+
+$box-shadow: 0 4px 8px 0 var(--sami-dark-200), 0 6px 20px 0 var(--sami-dark-200);
 $width: 320px;
+$wrap: "sami-subscriber";
 
-sami-subscriber {
-    & div.sami-subscriber:not(.active) {
-        & div.sami-subscriber___hyperlink {
-            right: 0px;
-            transition: all 1s;
-            -webkit-transition: all 1s;
-            -moz-transition: all 1s;
-            -ms-transition: all 1s;
-            -o-transition: all 1s;
-        }
-        & div.sami-subscriber___div {
-            overflow: auto;
-            right: -320px;
-            transition: all 1s;
-            -webkit-transition: all 1s;
-            -moz-transition: all 1s;
-            -ms-transition: all 1s;
-            -o-transition: all 1s;
-        }
-    }
-    & div.sami-subscriber.active {
-        & div.sami-subscriber___hyperlink {
-            transition: all 1s;
-            -webkit-transition: all 1s;
-            -moz-transition: all 1s;
-            -ms-transition: all 1s;
-            -o-transition: all 1s;
-            right: -200px;
-            display: none;
-            z-index: 0;
+#{$wrap} {
+    & .#{$wrap}{
+        & .#{$wrap}___body {
             overflow: hidden;
-        }
-        & div.sami-subscriber___div {
-            overflow: hidden;
-            transition: all 1s;
-            -webkit-transition: all 1s;
-            -moz-transition: all 1s;
-            -ms-transition: all 1s;
-            -o-transition: all 1s;
-            right: 0;
-            z-index: 3;
-        }
-    }
-
-    & div.sami-subscriber.active::before {
-        position: fixed;
-        content: "";
-        width: 100%;
-        height: 100%;
-        background: #00000042;
-        left: 0;
-        top: 0;
-        z-index: 2;
-    }
-
-    & div.sami-subscriber {
-        & div.sami-subscriber___hyperlink {
-            position: absolute;
-            top: 0;
-            background: rgb(var(--sami-screen));
-            z-index: 1;
-            box-shadow: 4px 9px 8px 0 rgb(0 0 0 / 20%);
-            & a {
-                display: flex;
-                text-decoration: none;
-                color: rgb(var(--sami-white-900));
-                border-style: solid;
-                border-width: 2px;
-                border-color: rgb(var(--sami-white-900));
-                margin-top: 15%;
-            }
-            & a:hover {
-                color: rgb(var(--sami-white-800));
-                border-color: rgb(var(--sami-border-800));
-            }
-            @media (max-width: 770px)  {/*and (max-height: 590px)*/
-                & a {
-                    margin-top: 0%;
-                }
-            }
-        }
-        & div.sami-subscriber___close {
-            & a {
-                text-decoration: none;
-                font-weight: bolder;
-                color: rgb(var(--sami-dark));
-                display: inline-block;
-            }
-        }
-        & div.sami-subscriber___div {
-            box-shadow: $box-shadow;
-            background: rgb(var(--sami-white));
-            z-index: 1;
-            width: 100%;
             height: 100%;
-            max-width: $width;
             top: 0;
+            z-index: 3;
+            box-shadow: 0 4px 8px 0 var(--sami-dark-200), 0 6px 20px 0 var(--sami-dark-200);
             position: fixed;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
+            width: 315px;
+            & sami-hyperlink[part="close"] {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            & div[part="body"] {
+                width: 250px;
+                & sami-paragraph:nth-child(1) p {
+                    font-size: 3rem;
+                    font-weight: 700;
+                    text-align: left;
+                    line-height: 1.2;
+                    margin-bottom: 30px;
+                }
+                & sami-paragraph:nth-child(2) p {
+                    line-height: 1.8;
+                    margin: 0px;
+                    text-align: center;
+
+                    font-weight: 100;
+                    font-size: 1rem;
+                }
+            }
+        }
+        & .#{$wrap}___body:nth-child(1) {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: left;
+            line-height: 1.2;
+        }
+        & .#{$wrap}___body input {
+            margin-top: 20px;
         }
     }
+    & .#{$wrap}:not(.#{$wrap}___active) {
+        & .#{$wrap}___body {
+            right: -315px;
+            transition: all 1s;
+        }
+        & .#{$wrap}___backdrop {
+            display: none;
+        }
+    }
+    & .#{$wrap}.#{$wrap}___active {
+        & .#{$wrap}___backdrop {
+            display: block;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: #00000042;
+            left: 0;
+            top: 0;
+            z-index: 2;
+        }
+        & .#{$wrap}___body {
+            transition: all 1s;
+            right: 0;
+            
+        }
+        
+    }
+}
+
+:is(#{$wrap} .#{$wrap} .#{$wrap}___body, #{$wrap} sami-paragraph, #{$wrap} sami-paragraph p, #{$wrap}
+        sami-form, #{$wrap} form) {
+    background: var(--sami-white);
 }

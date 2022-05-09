@@ -41,28 +41,21 @@
 | `justifyContentMobile`     | `justify-content-mobile`     |             | `string`                       | `undefined` |
 | `listGroupData`            | `list-group-data`            |             | `IListGroup[] \| string`       | `undefined` |
 | `listSocialMediaData`      | `list-social-media-data`     |             | `IListSocialMedia[] \| string` | `undefined` |
+| `position`                 | `position`                   |             | `string`                       | `undefined` |
+| `top`                      | `top`                        |             | `string`                       | `undefined` |
+| `zIndex`                   | `z-index`                    |             | `string`                       | `undefined` |
 
 
 ## Dependencies
 
 ### Depends on
 
-- [sami-hyperlink-image](../../../atoms/hyperlinks/hyperlink-image)
-- [sami-list-group](../../../molecules/lists/list-group)
-- [sami-list-social-media](../../../molecules/lists/list-social-media)
 - [sami-dropdown](../../../molecules/dropdowns/dropdown)
 
 ### Graph
 ```mermaid
 graph TD;
-  sami-header --> sami-hyperlink-image
-  sami-header --> sami-list-group
-  sami-header --> sami-list-social-media
   sami-header --> sami-dropdown
-  sami-list-group --> sami-hyperlink
-  sami-list-social-media --> sami-hyperlink-icon
-  sami-dropdown --> sami-hyperlink
-  sami-dropdown --> sami-list-group
   style sami-header fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

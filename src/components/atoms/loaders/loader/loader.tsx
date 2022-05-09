@@ -1,4 +1,4 @@
-import { Component, h, Method, State } from '@stencil/core';
+import { Component, h, Method, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'sami-loader',
@@ -7,26 +7,25 @@ import { Component, h, Method, State } from '@stencil/core';
 export class Loader {
 
   @State() isOpen: boolean = false;
+  @Prop() type: string = "";
 
-  //@Event() open: EventEmitter<boolean>;
-
-  @Method() // Con este decorator, exponemos el método al DOM
-  async show(){
+  @Method()
+  async show() {
     this.isOpen = true;
   }
 
 
-  @Method() // Con este decorator, exponemos el método al DOM
-  async close(){
+  @Method()
+  async close() {
     this.isOpen = false;
   }
 
 
-
   render() {
+    //{ 'sami-loader': true, 'sami-loader___active': this.isOpen }
     return (
-      <div class={{'sami-loader':true, 'sami-loader___active':this.isOpen}}>
-        <slot name="loader"></slot>
+      <div class={`sami-loader ${this.isOpen ? 'sami-loader___active' : ''} sami-loader___${this.type}`}>
+        <slot></slot>
       </div>
     );
   }

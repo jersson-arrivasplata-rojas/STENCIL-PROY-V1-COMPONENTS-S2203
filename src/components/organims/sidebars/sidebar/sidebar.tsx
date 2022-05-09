@@ -1,94 +1,101 @@
-import { Component, h, Prop, State, Listen } from '@stencil/core';
+import { Component, h, State, Listen, Element, Method } from '@stencil/core';
 
 @Component({
   tag: 'sami-sidebar',
   styleUrl: 'sidebar.scss'
 })
 export class Sidebar {
+  @Element() host: HTMLDivElement;
 
-  @State() isMenuOpen: boolean = true;
+  class: string[] = [];
+  children: Element[];
 
-  @Prop() boxShadow?: string;
+  @State() isMenuOpen: boolean = false;
+  @State() isMobile: boolean = false;
 
-  @Prop() background?: string;
-
-  @Prop() zIndex?: number;
-
-  @Prop() width?: string;
-
-  @Prop() height?: string;
-
-  @Prop() maxWidth?: string;
-
-  @Prop() top?: number;
-
-  @Prop() position?: string;
-
-
-  @Prop() hyperlinkUrl?: string;
-
-  @Prop() hyperlinkPadding?: string;
-
-  @Prop() hyperlinkFilter?: string;
-
-  @Prop() hyperlinkUrlImage?: string;
 
   @Listen('resize', { target: 'window' })
-  handleScroll() {//e: Event
-    //const target = e.target as Window;
-    this.validateMenu();//target
+  handleScroll(e: Event) {
+    //const array = Array.from(e.srcElement['path']);
+    const target = e.target as Window;
+    this.validateMenu(target);//target
   }
 
 
   constructor() {
-    this.validateMenu();//window
+    this.class = (this.host.className).split(' ');
+    this.host.className = '';
+
+    this.children = Array.from(this.host.children);
+
+    (this.children).forEach(x => {
+      const part = Array.from(x['part']);
+      if (part && part[0] == 'menu') x.slot = 'menu';
+      if (part && part[0] == 'header') x.slot = 'header';
+      if (part && part[0] == 'body') x.slot = 'body';
+      if (part && part[0] == 'footer') x.slot = 'footer';
+
+      if (x.slot == 'menu') {
+        x.classList.add('sami-sidebar___menu')
+      } else if (x.slot == 'header') {
+        x.classList.add('sami-sidebar___header')
+      } else if (x.slot == 'body') {
+        x.classList.add('sami-sidebar___body')
+      } else if (x.slot == 'footer') {
+        x.classList.add('sami-sidebar___footer')
+      }
+    });
+  }
+  componentDidLoad() {
+    this.validateMenu(window);//window
+
+  }
+  componentWillRender() {
   }
 
+  private validateMenu(target: Window) {//target: Window
 
-  private validateMenu() {//target: Window
     if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
-      this.isMenuOpen = true;
+
+      this.isMenuOpen = !this.isMenuOpen;
+      if (target['innerWidth'] < 770) {
+        this.isMobile = true;
+      }else{
+        this.isMenuOpen = true;
+        this.isMobile = false;
+      }
+      //this.isMenuOpen = (!(!isNaN(target['innerWidth']) && target['innerWidth'] < 770));
+      //this.isMobile = false;
+    } else {
+      this.isMenuOpen = !this.isMenuOpen;
+      this.isMobile = true;
     }
   }
 
-  /**
-   * es: Retorna un json de estilos
-   * en: Return a json of styles
-   */
-  private getStyles() {
-    const styles = Object.assign({});
-    (this.boxShadow) ? styles.boxShadow = this.boxShadow : delete styles.boxShadow;
-    (this.background) ? styles.background = this.background : delete styles.background;
-    (this.zIndex) ? styles.zIndex = this.zIndex : delete styles.zIndex;
-    (this.width) ? styles.width = this.width : delete styles.width;
-    (this.height) ? styles.height = this.height : delete styles.height;
-    (this.maxWidth) ? styles.maxWidth = this.maxWidth : delete styles.maxWidth;
-    (this.top) ? styles.top = this.top : delete styles.top;
-    (this.position) ? styles.position = this.position : delete styles.position;
-
-    return styles;
+  @Method()
+  async show() {
+    this.validateMenu(window)
   }
 
-  private menu() {
-    this.isMenuOpen = !this.isMenuOpen;
+  getClass(): string {
+    this.class = [];
+    if (this.isMenuOpen) {
+      this.class.push('sami-sidebar___active')
+    }
+    if (this.isMobile) {
+      this.class.push('sami-sidebar___mobile')
+    }
+    return this.class.join(' ');
   }
-
   render() {
     return (
-      <div class={{ 'sami-sidebar': true, 'sami-sidebar___active': this.isMenuOpen }} >
-        <div class='sami-sidebar___hyperlink-menu'>
-          <sami-hyperlink-icon url={this.hyperlinkUrl} target="" type="menu" padding={this.hyperlinkPadding} filter={this.hyperlinkFilter} onClick={() => this.menu()} url-image={this.hyperlinkUrlImage}></sami-hyperlink-icon>
-        </div>
-        <nav class='sami-sidebar___nav' style={this.getStyles()}>
-          <div class='sami-sidebar___hyperlink-image'>
-            <slot name="hyperlink-image" ></slot>
-          </div>
-          <div class='sami-sidebar___list-group'>
-            <slot name="list-group" ></slot>
-          </div>
-          <div class='sami-sidebar___list-social-media'>
-            <slot name="list-social-media" ></slot>
-          </div>
+      <div class={`sami-sidebar ${this.getClass()}`}>
+
+        <nav class='sami-sidebar___nav'>
+          <slot name="menu" ></slot>
+          <slot name="header" ></slot>
+          <slot name="body" ></slot>
+          <slot name="footer" ></slot>
         </nav>
       </div>
     );

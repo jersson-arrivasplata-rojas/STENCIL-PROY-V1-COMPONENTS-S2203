@@ -40,17 +40,21 @@ export class Dropdown {
   }*/
   render() {
     //{this.cardTag ? <sami-card-tag text={this.text}></sami-card-tag>: (this.cardTag as HTMLElement)}
+    // display="grid" 
+    //width={this.width} 
+
+    // <sami-hyperlink class="sami-dropdown___header" text={this.text} url="javascript:void(0)" target="_self"></sami-hyperlink>
     return (
 
       <div class={'sami-dropdown'}>
         {
           this.border ? <div class='sami-dropdown___border'></div> : []
         }
-        <sami-hyperlink class="sami-dropdown___header" width={this.width} text={this.text} url="javascript:void(0)" target="_self"></sami-hyperlink>
+       
         {
           (this.data) ? (
             <div class="sami-dropdown___content" style={this.getContentStyles()}>
-              <sami-list-group data={this.getListGroup()} display="grid" ></sami-list-group>
+              <sami-list-group data={this.getListGroup()}></sami-list-group>
             </div>
           ) : []
         }

@@ -1,4 +1,5 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, Element, h, Prop } from '@stencil/core';
+import { position } from '../../../../functions/class.function';
 
 @Component({
   tag: 'sami-header-mobile',
@@ -6,39 +7,28 @@ import { Component, h, Prop } from '@stencil/core';
 })
 export class HeaderMobile {
 
+  @Element() host: HTMLAnchorElement;
+
+  @Prop() position?: string = 'fixed';
+
+  class: string[] = [];
+
+  constructor() {
+    this.class = (this.host.className).split(' ');
+    this.host.className = '';
+  }
 
 
-  @Prop() hyperlinkBackgroundImage: string;
+  private getClass(): string {
+    this.class.push(position(this.position));
+    return this.class.join(' ');
+  }
 
-  @Prop() hyperlinkMaxWidth: string;
-
-  @Prop() hyperlinkBorderRadius: string;
-
-  @Prop() hyperlinkBackground: string;
-  
-  @Prop() hyperlinkUrl: string;
-
-  @Prop() hyperlinkTarget: string;
-
-  @Prop() hyperlinkWidth: string;
-
-  @Prop() hyperlinkHeight: string;
   render() {
-    
     return (
-      <div class='sami-header-mobile'>
-        <sami-hyperlink-image
-          background-image={this.hyperlinkBackgroundImage} 
-          url={this.hyperlinkUrl}
-          max-width={this.hyperlinkMaxWidth}
-          width={this.hyperlinkWidth}
-          height={this.hyperlinkHeight}
-          border-radius={this.hyperlinkBorderRadius}
-          background={this.hyperlinkBackground}
-          target={this.hyperlinkTarget}
-        ></sami-hyperlink-image>
+      <div class={`sami-header-mobile ${this.getClass()}`}>
+        <slot></slot>
       </div>
     );
   }
-
 }

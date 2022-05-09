@@ -1,0 +1,8 @@
+@import "../../../global/base.scss";
+$wrap: "sami-icon";
+
+#{$wrap} {
+    & .#{$wrap}.color-dark{
+        color:var(--sami-dark);
+    }
+}

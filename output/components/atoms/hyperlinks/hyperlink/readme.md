@@ -18,34 +18,17 @@
 
 ## Properties
 
-| Property  | Attribute | Description                                                                                   | Type         | Default     |
-| --------- | --------- | --------------------------------------------------------------------------------------------- | ------------ | ----------- |
-| `fnClick` | --        |                                                                                               | `() => void` | `() => { }` |
-| `padding` | `padding` | es: Ruta que redirige del card image en: Route of redirect card image Example: localhost/css3 | `string`     | `undefined` |
-| `target`  | `target`  |                                                                                               | `string`     | `"_self"`   |
-| `text`    | `text`    | es: Ruta que redirige del card image en: Route of redirect card image Example: localhost/css3 | `string`     | `''`        |
-| `url`     | `url`     | es: Ruta que redirige del card image en: Route of redirect card image Example: localhost/css3 | `string`     | `'#'`       |
-| `width`   | `width`   |                                                                                               | `string`     | `undefined` |
+| Property        | Attribute        | Description | Type      | Default      |
+| --------------- | ---------------- | ----------- | --------- | ------------ |
+| `background`    | `background`     |             | `string`  | `''`         |
+| `borderStyle`   | `border-style`   |             | `string`  | `''`         |
+| `borderWidth`   | `border-width`   |             | `string`  | `''`         |
+| `color`         | `color`          |             | `string`  | `''`         |
+| `decoration`    | `decoration`     |             | `string`  | `''`         |
+| `hyperlinkType` | `hyperlink-type` |             | `string`  | `''`         |
+| `onlyDesktop`   | `only-desktop`   |             | `boolean` | `false`      |
+| `position`      | `position`       |             | `string`  | `'relative'` |
 
-
-## Dependencies
-
-### Used by
-
- - [sami-dropdown](../../../molecules/dropdowns/dropdown)
- - [sami-list-group](../../../molecules/lists/list-group)
- - [sami-sidebar-dashboard](../../../organims/sidebars/sidebar-dashboard)
- - [sami-subscriber](../../../organims/subscribers/subscriber)
-
-### Graph
-```mermaid
-graph TD;
-  sami-dropdown --> sami-hyperlink
-  sami-list-group --> sami-hyperlink
-  sami-sidebar-dashboard --> sami-hyperlink
-  sami-subscriber --> sami-hyperlink
-  style sami-hyperlink fill:#f9f,stroke:#333,stroke-width:4px
-```
 
 ----------------------------------------------
 

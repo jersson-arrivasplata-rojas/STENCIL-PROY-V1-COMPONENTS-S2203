@@ -1,0 +1,39 @@
+@import "../../../../global/base.scss";
+$wrap: "sami-input";
+
+#{$wrap} {
+  & .#{$wrap}-inline {
+    background: none;
+    border-radius: 0;
+    height: 56px;
+    width: 240px;
+    outline: none;
+    border-style: solid;
+    border-color: var(--sami-dark);
+    font-size: 14px;
+    text-align: center;
+  }
+
+  & .#{$wrap}-subscribe {
+    height: 56px;
+    border-radius: 0;
+    display: block;
+    color: var(--sami-white);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.2rem;
+    border-width: 2px;
+    background: var(--sami-screen);
+    border-style: none;
+    cursor: pointer;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  & .#{$wrap}-subscribe:hover {
+    background: var(--sami-screen);
+    opacity: 0.8;
+  }
+}

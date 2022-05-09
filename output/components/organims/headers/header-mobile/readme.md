@@ -18,30 +18,10 @@
 
 ## Properties
 
-| Property                   | Attribute                    | Description | Type     | Default     |
-| -------------------------- | ---------------------------- | ----------- | -------- | ----------- |
-| `hyperlinkBackground`      | `hyperlink-background`       |             | `string` | `undefined` |
-| `hyperlinkBackgroundImage` | `hyperlink-background-image` |             | `string` | `undefined` |
-| `hyperlinkBorderRadius`    | `hyperlink-border-radius`    |             | `string` | `undefined` |
-| `hyperlinkHeight`          | `hyperlink-height`           |             | `string` | `undefined` |
-| `hyperlinkMaxWidth`        | `hyperlink-max-width`        |             | `string` | `undefined` |
-| `hyperlinkTarget`          | `hyperlink-target`           |             | `string` | `undefined` |
-| `hyperlinkUrl`             | `hyperlink-url`              |             | `string` | `undefined` |
-| `hyperlinkWidth`           | `hyperlink-width`            |             | `string` | `undefined` |
+| Property   | Attribute  | Description | Type     | Default   |
+| ---------- | ---------- | ----------- | -------- | --------- |
+| `position` | `position` |             | `string` | `'fixed'` |
 
-
-## Dependencies
-
-### Depends on
-
-- [sami-hyperlink-image](../../../atoms/hyperlinks/hyperlink-image)
-
-### Graph
-```mermaid
-graph TD;
-  sami-header-mobile --> sami-hyperlink-image
-  style sami-header-mobile fill:#f9f,stroke:#333,stroke-width:4px
-```
 
 ----------------------------------------------
 
