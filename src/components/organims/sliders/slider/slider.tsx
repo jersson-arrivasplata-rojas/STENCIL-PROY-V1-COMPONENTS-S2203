@@ -2,11 +2,12 @@ import { Component, Element, Prop, State, h } from '@stencil/core';
 
 @Component({
 	tag: 'sami-slider',
-	styleUrl: 'slider.scss',
-	shadow: true
+	styleUrl: 'slider.scss'
 })
 export class Slider {
-	@Element() el: HTMLElement;
+	//@Element() el: HTMLElement;
+	@Element() host: HTMLDivElement;
+
 	@Prop() showStatus: boolean = false;
 	@State() currentSlideNumber: number = 0;
 	private slidesCount: number = 0;
@@ -17,17 +18,24 @@ export class Slider {
 		prev: null,
 		next: null
 	};
+	class: string[] = [];
 
+	constructor() {
+		this.class = (this.host.className).split(' ');
+	}
 	componentWillLoad() {
-		this.slides = this.el.querySelectorAll('li');
+		this.slides = this.host.querySelectorAll('li');
 		this.slidesCount = this.slides.length;
 	}
 
 	componentDidLoad() {
-		this.sliderList = this.el.shadowRoot.querySelector('ul');
+		//this.sliderList = this.el.shadowRoot.querySelector('ul');
+		this.sliderList = this.host.querySelector('ul');
 		this.slideWidth = (this.slides[0] as HTMLElement).offsetWidth;
-		for (let type in this.controls)
-			this.controls[type] = this.el.shadowRoot.querySelector('.btn_' + type);
+		for (let type in this.controls) {
+			//this.controls[type] = this.el.shadowRoot.querySelector('.btn_' + type);
+			this.controls[type] = this.host.querySelector('.btn_' + type);
+		}
 		this.updateControls();
 	}
 
@@ -44,25 +52,32 @@ export class Slider {
 	}
 
 	updateControls() {
-		this.switchControl('prev', (this.currentSlideNumber === 0)? false : true);
-		this.switchControl('next', (this.currentSlideNumber === this.slidesCount - 1)? false : true);
+		this.switchControl('prev', (this.currentSlideNumber === 0) ? false : true);
+		this.switchControl('next', (this.currentSlideNumber === this.slidesCount - 1) ? false : true);
 	}
 
 	switchControl(type: string, enabled: boolean) {
 		if (this.controls[type])
 			this.controls[type].disabled = !enabled;
 	}
+	private getClass(): string {
 
+		return this.class.join(' ');
+	}
+
+	validateSlideCount() {
+		return !Boolean(this.slidesCount > 1);
+	}
 	render() {
 		return (
-			<figure>
-				<button type="button" class="btn_next" onClick={this.slide.bind(this, 1)}>&gt;</button>
-				<button type="button" class="btn_prev" onClick={this.slide.bind(this, -1)}>&lt;</button>
-				<ul>
-					<slot/>
+			<div class={`sami-slider ${this.getClass()}`}>
+				<button type="button" class="sami-slider___button btn_next" onClick={this.slide.bind(this, 1)} hidden={this.validateSlideCount()}>&gt;</button>
+				<button type="button" class="sami-slider___button btn_prev" onClick={this.slide.bind(this, -1)} hidden={this.validateSlideCount()}>&lt;</button>
+				<ul class={`sami-slider___ul`}>
+					<slot />
 				</ul>
-				{this.showStatus && <figcaption>Slide {this.currentSlideNumber + 1}/{this.slidesCount}</figcaption>}
-			</figure>
+				{this.showStatus && <div>Slide {this.currentSlideNumber + 1}/{this.slidesCount}</div>}
+			</div>
 		);
 	}
 

@@ -28,9 +28,9 @@ $wrap: "sami-card-code";
   & div.#{$wrap}:not(.active),
   div.#{$wrap}.active {
     @media (max-width: 550px) {
-      /*width: 360px;*/
+      /*width: 360px;  width: 100%;*/
 
-      width: 100%;
+    
       margin: auto;
       & div.#{$wrap}___section-two {
         & p.#{$wrap}___title {
@@ -69,8 +69,8 @@ $wrap: "sami-card-code";
   }
   & div.#{$wrap}:not(.active) {
     @media (max-width: 550px) {
-      /*width: 360px;*/
-       width: 100%;
+      /*width: 360px; width: 100%;*/
+      
       & div.#{$wrap}___section-one {
         width: 55px;
         flex-direction: column-reverse;
@@ -113,8 +113,8 @@ $wrap: "sami-card-code";
 
   & div.#{$wrap}.active {
     @media (max-width: 550px) {
-       /*width: 360px;*/
-       width: 100%;
+       /*width: 360px;width: 100%;*/
+       
       & div.#{$wrap}___section-two {
         padding-left: 0px;
         & div.#{$wrap}___content {
@@ -137,7 +137,7 @@ $wrap: "sami-card-code";
     position: relative;
     border-style: solid;
     border-width: 2px;
-    background: rgb(var(--sami-white));
+    background: var(--sami-white);
 
     & div.#{$wrap}___section-one {
       position: absolute;
@@ -159,12 +159,12 @@ $wrap: "sami-card-code";
           padding-top: 0.4rem;
           padding-bottom: 0.4rem;
           font-size: 14px;
-          color: rgb(var(--sami-white-800));
+          color: var(--sami-white-800);
           text-transform: uppercase;
         }
         & p.#{$wrap}___subtitle {
           font-size: 13px;
-          color: rgb(var(--sami-white-900));
+          color: var(--sami-white-900);
         }
       }
       & div.#{$wrap}___img {
@@ -193,7 +193,7 @@ $wrap: "sami-card-code";
       }
       & p.#{$wrap}___subtitle {
         font-size: 14px;
-        color: rgb(var(--sami-muted));
+        color: var(--sami-muted);
       }
       & p.#{$wrap}___author {
         position: absolute;

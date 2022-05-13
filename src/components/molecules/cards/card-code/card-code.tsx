@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Listen, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'sami-card-code',
@@ -46,11 +46,32 @@ export class CardCode {
   @Prop() paddingRight?: string;
   @Prop() paddingLeft?: string;
   @Prop() marginTop?: string;
-
   @Prop() type?: string = "";
+  @State() width?: string;
+
+  @Listen('resize', { target: 'window' })
+  handleScroll(e: Event) {
+    //const array = Array.from(e.srcElement['path']);
+    const target = e.target as Window;
+    this.validate(target);//target
+  }
+
+  componentDidLoad() {
+    this.validate(window);//window
+
+  }
+
+  private validate(target: Window) {//target: Window
+    if (target['innerWidth'] <= 550) {
+      this.width = ( target['innerWidth'] - 10) + 'px';
+    } else {
+      this.width = '';
+    }
+  }
 
   private getStyles() {
     const styles = Object.assign({});
+    (this.width) ? styles.width = this.width : delete styles.width;
     (this.flexDirection) ? styles.flexDirection = `url(${this.flexDirection})` : delete styles.flexDirection;
     (this.backgroundColor) ? styles.borderColor = `${this.backgroundColor}` : delete styles.borderColor;
 
@@ -77,7 +98,7 @@ export class CardCode {
 
     return styles;
   }
-  
+
   private getContentStyles() {
     const styles = Object.assign({});
     (this.paddingRight) ? styles.paddingRight = `${this.paddingRight}` : delete styles.paddingRight;
@@ -89,6 +110,7 @@ export class CardCode {
 
   render() {
     //{this.cardTag ? <sami-card-tag text={this.text}></sami-card-tag>: (this.cardTag as HTMLElement)}
+    this.validate(window);
     return (
 
       <div class={{ 'sami-card-code': true, 'active': this.box }} style={this.getStyles()} id={`sami-card-code___` + this.identify}>
@@ -110,7 +132,7 @@ export class CardCode {
           <p class="sami-card-code___subtitle" style={{ 'fontSize': this.contentSubtitleFontSize }}>
             {this.contentSubtitle}
           </p>
-          <div class="sami-card-code___content" style={!this.preview ? this.getContentStyles():''}>
+          <div class="sami-card-code___content" style={!this.preview ? this.getContentStyles() : ''}>
             {this.preview ? <div class='sami-card-code___preview-html'><slot name="view-html"></slot></div> : <slot name="view-html"></slot>}
           </div>
           <p class='sami-card-code___author' style={this.getAuthorStyles()}>

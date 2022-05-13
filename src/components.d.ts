@@ -45,12 +45,6 @@ export namespace Components {
         "text": string;
         "width": string;
     }
-    interface SamiFlexCode {
-    }
-    interface SamiFlexCodeView {
-        "carousel": boolean;
-        "identify"?: string;
-    }
     interface SamiFooter {
     }
     interface SamiForm {
@@ -168,6 +162,21 @@ export namespace Components {
         "listGroupData": string | Array<IListGroup>;
     }
     interface SamiTag {
+        "align"?: string;
+        "background": string;
+        "borderRadius": string;
+        "bottom": string;
+        "color": string;
+        "fontWeight": string;
+        "height": string;
+        "left": string;
+        "lineHeight": string;
+        "position"?: string;
+        "right": string;
+        "top": string;
+        "transition": string;
+        "width": string;
+        "zIndex": string;
     }
 }
 declare global {
@@ -194,18 +203,6 @@ declare global {
     var HTMLSamiDropdownElement: {
         prototype: HTMLSamiDropdownElement;
         new (): HTMLSamiDropdownElement;
-    };
-    interface HTMLSamiFlexCodeElement extends Components.SamiFlexCode, HTMLStencilElement {
-    }
-    var HTMLSamiFlexCodeElement: {
-        prototype: HTMLSamiFlexCodeElement;
-        new (): HTMLSamiFlexCodeElement;
-    };
-    interface HTMLSamiFlexCodeViewElement extends Components.SamiFlexCodeView, HTMLStencilElement {
-    }
-    var HTMLSamiFlexCodeViewElement: {
-        prototype: HTMLSamiFlexCodeViewElement;
-        new (): HTMLSamiFlexCodeViewElement;
     };
     interface HTMLSamiFooterElement extends Components.SamiFooter, HTMLStencilElement {
     }
@@ -338,8 +335,6 @@ declare global {
         "sami-card-code": HTMLSamiCardCodeElement;
         "sami-card-image": HTMLSamiCardImageElement;
         "sami-dropdown": HTMLSamiDropdownElement;
-        "sami-flex-code": HTMLSamiFlexCodeElement;
-        "sami-flex-code-view": HTMLSamiFlexCodeViewElement;
         "sami-footer": HTMLSamiFooterElement;
         "sami-form": HTMLSamiFormElement;
         "sami-grid": HTMLSamiGridElement;
@@ -399,12 +394,6 @@ declare namespace LocalJSX {
         "right"?: string;
         "text"?: string;
         "width"?: string;
-    }
-    interface SamiFlexCode {
-    }
-    interface SamiFlexCodeView {
-        "carousel"?: boolean;
-        "identify"?: string;
     }
     interface SamiFooter {
     }
@@ -519,14 +508,27 @@ declare namespace LocalJSX {
         "listGroupData"?: string | Array<IListGroup>;
     }
     interface SamiTag {
+        "align"?: string;
+        "background"?: string;
+        "borderRadius"?: string;
+        "bottom"?: string;
+        "color"?: string;
+        "fontWeight"?: string;
+        "height"?: string;
+        "left"?: string;
+        "lineHeight"?: string;
+        "position"?: string;
+        "right"?: string;
+        "top"?: string;
+        "transition"?: string;
+        "width"?: string;
+        "zIndex"?: string;
     }
     interface IntrinsicElements {
         "sami-card": SamiCard;
         "sami-card-code": SamiCardCode;
         "sami-card-image": SamiCardImage;
         "sami-dropdown": SamiDropdown;
-        "sami-flex-code": SamiFlexCode;
-        "sami-flex-code-view": SamiFlexCodeView;
         "sami-footer": SamiFooter;
         "sami-form": SamiForm;
         "sami-grid": SamiGrid;
@@ -558,8 +560,6 @@ declare module "@stencil/core" {
             "sami-card-code": LocalJSX.SamiCardCode & JSXBase.HTMLAttributes<HTMLSamiCardCodeElement>;
             "sami-card-image": LocalJSX.SamiCardImage & JSXBase.HTMLAttributes<HTMLSamiCardImageElement>;
             "sami-dropdown": LocalJSX.SamiDropdown & JSXBase.HTMLAttributes<HTMLSamiDropdownElement>;
-            "sami-flex-code": LocalJSX.SamiFlexCode & JSXBase.HTMLAttributes<HTMLSamiFlexCodeElement>;
-            "sami-flex-code-view": LocalJSX.SamiFlexCodeView & JSXBase.HTMLAttributes<HTMLSamiFlexCodeViewElement>;
             "sami-footer": LocalJSX.SamiFooter & JSXBase.HTMLAttributes<HTMLSamiFooterElement>;
             "sami-form": LocalJSX.SamiForm & JSXBase.HTMLAttributes<HTMLSamiFormElement>;
             "sami-grid": LocalJSX.SamiGrid & JSXBase.HTMLAttributes<HTMLSamiGridElement>;

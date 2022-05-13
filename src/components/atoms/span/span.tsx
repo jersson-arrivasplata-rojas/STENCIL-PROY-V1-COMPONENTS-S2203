@@ -1,4 +1,5 @@
 import { Component, Element, h } from '@stencil/core';
+//import { Utils } from '@jersson-arrivasplata-rojas/sami-utils/src/index';
 
 @Component({
   tag: 'sami-span',
@@ -13,7 +14,6 @@ export class Span {
     this.host.className ='';
   }
   private getClass(): string {
-
     return this.class.join(' ');
   }
 
