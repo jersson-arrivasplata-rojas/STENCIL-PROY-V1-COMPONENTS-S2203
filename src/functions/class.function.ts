@@ -2,8 +2,11 @@ import { BackgroundColorEnum } from "../enum/background-color.enum";
 import { BorderStyleEnum } from "../enum/border-style.enum";
 import { BorderWidthEnum } from "../enum/border-width.enum";
 import { ColorEnum } from "../enum/color.enum";
+import { DisplayEnum } from "../enum/display.enum";
 import { FontWeigthEnum } from "../enum/font-weigth.enum";
+import { JustifyItemsEnum } from "../enum/justify-items.enum";
 import { ListStyleEnum } from "../enum/list-style.enum";
+import { MarginEnum } from "../enum/margin";
 import { NumberEnum } from "../enum/number.enum";
 import { ObjectFitEnum } from "../enum/object-fit.enum";
 import { OpacityEnum } from "../enum/opacity.enum";
@@ -54,6 +57,12 @@ export function textAlign(text: string) {
   }
   return '';
 }
+export function justifyItems(text: string) {
+  if (text && JustifyItemsEnum[(text).toUpperCase()]) {
+    return 'sami-justify-items-' + JustifyItemsEnum[text.toUpperCase()];
+  }
+  return '';
+}
 export function textTransform(text: string) {
   if (text && TextTransformEnum[(text).toUpperCase()]) {
     return 'sami-text-transform-' + TextTransformEnum[text.toUpperCase()];
@@ -87,6 +96,18 @@ export function filterInvert(text: string) {
 export function objectFit(text: string) {
   if (text && (ObjectFitEnum[(text).toUpperCase()])) {
     return 'sami-object-fit-' + (ObjectFitEnum[(text).toUpperCase()]);
+  }
+  return '';
+}
+export function display(text: string) {
+  if (text && (DisplayEnum[(text).toUpperCase()])) {
+    return 'sami-display-' + (DisplayEnum[(text).toUpperCase()]);
+  }
+  return '';
+}
+export function margin(text: string) {
+  if (text && (MarginEnum[(text).toUpperCase()])) {
+    return 'sami-margin-' + (MarginEnum[(text).toUpperCase()]);
   }
   return '';
 }

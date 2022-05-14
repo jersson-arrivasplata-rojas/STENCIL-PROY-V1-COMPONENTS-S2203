@@ -50,7 +50,9 @@ export namespace Components {
     interface SamiForm {
     }
     interface SamiGrid {
+        "align"?: string;
         "padding"?: string;
+        "type"?: string;
     }
     interface SamiHeader {
         "backgroundColor": string;
@@ -95,8 +97,10 @@ export namespace Components {
     }
     interface SamiImg {
         "alt"?: string;
+        "display"?: string;
         "filterInvert"?: string;
         "height"?: string;
+        "margin"?: string;
         "objectFit"?: string;
         "opacity"?: string;
         "src"?: string;
@@ -400,7 +404,9 @@ declare namespace LocalJSX {
     interface SamiForm {
     }
     interface SamiGrid {
+        "align"?: string;
         "padding"?: string;
+        "type"?: string;
     }
     interface SamiHeader {
         "backgroundColor"?: string;
@@ -445,8 +451,10 @@ declare namespace LocalJSX {
     }
     interface SamiImg {
         "alt"?: string;
+        "display"?: string;
         "filterInvert"?: string;
         "height"?: string;
+        "margin"?: string;
         "objectFit"?: string;
         "opacity"?: string;
         "src"?: string;

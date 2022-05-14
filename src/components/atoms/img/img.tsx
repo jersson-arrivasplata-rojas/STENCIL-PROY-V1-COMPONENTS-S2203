@@ -1,5 +1,5 @@
 import { Component, Element, h, Prop } from '@stencil/core';
-import { filterInvert, objectFit, opacity } from '../../../functions/class.function';
+import { display, filterInvert, margin, objectFit, opacity } from '../../../functions/class.function';
 
 @Component({
   tag: 'sami-img',
@@ -22,15 +22,25 @@ export class Img {
   @Prop() opacity?: string = '0';
   @Prop() filterInvert?: string = '0';
   @Prop() objectFit?: string = 'cover';
+  @Prop() display?: string = 'block';
+  @Prop() margin?: string = 'auto';
 
   constructor() {
-    this.class = (this.host.className).split(' ');
   }
+  
+  componentWillLoad(){
+    const className: string = this.host.className;
+    this.class = (className).split(' ');
+    this.host.className = '';
+  }
+
   private getClass(): string {
 
     this.class.push(opacity(this.opacity));
     this.class.push(filterInvert(this.filterInvert));
     this.class.push(objectFit(this.objectFit));
+    this.class.push(display(this.display));
+    this.class.push(margin(this.margin));
 
 
     return this.class.join(' ');

@@ -1,10 +1,12 @@
-import { Component, h, Listen, Prop, State } from '@stencil/core';
+import { Devices } from '@jersson-arrivasplata-rojas/sami-utils/dist/lib';
+import { Component, Element, h, Listen, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'sami-card-code',
   styleUrl: 'card-code.scss'
 })
 export class CardCode {
+  @Element() host: HTMLDivElement;
 
   @Prop() box?: boolean = false;
 
@@ -47,7 +49,11 @@ export class CardCode {
   @Prop() paddingLeft?: string;
   @Prop() marginTop?: string;
   @Prop() type?: string = "";
-  @State() width?: string;
+  @State() width: string = "";
+  class: string[] = [];
+
+  constructor() {
+  }
 
   @Listen('resize', { target: 'window' })
   handleScroll(e: Event) {
@@ -55,15 +61,24 @@ export class CardCode {
     const target = e.target as Window;
     this.validate(target);//target
   }
-
+  componentWillLoad(){
+    const className: string = this.host.className;
+    this.class = (className).split(' ');
+    this.host.className = '';
+    
+  }
   componentDidLoad() {
     this.validate(window);//window
 
   }
 
-  private validate(target: Window) {//target: Window
-    if (target['innerWidth'] <= 550) {
-      this.width = ( target['innerWidth'] - 10) + 'px';
+  private validate(target: Window) {//target: Window //innerWidth
+    let measures = {
+      'width': (new Devices().isMobile()) ? target['screen']['width'] : target['innerWidth'],
+    };
+    if (measures.width <= 550) {
+      this.host.parentElement.parentElement.parentElement.style.maxWidth = (measures.width) + 'px';
+      this.width = (measures.width) + 'px';
     } else {
       this.width = '';
     }
@@ -107,13 +122,16 @@ export class CardCode {
 
     return styles;
   }
+  private getClass(): string {
 
+    return this.class.join(' ');
+  }
   render() {
+    //{{ 'sami-card-code': true, 'active': this.box }} 
     //{this.cardTag ? <sami-card-tag text={this.text}></sami-card-tag>: (this.cardTag as HTMLElement)}
     this.validate(window);
     return (
-
-      <div class={{ 'sami-card-code': true, 'active': this.box }} style={this.getStyles()} id={`sami-card-code___` + this.identify}>
+      <div class={`sami-card-code ${(this.box) ? 'active' : ''} ${this.getClass()}`} style={this.getStyles()} id={`sami-card-code___` + this.identify}>
         <div class={{ 'sami-card-code___section-one': true }} style={this.getSectionOneStyles()}>
           <div class="sami-card-code___header ">
             <p class={{ 'sami-card-code___title': true }} style={{ 'fontSize': this.titleImageFontSize }}>{this.titleImage}</p>

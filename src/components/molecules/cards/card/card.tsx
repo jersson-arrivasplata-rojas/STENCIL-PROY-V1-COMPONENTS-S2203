@@ -10,8 +10,12 @@ export class Card {
   class: string[] = [];
 
   constructor() {
-    this.class = (this.host.className).split(' ');
+  }
+  componentWillLoad(){
+    const className: string = this.host.className;
+    this.class = (className).split(' ');
     this.host.className = '';
+
     this.children = Array.from(this.host.children);
 
     (this.children).forEach(x => {
@@ -28,6 +32,7 @@ export class Card {
         x.classList.add('sami-card___footer')
       }
     });
+    
   }
   private getClass(): string {
 

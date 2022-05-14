@@ -12,17 +12,17 @@ export class CardImage {
 
   samiImage: Element;
 
+  class: string[] = [];
   constructor() {
-    console.log(this.host)
+    //console.log(this.host)
   }
-
-  componentDidLoad() {
-
-  }
-  componentWillRender() {
-
+  componentWillLoad(){
+    const className: string = this.host.className;
+    this.class = (className).split(' ');
+    this.host.className = '';
+    
     this.children = Array.from(this.host.children);
-    const samTag = (this.children.find(element => (element.tagName).toLowerCase() === 'sami-tag'));
+    const samTag = (this.children.find(element => (element.tagName).toLowerCase() === 'sami-span'));
     (samTag) ? samTag.slot = "tag" : null;
     const samImg = (this.children.find(element => (element.tagName).toLowerCase() === 'sami-img'));
     (samImg) ? samImg.slot = "background" : null;
@@ -38,10 +38,22 @@ export class CardImage {
 
     }
   }
+  componentDidLoad() {
+
+  }
+  componentWillRender() {
+
+ 
+  }
+
+  private getClass(): string {
+
+    return this.class.join(' ');
+  }
 
   render() {
     return (
-      <a class="sami-card-image" href={this.url}>
+      <a class={`sami-card-image ${this.getClass()}`} href={this.url}>
         <slot name="tag"></slot>
         <slot name="background"></slot>
         <div class="sami-card-image___content">

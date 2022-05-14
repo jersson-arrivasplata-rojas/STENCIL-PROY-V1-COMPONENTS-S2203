@@ -1,5 +1,5 @@
 import { Component, h, State, Listen, Element, Method } from '@stencil/core';
-
+import { Devices } from '@jersson-arrivasplata-rojas/sami-utils/dist/lib';
 @Component({
   tag: 'sami-sidebar',
   styleUrl: 'sidebar.scss'
@@ -23,9 +23,13 @@ export class Sidebar {
 
 
   constructor() {
-    this.class = (this.host.className).split(' ');
-    this.host.className = '';
+  }
 
+  componentWillLoad(){
+    const className: string = this.host.className;
+    this.class = (className).split(' ');
+    this.host.className = '';
+    
     this.children = Array.from(this.host.children);
 
     (this.children).forEach(x => {
@@ -46,6 +50,7 @@ export class Sidebar {
       }
     });
   }
+
   componentDidLoad() {
     this.validateMenu(window);//window
 
@@ -55,8 +60,7 @@ export class Sidebar {
 
   private validateMenu(target: Window) {//target: Window
 
-    if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
-
+    if (!(new Devices().isMobile())) {
       this.isMenuOpen = !this.isMenuOpen;
       if (target['innerWidth'] < 770) {
         this.isMobile = true;

@@ -32,9 +32,13 @@ export class Hyperlink {
   ctrlClick?: ((this: GlobalEventHandlers, ev: MouseEvent) => any) | null = () => { };
 
   constructor() {
-    this.class = (this.host.className).split(' ');
-    this.host.className = '';
+  }
 
+
+  componentWillLoad(){
+    const className: string = this.host.className;
+    this.class = (className).split(' ');
+    this.host.className = '';
     if(this.ctrlClick.length>0){
 
       this.ctrlClick = this.host.onclick;

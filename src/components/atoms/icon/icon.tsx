@@ -7,15 +7,25 @@ import { Component, Element, h } from '@stencil/core';
 export class Icon {
   @Element() host: HTMLFormElement;
   children: Element[];
-  class: string='';
+  class: string[] = [];
   constructor() {
-    this.class = this.host.className;
-    this.host.className ='';
+  }
+  componentWillLoad(){
+    const className: string = this.host.className;
+    this.class = (className).split(' ');
+    this.host.className = '';
+    
+  }
+
+
+  private getClass(): string {
+
+    return this.class.join(' ');
   }
 
   render() {
     return (
-      <i class={`sami-icon ${this.class}`}></i>
+      <i class={`sami-icon ${this.getClass()}`}></i>
     );
   }
 

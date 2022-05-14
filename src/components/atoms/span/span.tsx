@@ -10,9 +10,14 @@ export class Span {
   children: Element[];
   class: string[] = [];
   constructor() {
-    this.class = (this.host.className).split(' ');
-    this.host.className ='';
   }
+  componentWillLoad(){
+    const className: string = this.host.className;
+    this.class = (className).split(' ');
+    this.host.className = '';
+    
+  }
+
   private getClass(): string {
     return this.class.join(' ');
   }

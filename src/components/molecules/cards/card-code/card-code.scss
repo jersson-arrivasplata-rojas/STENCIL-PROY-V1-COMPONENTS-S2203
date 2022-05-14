@@ -133,12 +133,11 @@ $wrap: "sami-card-code";
   }
   & div.#{$wrap} {
     height: 320px;
-    width: 520px;
+    width: 516px;
     position: relative;
     border-style: solid;
     border-width: 2px;
     background: var(--sami-white);
-
     & div.#{$wrap}___section-one {
       position: absolute;
       left: 0;
@@ -210,6 +209,7 @@ $wrap: "sami-card-code";
         line-height: 1.2;
         & code {
           background: transparent;
+          text-align: left;
           padding: 0;
         }
       }

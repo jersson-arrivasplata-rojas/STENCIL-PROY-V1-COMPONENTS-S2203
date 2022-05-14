@@ -24,9 +24,14 @@ export class ListItem {
   //@Prop({"reflect": true}) subtitle?: boolean = false;
 
   constructor() {
-    this.class = (this.host.className).split(' ');
-    this.host.className = '';
 
+  }
+
+  componentWillLoad(){
+    const className: string = this.host.className;
+    this.class = (className).split(' ');
+    this.host.className = '';
+    
   }
   private getClass(): string {
 

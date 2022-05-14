@@ -15,8 +15,13 @@ export class Subscriber {
   @State() isOpen: boolean = false;
 
   constructor() {
-    this.class = (this.host.className).split(' ');
-    this.host.className = '';
+  }
+	componentWillLoad() {
+		
+		const className: string = this.host.className;
+		this.class = (className).split(' ');
+		this.host.className = '';
+
     this.children = Array.from(this.host.children);
     (this.children).forEach(x => {
       const part = Array.from(x['part']);
@@ -30,8 +35,7 @@ export class Subscriber {
         x.classList.add('sami-subscriber___body')
       }*/
     })
-  }
-
+	}
   @Method()
   async show() {
     this.isOpen = !this.isOpen;

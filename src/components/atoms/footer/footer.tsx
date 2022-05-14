@@ -17,11 +17,17 @@ export class Footer {
   //@Prop() class?: string = '';
 
   constructor() {
-    this.class = (this.host.className).split(' ');
-    this.host.className = '';
   }
-  private getClass(): string {
-    return this.class.join(' ');
+  componentWillLoad(){
+    const className: string = this.host.className;
+    this.class = (className).split(' ');
+    this.host.className = '';
+  
+    this.children = Array.from(this.host.children);
+    const samParagraph = (this.children.find(element => (element.tagName).toLowerCase() === 'sami-paragraph'));
+    (samParagraph) ? samParagraph.slot = "footer" : null;
+
+    
   }
   componentDidLoad() {
 
@@ -29,11 +35,12 @@ export class Footer {
   componentWillRender() {
 
     //this.host.innerHTML = '';
-    this.children = Array.from(this.host.children);
-    const samParagraph = (this.children.find(element => (element.tagName).toLowerCase() === 'sami-paragraph'));
-    (samParagraph) ? samParagraph.slot = "footer" : null;
   }
 
+  
+  private getClass(): string {
+    return this.class.join(' ');
+  }
   render() {
     return (
       <footer class={`sami-footer ${this.getClass()}`}>

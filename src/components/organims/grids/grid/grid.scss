@@ -4,30 +4,42 @@ $wrap: "sami-grid";
     & div.#{$wrap} {
         background: transparent;
         display: grid;
+    }
+    /*#inicio .#{$wrap}___card*/
+    & div.#{$wrap}.#{$wrap}___card {
         grid-column-gap: var(--sami-spacing-l);
         grid-row-gap:var(--sami-spacing-l);
-        /*width: 100%;*/
         grid-template-columns: repeat(4, 1fr);
     }
-
     @media (max-width: 1490px) {
-        & div.#{$wrap} {
+        & div.#{$wrap}.#{$wrap}___card  {
             grid-template-columns: repeat(3, 1fr);
         }
     }
     @media (max-width: 960px) {
-        & div.#{$wrap} {
+        & div.#{$wrap}.#{$wrap}___card  {
             grid-template-columns: repeat(3, 1fr);
         }
     }
     @media (max-width: 769px) {
-        & div.#{$wrap} {
+        & div.#{$wrap}.#{$wrap}___card  {
             grid-template-columns: repeat(2, 1fr);
         }
     }
     @media (max-width: 540px) {
-        & div.#{$wrap} {
+        & div.#{$wrap}.#{$wrap}___card  {
             grid-template-columns: repeat(1, 1fr);
         }
     }
+    /*#fin .#{$wrap}___card*/
+    /*#inicio .#{$wrap}___slider*/
+    & div.#{$wrap}.#{$wrap}___slider {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 1390px) {
+        & div.#{$wrap}.#{$wrap}___slider  {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    /*#fin .#{$wrap}___slider*/
 }

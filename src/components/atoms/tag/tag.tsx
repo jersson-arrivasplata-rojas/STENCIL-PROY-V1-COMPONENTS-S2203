@@ -30,8 +30,12 @@ export class Tag {
    * Example: filter 200ms linear, transform 200ms linear
    */
   constructor() {
-    this.class = (this.host.className).split(' ');
+  }
+  componentWillLoad(){
+    const className: string = this.host.className;
+    this.class = (className).split(' ');
     this.host.className = '';
+    
   }
   private getClass(): string {
     this.class.push(position(this.position));

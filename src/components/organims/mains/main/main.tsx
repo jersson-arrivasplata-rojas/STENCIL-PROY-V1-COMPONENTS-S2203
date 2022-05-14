@@ -11,8 +11,12 @@ export class Main {
   class: string[] = [];
 
   constructor() {
-    this.class = (this.host.className).split(' ');
+  }
+  componentWillLoad(){
+    const className: string = this.host.className;
+    this.class = (className).split(' ');
     this.host.className = '';
+    
   }
   private getStyles() {
     const styles = Object.assign({});

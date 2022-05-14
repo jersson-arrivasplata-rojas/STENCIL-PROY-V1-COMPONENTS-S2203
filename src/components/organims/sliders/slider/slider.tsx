@@ -11,7 +11,7 @@ export class Slider {
 	@Prop() showStatus: boolean = false;
 	@State() currentSlideNumber: number = 0;
 	private slidesCount: number = 0;
-	private slides: NodeList;
+	private slides: Element[];
 	private sliderList: HTMLElement;
 	private slideWidth: number = 0;
 	private controls: object = {
@@ -21,20 +21,27 @@ export class Slider {
 	class: string[] = [];
 
 	constructor() {
-		this.class = (this.host.className).split(' ');
 	}
+	
 	componentWillLoad() {
-		this.slides = this.host.querySelectorAll('li');
+		
+		const className: string = this.host.className;
+		this.class = (className).split(' ');
+		this.host.className = '';
+
+		//this.slides = this.host.querySelectorAll('li');
+		this.slides = Array.from(this.host.children);
+
 		this.slidesCount = this.slides.length;
 	}
 
 	componentDidLoad() {
 		//this.sliderList = this.el.shadowRoot.querySelector('ul');
-		this.sliderList = this.host.querySelector('ul');
+		this.sliderList = this.host.querySelector('ul.sami-slider___ul');
 		this.slideWidth = (this.slides[0] as HTMLElement).offsetWidth;
 		for (let type in this.controls) {
 			//this.controls[type] = this.el.shadowRoot.querySelector('.btn_' + type);
-			this.controls[type] = this.host.querySelector('.btn_' + type);
+			this.controls[type] = this.host.querySelector('.sami-slider___button_' + type);
 		}
 		this.updateControls();
 	}
@@ -71,8 +78,8 @@ export class Slider {
 	render() {
 		return (
 			<div class={`sami-slider ${this.getClass()}`}>
-				<button type="button" class="sami-slider___button btn_next" onClick={this.slide.bind(this, 1)} hidden={this.validateSlideCount()}>&gt;</button>
-				<button type="button" class="sami-slider___button btn_prev" onClick={this.slide.bind(this, -1)} hidden={this.validateSlideCount()}>&lt;</button>
+				<button type="button" class="sami-slider___button sami-slider___button_next" onClick={this.slide.bind(this, 1)} hidden={this.validateSlideCount()}>&gt;</button>
+				<button type="button" class="sami-slider___button sami-slider___button_prev" onClick={this.slide.bind(this, -1)} hidden={this.validateSlideCount()}>&lt;</button>
 				<ul class={`sami-slider___ul`}>
 					<slot />
 				</ul>

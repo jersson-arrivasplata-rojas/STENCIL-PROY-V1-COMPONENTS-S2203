@@ -23,7 +23,26 @@ $sami-width-container: 1200px;
 $sami-muted: #6c757d;
 html {
     font-size: 10pt;
-  }
+}
+
+.sami-margin-auto {
+    margin: auto;
+}
+.sami-display-block {
+    display: block;
+}
+.sami-display-initial {
+    display: initial;
+}
+.sami-display-flex {
+    display: flex;
+}
+.sami-display-contents {
+    display: contents;
+}
+.sami-justify-items-center {
+    justify-items: center;
+}
 /*@import url('./global.scss');*/
 .sami-text-color-white {
     color: var(--sami-white);
@@ -56,7 +75,7 @@ html {
 .sami-position-relative {
     position: relative;
 }
-.sami-position-fixed{
+.sami-position-fixed {
     position: fixed;
 }
 .sami-border-style-solid {
@@ -498,3 +517,9 @@ html {
     padding-left: 3rem;
 }
 /*fin padding*/
+
+@media (min-width: 520px) {
+    .sami-desk-max-width-520 {
+        max-width: 520px !important;
+    }
+}

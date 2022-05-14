@@ -53,8 +53,11 @@ $wrap: "sami-slider";
 			opacity: 0.25;
 		}
 
-		&.btn_next {
+		&.#{$wrap}___button_next {
 			right: 0;
+		}
+		&.#{$wrap}___button_prev {
+			left: 0;
 		}
 	}
 }

@@ -17,6 +17,10 @@ export class Input {
   placeholder: string;
   value: string;
   constructor() {
+   
+  }
+  
+  componentWillLoad(){
     (Array.from(this.host.attributes)).forEach(x => {
       if (x && x['name'] === 'class'){
         this.class = (x['value']).split(' ');
@@ -28,6 +32,7 @@ export class Input {
       if (x && x['name'] === 'value') this.value = x['value'];
     });
   }
+
   private getClass(): string {
     if(this.inputType =='inline'){
       this.class.push('sami-input-inline');

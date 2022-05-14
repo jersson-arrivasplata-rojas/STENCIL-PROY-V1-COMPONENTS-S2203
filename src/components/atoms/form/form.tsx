@@ -11,13 +11,16 @@ export class Form {
   method: string;
   action: string;
   constructor() {
-    this.class = (this.host.className).split(' ');
+  }
+  componentWillLoad(){
+    const className: string = this.host.className;
+    this.class = (className).split(' ');
     this.host.className = '';
-
-
+    
     this.method = this.host.method;
     this.action = this.host.action;
   }
+
   private getClass(): string {
     return this.class.join(' ');
   }

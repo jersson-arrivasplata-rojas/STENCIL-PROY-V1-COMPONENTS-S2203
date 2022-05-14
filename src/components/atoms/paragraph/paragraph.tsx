@@ -28,7 +28,11 @@ export class Paragraph {
   @Prop() heading?: string = '';
 
   constructor(){
-    this.class = (this.host.className).split(' ');
+  }
+
+  componentWillLoad(){
+    const className: string = this.host.className;
+    this.class = (className).split(' ');
     this.host.className = '';
   }
 

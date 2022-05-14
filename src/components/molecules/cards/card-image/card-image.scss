@@ -1,20 +1,20 @@
 @import "../../../../global/base.scss";
 $wrap: "sami-card-image";
 
-:is(#{$wrap}, #{$wrap} a, #{$wrap} sami-img.#{$wrap}___background, #{$wrap} sami-img.#{$wrap}___background img) {
+:is(#{$wrap}, #{$wrap} a, #{$wrap} sami-img .#{$wrap}___background, #{$wrap} sami-img .#{$wrap}___background img) {
   height: 100%;
   width: 100%;
 }
-:is(#{$wrap} a.#{$wrap}, #{$wrap} sami-tag, #{$wrap} div.#{$wrap}___content, sami-img.#{$wrap}___background) {
+:is(#{$wrap} a.#{$wrap}, #{$wrap} sami-span, #{$wrap} div.#{$wrap}___content, sami-img .#{$wrap}___background) {
   position: absolute;
 }
 
-:is(#{$wrap} sami-img.#{$wrap}___background, #{$wrap} div.#{$wrap}___content) {
+:is(#{$wrap} sami-img .#{$wrap}___background, #{$wrap} div.#{$wrap}___content) {
   top: 0;
   left: 0;
 }
-/*, #{$wrap} sami-tag span*/
-:is(#{$wrap} sami-tag) {
+/*, #{$wrap} sami-span span*/
+:is(#{$wrap} sami-span) {
   background: var(--sami-white-900);
   color: var(--sami-dark);
 }
@@ -28,12 +28,10 @@ $wrap: "sami-card-image";
   display: block;
   margin: auto;
   & a.#{$wrap} {
-    & sami-img.#{$wrap}___background {
+    & sami-img .#{$wrap}___background {
       filter: brightness(0.75) saturate(1.2) contrast(0.85);
-      img.#{$wrap}___background {
-        border-radius: 10%;
-        max-width: fit-content;
-      }
+      border-radius: 10%;
+      max-width: fit-content;
     }
     & div.#{$wrap}___content {
       padding: var(--sami-spacing-l);
@@ -52,7 +50,7 @@ $wrap: "sami-card-image";
         /*text-shadow: 2px 2px 20px var(--sami-dark);*/
       }
     }
-    & sami-tag {
+    & sami-span {
       bottom: 0px;
       width: 40px;
       height: 25px;
@@ -73,7 +71,7 @@ $wrap: "sami-card-image";
   padding-bottom: 100%;
   width: 100%;
 }
-#{$wrap}:hover sami-tag {
+#{$wrap}:hover sami-span {
   transform: translate(7px, 7px);
 }
 /*
