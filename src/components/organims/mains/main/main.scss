@@ -3,7 +3,7 @@ $wrap: "sami-main";
 #{$wrap} {
   & div.#{$wrap} {
     height: 100%;
-    background: rgb(var(--sami-screen));
+    background: var(--sami-screen);
     margin-top: 0;
     width: calc(100% - 250px);
     float: right;

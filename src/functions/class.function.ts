@@ -1,3 +1,4 @@
+import { AlignItemsEnum } from "../enum/align-items.enum";
 import { BackgroundColorEnum } from "../enum/background-color.enum";
 import { BorderStyleEnum } from "../enum/border-style.enum";
 import { BorderWidthEnum } from "../enum/border-width.enum";
@@ -63,6 +64,12 @@ export function justifyItems(text: string) {
   }
   return '';
 }
+export function alignItems(text: string) {
+  if (text && AlignItemsEnum[(text).toUpperCase()]) {
+    return 'sami-align-items-' + AlignItemsEnum[text.toUpperCase()];
+  }
+  return '';
+}
 export function textTransform(text: string) {
   if (text && TextTransformEnum[(text).toUpperCase()]) {
     return 'sami-text-transform-' + TextTransformEnum[text.toUpperCase()];
@@ -111,3 +118,9 @@ export function margin(text: string) {
   }
   return '';
 }
+/*export function zIndex(text: string) {
+  if (text && (NumberEnum['NUMBER_' + (text).toUpperCase()])) {
+    return 'sami-z-index-' + (NumberEnum['NUMBER_' + (text).toUpperCase()]);
+  }
+  return '';
+}*/

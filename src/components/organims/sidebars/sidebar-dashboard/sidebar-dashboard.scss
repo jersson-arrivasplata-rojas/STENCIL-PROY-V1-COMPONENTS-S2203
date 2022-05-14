@@ -1,208 +1,145 @@
+$box-shadow: 0px 0px 0px 0px var(--sami-dark-200), 0px 0px 3px 0px var(--sami-dark-200);
+@import "../../../../global/base.scss";
 $padding: 10px 10px 10px 35px;
 $border-right-color: rgba(var(--sami-border), 100%);
 $wrap: "sami-sidebar-dashboard";
+
 #{$wrap} {
-  & .#{$wrap} {
-    & .#{$wrap}___border-bottom{
+  & div.#{$wrap}:not(.#{$wrap}___active):not(.#{$wrap}___mobile),
+  div.#{$wrap}.#{$wrap}___mobile:not(.#{$wrap}___active),
+  div.#{$wrap}.#{$wrap}___mobile.#{$wrap}___active {
+    & nav.#{$wrap}___nav {
+      left: 0px;
+      transition: all 1s;
+    }
+  }
 
+  & div.#{$wrap}.#{$wrap}___mobile:not(.#{$wrap}___active) {
+    & nav.#{$wrap}___nav {
+      left: -250px;
+      transition: all 1s;
     }
-    & .#{$wrap}___body{
-      display: flex;
-    }
-    & div.#{$wrap}___border {
-      /*border-right-style: solid;
-      border-right-width: 1px;
-      border-right-color: rgba(var(--sami-dark), 0.5);*/
-      background: rgba(var(--sami-dark), 0.9);
-      top: 0;
-      z-index: 1;
-      width: 1px;
-      margin-top: -21px;
+  }
+
+  & div.#{$wrap}::before {
+    position: fixed;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #00000042;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
+  & div.#{$wrap}.#{$wrap}___active:not(.#{$wrap}___mobile)::before,
+  div.#{$wrap}.#{$wrap}___mobile:not(.#{$wrap}___active)::before {
+    display: none;
+  }
+  & div.#{$wrap}.#{$wrap}___active.#{$wrap}___mobile::before {
+    display: block;
+  }
+
+  & nav.#{$wrap}___nav {
+    box-shadow: $box-shadow;
+    background: var(--sami-screen);
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 320px;
+    top: 0;
+    position: fixed;
+    & .#{$wrap}___menu {
+      display: none;
+      padding: 0px;
+      position: absolute;
+      top: -4px;
+      right: -45px;
+      z-index: 0;
+      font-size: 2.3rem;
+      height: 45px;
+      width: 45px;
+      text-align: center;
+      box-shadow: 8px 8px 8px -1px var(--sami-dark-200);
+      background: var(--sami-screen);
+      color: var(--sami-white);
     }
 
-    & ul.#{$wrap}___ul.#{$wrap}___main{
-      border-bottom-style: solid;
-      border-bottom-width: 1px;
-    }
-    & ul.#{$wrap}___ul {
-      height: 100%;
-      display: block;
-      background-color: rgb(var(--sami-white));
-      overflow-x: hidden;
-      overflow-y: hidden;
-      position: relative;
-      z-index: 1;
-      text-transform: capitalize;
-      margin: 0px;
-      padding: 0px;   
-      width: 320px;
-      & li.#{$wrap}___section {
-        & ul {
-          & li {
-            & a {
-              padding: 10px 10px 10px 55px;
-            }
-          }
+    & .#{$wrap}___body {
+      width: 245px;
+      margin: auto;
+      & sami-list ul {
+        & sami-list-item > li:nth-child(1) > sami-paragraph:nth-child(1) p {
+          color: var(--sami-dark-500);
+          border-bottom-style: solid;
+          border-bottom-width: 1px;
+          border-bottom-color: var(--sami-dark-200);
+          display: block;
+          padding-bottom: 10px;
+          font-size: 12px;
         }
-      }
-      & li {
-        & a {
+        & sami-list-item li a {
+          padding: 10px 34px 10px 35px;
           font-size: 14px;
           text-decoration: none;
-          color: rgb(var(--sami-dark));
-          padding: $padding;
-          height: 50px;
+          color: var(--sami-dark);
+          height: 40px;
           display: flex;
           justify-content: left;
           align-items: center;
         }
+        & sami-list-item li a:hover {
+          .sami-hyperlink___block {
+            display: block;
+            width: 3px;
+            background: var(--sami-border);
+            height: 100%;
+            position: absolute;
+            right: -37px;
+          }
+        }
+      }
 
-        & div {
+      /*& 
+      & ul li {
+        p {
           padding: 15px 35px 15px 35px;
-          & span {
-            color: rgba(var(--sami-dark), 0.5);
+        }
+        & :nth-child(1) {
+          & p {
+            color: var(--sami-dark-500);
             border-bottom-style: solid;
             border-bottom-width: 1px;
-            border-bottom-color: rgba(var(--sami-dark), 0.2);
+            border-bottom-color: var(--sami-dark-200);
             display: block;
             padding-bottom: 10px;
             font-size: 12px;
           }
         }
-      }
-      &
-        li.#{$wrap}___li:hover:not(.#{$wrap}___section):not(.#{$wrap}___active) {
-        background-color: rgba(var(--sami-screen), 5%);
-        /*darken($sami-screen, 5%);*/
-      }
-      & li.#{$wrap}___active {
-        /*darken($sami-screen, 5%);*/
-        background-color: rgba(var(--sami-screen), 5%);
-      }
-
-      & li.#{$wrap}___active,
-      li.#{$wrap}___li:hover:not(.#{$wrap}___section):not(.#{$wrap}___active) {
-        border-right-style: solid;
-        border-right-width: 4px;
-        border-right-color: $border-right-color;
-        & a {
-          color: rgba(var(--sami-dark), 80%);
+        & :nth-child(2) {
+          & a {
+            font-size: 14px;
+            text-decoration: none;
+            color: var(--sami-dark);
+            height: 50px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+          }
         }
-      }
+      }*/
     }
-
-    & div.#{$wrap}___hyperlink-menu {
-      position: absolute;
-      top: 0;
-      background: rgb(var(--sami-screen));
-      z-index: 2;
-
-      & a {
-        display: flex;
-      }
-
-      @media (min-width: 770px) {
-        /*and (min-height: 590px)*/
-        & a {
-          display: none;
-        }
-      }
-    }
-    @media (min-width: 770px) {
-      /*and (min-height: 590px)*/
-
-      & div.#{$wrap}___hyperlink-menu {
-        box-shadow: 4px 9px 8px 0 rgb(0 0 0 / 20%);
+    & .#{$wrap}___footer {
+      margin-bottom: 10%;
+      ul {
+        margin: 0px 25px 0px 25px;
       }
     }
   }
   @media (max-width: 770px) {
-    /*and (min-height: 590px)*/
-
-    & div.#{$wrap}___.#{$wrap}___active::before {
-      position: fixed;
-      content: "";
-      width: 100%;
-      height: 100%;
-      background: #00000042;
-      left: 0;
-      top: 0;
-      z-index: 2;
-    }
-  }
-  /* & ul.#{$wrap}___ul.#{$wrap}___main:hover {
-    overflow-y: scroll;
-  }*/
-  & div.#{$wrap}:not(.#{$wrap}___active) {
-    & div.#{$wrap}___hyperlink-menu {
-      left: 0px;
-      transition: all 1s;
-      -webkit-transition: all 1s;
-      -moz-transition: all 1s;
-      -ms-transition: all 1s;
-      -o-transition: all 1s;
-    }
-
-    & ul.#{$wrap}___ul {
-      /*left: -320px;*/
-      width: 0px;
-      transition: all 1s;
-      -webkit-transition: all 1s;
-      -moz-transition: all 1s;
-      -ms-transition: all 1s;
-      -o-transition: all 1s;
-    } 
-    & div.#{$wrap}___border{
-      
-      left: -1px;     
-      transition: all 1s;
-      -webkit-transition: all 1s;
-      -moz-transition: all 1s;
-      -ms-transition: all 1s;
-      -o-transition: all 1s;
-    }
-  }
-  & div.#{$wrap}.#{$wrap}___active {
-    & div.#{$wrap}___hyperlink-menu {
-      transition: all 1s;
-      -webkit-transition: all 1s;
-      -moz-transition: all 1s;
-      -ms-transition: all 1s;
-      -o-transition: all 1s;
-      left: 321px;
-      z-index: 3;
-      /*position: fixed;*/
-      box-shadow: 4px 9px 8px 0 rgb(0 0 0 / 20%);
-    }
-    & div.#{$wrap}___border{
-      
-      left: 321px;      
-      transition: all 1s;
-      -webkit-transition: all 1s;
-      -moz-transition: all 1s;
-      -ms-transition: all 1s;
-      -o-transition: all 1s;
-    }
-    & ul.#{$wrap}___ul {
-    
-      width: 320px;
-      transition: all 1s;
-      -webkit-transition: all 1s;
-      -moz-transition: all 1s;
-      -ms-transition: all 1s;
-      -o-transition: all 1s;
+    & nav.#{$wrap}___nav {
+      & .#{$wrap}___menu {
+        display: block;
+      }
     }
   }
 }
-#{$wrap}:hover {
-}
-/*@media (max-width: 769px) {
-  #{$wrap} {
-    left: -350px;
-  }
-  #{$wrap} {
-    & div.#{$wrap}___border {
-      left: -350px;
-    }
-  }
-}*/

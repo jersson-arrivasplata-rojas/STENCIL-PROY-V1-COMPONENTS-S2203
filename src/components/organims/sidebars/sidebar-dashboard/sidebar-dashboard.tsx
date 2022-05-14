@@ -1,139 +1,105 @@
-import { Component, h, Listen, Prop, State, Watch } from '@stencil/core';
-import { IHyperLink } from '../interfaces/hyperlink.interface';
-
-
-
+import { Component, Element, h, Listen, Method, State } from '@stencil/core';
+import { Devices } from '@jersson-arrivasplata-rojas/sami-utils/dist/lib';
 
 @Component({
   tag: 'sami-sidebar-dashboard',
   styleUrl: 'sidebar-dashboard.scss'
 })
 export class SidebarDashboard {
+  @Element() host: HTMLDivElement;
 
-  
+  class: string[] = [];
+  children: Element[];
 
-  @Prop() menuLeft?: string;
-  
-  @State() isMenuOpen: boolean = true;
-
-  @Prop() hyperlinkUrl?: string;
-
-  @Prop() hyperlinkPadding?: string;
-
-  @Prop() hyperlinkFilter?: string;
-
-  @Prop() hyperlinkUrlImage?: string;
+  @State() isMenuOpen: boolean = false;
+  @State() isMobile: boolean = false;
 
 
-  @Prop({ mutable: true }) data:
-    Array<IHyperLink |
-    {
-      title: string;
-      data: Array<IHyperLink>;
-    }
-    > = [];
-
-  private arrayHyperLink: Array<IHyperLink> = [];
-
+  @Listen('resize', { target: 'window' })
+  handleScroll(e: Event) {
+    //const array = Array.from(e.srcElement['path']);
+    const target = e.target as Window;
+    this.validateMenu(target);//target
+  }
 
 
   constructor() {
-    this.validateMenu();
   }
 
+  componentWillLoad() {
+    const className: string = this.host.className;
+    this.class = (className).split(' ');
+    this.host.className = '';
 
-  @Watch('data')
-  parseDataProp(newValue) {
-    if (newValue) this.data = newValue;
+    this.children = Array.from(this.host.children);
 
-  }
+    (this.children).forEach(x => {
+      const part = Array.from(x['part']);
+      if (part && part[0] == 'menu') x.slot = 'menu';
+      if (part && part[0] == 'body') x.slot = 'body';
+      if (part && part[0] == 'footer') x.slot = 'footer';
 
-
-  private instanceOfIHyperLink(object: any): object is IHyperLink {
-    return 'url' in object;
-  }
-
-  private listOfHyperLink(x: IHyperLink) {
-    //<sami-hyperlink text={x.text} url={x.url} target={x.target} fnClick={x.fnClick}></sami-hyperlink>
-    return (<li class={{ 'sami-sidebar-dashboard___li': true, 'sami-sidebar-dashboard___active': x.active }}>
-      
-    </li>);
-  }
-
-  private ArrayOfListOfHyperlink(data: Array<IHyperLink>) {
-    const array = [];
-    data.map((response) => {
-      array.push(this.listOfHyperLink(response))
+      if (x.slot == 'menu') {
+        x.classList.add('sami-sidebar-dashboard___menu')
+      } else if (x.slot == 'body') {
+        x.classList.add('sami-sidebar-dashboard___body')
+      } else if (x.slot == 'footer') {
+        x.classList.add('sami-sidebar-dashboard___footer')
+      }
     });
-    return array;
   }
 
-  private listWithTitle(x: { title: string; data: Array<IHyperLink>; }) {
+  componentDidLoad() {
+    this.validateMenu(window);//window
 
-    return (<li class={`sami-sidebar-dashboard___li sami-sidebar-dashboard___section`}>
-      <div class='sami-sidebar-dashboard___title'><span>{x.title}</span></div>
-      <ul class="sami-sidebar-dashboard___ul">
-        {
-          this.ArrayOfListOfHyperlink(x.data)
-        }
-      </ul>
-    </li>)
+  }
+  componentWillRender() {
   }
 
-  private listOfArrayData(data: Array<IHyperLink | { title: string; data: Array<IHyperLink>; }>) {
-    data.map((x, index) => {
-      if (this.instanceOfIHyperLink(x)) {
-        (this.arrayHyperLink[index]) ? 
-        this.arrayHyperLink[index] = this.listOfHyperLink({ ...x }) : 
-        this.arrayHyperLink.push(this.listOfHyperLink({ ...x }));
+  private validateMenu(target: Window) {//target: Window
 
+    if (!(new Devices().isMobile())) {
+      this.isMenuOpen = !this.isMenuOpen;
+      if (target['innerWidth'] < 770) {
+        this.isMobile = true;
+      } else {
+        this.isMenuOpen = true;
+        this.isMobile = false;
       }
-      else{ 
-        (this.arrayHyperLink[index]) ? 
-        this.arrayHyperLink[index] = this.listWithTitle({ ...x }) : 
-        this.arrayHyperLink.push(this.listWithTitle({ ...x }));
-      }
-    })
-    return this.arrayHyperLink;
-  }
-
-  @Listen('resize', { target: 'window' })
-  handleScroll() {//e: Event
-    //const target = e.target as Window;
-    this.validateMenu();//target
-  }
-  private validateMenu() {//target: Window
-    if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
-      this.isMenuOpen = true;
+      //this.isMenuOpen = (!(!isNaN(target['innerWidth']) && target['innerWidth'] < 770));
+      //this.isMobile = false;
+    } else {
+      this.isMenuOpen = !this.isMenuOpen;
+      this.isMobile = true;
     }
   }
-  private getMenuStyles() {
-    const styles = Object.assign({});
-    (this.menuLeft) ? styles.left = this.menuLeft : delete styles.left;
 
-    return styles;
+  @Method()
+  async show() {
+    this.validateMenu(window)
+  }
+
+  getClass(): string {
+    this.class = [];
+    if (this.isMenuOpen) {
+      this.class.push('sami-sidebar-dashboard___active')
+    }
+    if (this.isMobile) {
+      this.class.push('sami-sidebar-dashboard___mobile')
+    }
+    return this.class.join(' ');
   }
   render() {
-    // <sami-hyperlink-icon url={this.hyperlinkUrl} target="" type="menu" padding={this.hyperlinkPadding} filter={this.hyperlinkFilter} onClick={() => this.menu()} url-image={this.hyperlinkUrlImage}></sami-hyperlink-icon>
-  
     return (
-      <div class={{ 'sami-sidebar-dashboard': true, 'sami-sidebar-dashboard___active': this.isMenuOpen }} >
-        <div class='sami-sidebar-dashboard___hyperlink-menu' style={this.getMenuStyles()}>
-               </div>
-        <div class="sami-sidebar-dashboard___body">
-          <ul class="sami-sidebar-dashboard___ul sami-sidebar-dashboard___main">
-            {
-              this.data ? this.listOfArrayData([...this.data]) : []
-            }
-          </ul>
+      <div class={`sami-sidebar-dashboard ${this.getClass()}`}>
+        <nav class='sami-sidebar-dashboard___nav'>
+          <slot name="menu" ></slot>
+          <slot name="body" ></slot>
+          <slot name="footer" ></slot>
           <div class="sami-sidebar-dashboard___border"></div>
-        </div>
+        </nav>
       </div>
     );
   }
 
 }
-/**
- *
- *
- */

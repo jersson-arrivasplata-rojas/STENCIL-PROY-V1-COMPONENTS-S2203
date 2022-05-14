@@ -1,5 +1,6 @@
 export enum PositionEnum {
     ABSOLUTE = 'absolute',
     RELATIVE = 'relative',
-    FIXED = 'fixed'
+    FIXED = 'fixed',
+    STICKY = 'sticky'
 }

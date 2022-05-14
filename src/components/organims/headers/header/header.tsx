@@ -1,6 +1,5 @@
-import { Component, h, Prop, Watch } from '@stencil/core';
-import { IListGroup } from '../../../molecules/lists/interfaces/list-group.interface';
-import { IListSocialMedia } from '../../../molecules/lists/interfaces/list-social-media.interface';
+import { Component, Element, h, Host, Prop } from '@stencil/core';
+import { alignItems, display, position } from '../../../../functions/class.function';
 
 @Component({
   tag: 'sami-header',
@@ -8,173 +7,54 @@ import { IListSocialMedia } from '../../../molecules/lists/interfaces/list-socia
 })
 export class Header {
 
-  @Prop() zIndex: string;
+  @Element() host: HTMLAnchorElement;
 
-  @Prop() position: string;
+  @Prop() position?: string = 'fixed';
 
-  @Prop() top: string;
+  @Prop() desktop?: boolean = false;
 
-  @Prop() backgroundColor: string;
+  @Prop() display?: string = 'flex';
 
-  @Prop() boxShadow: string;
+  @Prop() align?: string = 'flex';
+  
+  //  @Prop() zIndex?: number = 0;
 
-  @Prop() flexGrow: boolean;
+  class: string[] = [];
 
-  @Prop() justifyContentMobile: string;
+  constructor() {
+  }
+  componentWillLoad() {
+    const className: string = this.host.className;
+    this.class = (className).split(' ');
+    this.host.className = '';
 
-  @Prop() justifyContent: string;
+  }
 
-  @Prop() desktop: boolean;
-
-  @Prop() hyperlinkBackgroundImage: string;
-
-  @Prop() hyperlinkMaxWidth: string;
-
-  @Prop() hyperlinkBorderRadius: string;
-
-  @Prop() hyperlinkBackground: string;
-
-  @Prop() hyperlinkUrl: string;
-
-  @Prop() hyperlinkTarget: string;
-
-  @Prop() hyperlinkWidth: string;
-
-  @Prop() hyperlinkHeight: string;
-
-  @Prop({ mutable: true }) listGroupData: string | Array<IListGroup>;
-
-  @Prop({ mutable: true }) listSocialMediaData: string | Array<IListSocialMedia>;
-
-  @Prop({ mutable: true }) dropdownListGroupData: string | Array<IListGroup>;
-
-  @Prop() dropdownTitle: string;
-
-  @Prop() dropdownWidth: string;
-  @Prop() dropdownRight: string;
-  @Prop() dropdownBorder: boolean=false;
-
-
-  @Watch('listGroupData')
-  parseListGroupData(newValue) {
-    if (newValue && Array.isArray(newValue)) {
-      this.listGroupData = newValue;
-    } else if (newValue && typeof newValue === "string") {
-      this.listGroupData = JSON.parse(newValue);
+  private getClass(): string {
+    if (this.desktop) {
+      this.class.push('sami-header___desktop');
     }
-  }
-
-  private getListGroup(): Array<IListGroup> {
-    if (Array.isArray(this.listGroupData)) {
-      return this.listGroupData;
-    }
-    return JSON.parse(this.listGroupData);
-  }
-
-  @Watch('dropdownListGroupData')
-  parseDropDownListGroupData(newValue) {
-    if (newValue && Array.isArray(newValue)) {
-      this.dropdownListGroupData = newValue;
-    } else if (newValue && typeof newValue === "string") {
-      this.dropdownListGroupData = JSON.parse(newValue);
-    }
-  }
-  private getDropDownListGroup(): Array<IListGroup> {
-    if (Array.isArray(this.dropdownListGroupData)) {
-      return this.dropdownListGroupData;
-    }
-    return JSON.parse(this.dropdownListGroupData);
-  }
-
-  @Watch('listSocialMediaData')
-  parseListSocialMediaData(newValue) {
-    if (newValue && Array.isArray(newValue)) {
-      this.listSocialMediaData = newValue;
-    } else if (newValue && typeof newValue === "string") {
-      this.listSocialMediaData = JSON.parse(newValue);
-    }
-  }
-
-  private getListSocialMedia(): Array<IListSocialMedia> {
-    if (Array.isArray(this.listSocialMediaData)) {
-      return this.listSocialMediaData;
-    }
-    return JSON.parse(this.listSocialMediaData);
-  }
 
 
-  /*private instanceOfIListGroup(object: any): object is IListGroup {
-    return ('url' in object);
-  }
-
-
-  private isArrayOfListGroup(value: any): boolean {
-    return Array.isArray(value) && value.every(item => this.instanceOfIListGroup(item) === true);
-  }*/
-
-  private getStyles() {
-    const styles = Object.assign({});
-    (this.justifyContent) ? styles.justifyContent = this.justifyContent : delete styles.justifyContent;
-    (this.backgroundColor) ? styles.backgroundColor = this.backgroundColor : delete styles.backgroundColor;
-    (this.boxShadow) ? styles.boxShadow = this.boxShadow : delete styles.boxShadow;
-    (this.position) ? styles.position = this.position : delete styles.position;
-    (this.top) ? styles.top = this.top : delete styles.top;
-    (this.zIndex) ? styles.zIndex = this.zIndex : delete styles.zIndex;
-    return styles;
-  }
-
-  private getHyperLinkImageStyles() {
-    const styles = Object.assign({});
-    (this.flexGrow) ? styles.flexGrow = 1 : delete styles.flexGrow;
-    (this.justifyContentMobile) ? styles.justifyContent = this.justifyContentMobile : delete styles.justifyContentMobile;
-
-
-    return styles;
+    this.class.push(alignItems(this.align));
+    this.class.push(display(this.display));
+    this.class.push(position(this.position));
+    return this.class.join(' ');
   }
 
   render() {
-    /*
-    max-width={this.hyperlinkMaxWidth}
-            width={this.hyperlinkWidth}
-            height={this.hyperlinkHeight}
-            border-radius={this.hyperlinkBorderRadius}
-            background={this.hyperlinkBackground}
-
-
-            <sami-hyperlink
-            url-image={this.hyperlinkBackgroundImage}
-            url={this.hyperlinkUrl}
-            target={this.hyperlinkTarget}
-          ></sami-hyperlink>
-    */
     return (
-      <div class={{ 'sami-header': true, 'sami-header___desktop': this.desktop }} style={this.getStyles()}>
-        <div style={this.getHyperLinkImageStyles()}>
-          
-        </div>
-        {
-          (this.listGroupData)? (
-            <div>
-              <sami-list-group data={this.getListGroup()} border={true} flex-direction="row" ></sami-list-group>
-            </div>
-          ):[]
-        }
-        {
-          (this.listSocialMediaData) ? (
-            <div>
-              <sami-list-social-media data={this.getListSocialMedia()} flex-direction="row" ></sami-list-social-media>
-            </div>
-          ) : []
-        }
-        {
-          (this.dropdownListGroupData) ? (
-            <div>
-              <sami-dropdown border={this.dropdownBorder} right={this.dropdownRight} width={this.dropdownWidth} text={this.dropdownTitle} data={this.getDropDownListGroup()} ></sami-dropdown>
-            </div>
-          ) : []
-        }
-      </div>
+      <Host class={`sami-header ${this.getClass()}`}>
+        <slot></slot>
+      </Host>
     );
   }
-
 }
+
+/**
+ * 
+
+      <div class={`sami-header ${this.getClass()}`}>
+        
+      </div>
+ */

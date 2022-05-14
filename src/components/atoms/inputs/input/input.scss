@@ -36,4 +36,16 @@ $wrap: "sami-input";
     background: var(--sami-screen);
     opacity: 0.8;
   }
+
+  & .#{$wrap}-doc-search {
+    height: 45px;
+    max-width: 500px;
+    width: 100%;
+    font-size: 15px;
+    padding-left: 20px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 8px;
+  }
+  
 }

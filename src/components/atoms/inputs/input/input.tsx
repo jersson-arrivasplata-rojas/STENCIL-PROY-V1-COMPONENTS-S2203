@@ -39,7 +39,10 @@ export class Input {
     }else if(this.inputType =='subscribe'){
         this.class.push('sami-input-subscribe');
     
-    }
+    }else if(this.inputType =='doc-search'){
+      this.class.push('sami-input-doc-search');
+  
+  }
 
     this.class.push(textAlign(this.align));
     return this.class.join(' ');

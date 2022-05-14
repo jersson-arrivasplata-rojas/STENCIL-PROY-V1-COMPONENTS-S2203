@@ -6,8 +6,6 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { IListGroup } from "./components/molecules/lists/interfaces/list-group.interface";
-import { IListSocialMedia } from "./components/molecules/lists/interfaces/list-social-media.interface";
-import { IHyperLink } from "./components/organims/sidebars/interfaces/hyperlink.interface";
 export namespace Components {
     interface SamiCard {
     }
@@ -55,30 +53,10 @@ export namespace Components {
         "type"?: string;
     }
     interface SamiHeader {
-        "backgroundColor": string;
-        "boxShadow": string;
-        "desktop": boolean;
-        "dropdownBorder": boolean;
-        "dropdownListGroupData": string | Array<IListGroup>;
-        "dropdownRight": string;
-        "dropdownTitle": string;
-        "dropdownWidth": string;
-        "flexGrow": boolean;
-        "hyperlinkBackground": string;
-        "hyperlinkBackgroundImage": string;
-        "hyperlinkBorderRadius": string;
-        "hyperlinkHeight": string;
-        "hyperlinkMaxWidth": string;
-        "hyperlinkTarget": string;
-        "hyperlinkUrl": string;
-        "hyperlinkWidth": string;
-        "justifyContent": string;
-        "justifyContentMobile": string;
-        "listGroupData": string | Array<IListGroup>;
-        "listSocialMediaData": string | Array<IListSocialMedia>;
-        "position": string;
-        "top": string;
-        "zIndex": string;
+        "align"?: string;
+        "desktop"?: boolean;
+        "display"?: string;
+        "position"?: string;
     }
     interface SamiHeaderMobile {
         "position"?: string;
@@ -141,17 +119,7 @@ export namespace Components {
         "show": () => Promise<void>;
     }
     interface SamiSidebarDashboard {
-        "data": Array<IHyperLink |
-    {
-      title: string;
-      data: Array<IHyperLink>;
-    }
-    >;
-        "hyperlinkFilter"?: string;
-        "hyperlinkPadding"?: string;
-        "hyperlinkUrl"?: string;
-        "hyperlinkUrlImage"?: string;
-        "menuLeft"?: string;
+        "show": () => Promise<void>;
     }
     interface SamiSlider {
         "showStatus": boolean;
@@ -163,7 +131,6 @@ export namespace Components {
         "toggle": (e: MouseEvent) => void;
     }
     interface SamiTab {
-        "listGroupData": string | Array<IListGroup>;
     }
     interface SamiTag {
         "align"?: string;
@@ -409,30 +376,10 @@ declare namespace LocalJSX {
         "type"?: string;
     }
     interface SamiHeader {
-        "backgroundColor"?: string;
-        "boxShadow"?: string;
+        "align"?: string;
         "desktop"?: boolean;
-        "dropdownBorder"?: boolean;
-        "dropdownListGroupData"?: string | Array<IListGroup>;
-        "dropdownRight"?: string;
-        "dropdownTitle"?: string;
-        "dropdownWidth"?: string;
-        "flexGrow"?: boolean;
-        "hyperlinkBackground"?: string;
-        "hyperlinkBackgroundImage"?: string;
-        "hyperlinkBorderRadius"?: string;
-        "hyperlinkHeight"?: string;
-        "hyperlinkMaxWidth"?: string;
-        "hyperlinkTarget"?: string;
-        "hyperlinkUrl"?: string;
-        "hyperlinkWidth"?: string;
-        "justifyContent"?: string;
-        "justifyContentMobile"?: string;
-        "listGroupData"?: string | Array<IListGroup>;
-        "listSocialMediaData"?: string | Array<IListSocialMedia>;
+        "display"?: string;
         "position"?: string;
-        "top"?: string;
-        "zIndex"?: string;
     }
     interface SamiHeaderMobile {
         "position"?: string;
@@ -492,17 +439,6 @@ declare namespace LocalJSX {
     interface SamiSidebar {
     }
     interface SamiSidebarDashboard {
-        "data"?: Array<IHyperLink |
-    {
-      title: string;
-      data: Array<IHyperLink>;
-    }
-    >;
-        "hyperlinkFilter"?: string;
-        "hyperlinkPadding"?: string;
-        "hyperlinkUrl"?: string;
-        "hyperlinkUrlImage"?: string;
-        "menuLeft"?: string;
     }
     interface SamiSlider {
         "showStatus"?: boolean;
@@ -513,7 +449,6 @@ declare namespace LocalJSX {
         "toggle"?: (e: MouseEvent) => void;
     }
     interface SamiTab {
-        "listGroupData"?: string | Array<IListGroup>;
     }
     interface SamiTag {
         "align"?: string;
