@@ -1,0 +1,41 @@
+# sami-subscriber
+
+
+
+<!-- Auto Generated Below -->
+
+
+## Usage
+
+### Angular
+
+```html
+<!-- Tag Card With Number -->
+<sami-card-tag text="1"></sami-card-tag>
+```
+
+
+
+## Properties
+
+| Property | Attribute | Description | Type                      | Default     |
+| -------- | --------- | ----------- | ------------------------- | ----------- |
+| `toggle` | --        |             | `(e: MouseEvent) => void` | `undefined` |
+
+
+## Methods
+
+### `show() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

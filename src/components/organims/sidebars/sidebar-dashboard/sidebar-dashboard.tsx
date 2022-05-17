@@ -1,5 +1,5 @@
 import { Component, Element, h, Listen, Method, State } from '@stencil/core';
-import { Devices } from '@jersson-arrivasplata-rojas/sami-utils/lib';
+import { Devices } from '@jersson-arrivasplata-rojas/sami-utils/core/build';
 
 @Component({
   tag: 'sami-sidebar-dashboard',

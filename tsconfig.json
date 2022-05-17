@@ -9,17 +9,23 @@
       "es2017"
     ],
     "moduleResolution": "node",
+    "sourceMap": false,
+    "noImplicitAny": false,
     "module": "esnext",
     "target": "es2017",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "jsx": "react",
     "jsxFactory": "h",
-    "typeRoots": ["node_modules/@types"]
+    "typeRoots": ["node_modules/@types"],
+    "skipLibCheck": true
   },
   "include": [
-    "src"
-, "trash/hyperlink copy"  ],
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "node_modules/@types/**/*.d.ts",
+    "./types/**/*.d.ts"
+  ],
   "exclude": [
     "node_modules"
   ]

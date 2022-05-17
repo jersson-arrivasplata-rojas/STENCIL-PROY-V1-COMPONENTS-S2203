@@ -1,5 +1,5 @@
-import { Devices } from '@jersson-arrivasplata-rojas/sami-utils/lib';
 import { Component, Element, h, Listen, Prop, State } from '@stencil/core';
+import { Devices } from '@jersson-arrivasplata-rojas/sami-utils/core/build';
 
 @Component({
   tag: 'sami-card-code',

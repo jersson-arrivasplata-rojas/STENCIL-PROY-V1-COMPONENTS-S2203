@@ -26,6 +26,7 @@
     "generate": "stencil generate"
   },
   "devDependencies": {
+    "@types/babel__core": "^7.1.19",
     "@types/eslint": "^8.4.1",
     "@types/jest": "^27.0.3",
     "jest": "^27.4.5",
@@ -43,7 +44,7 @@
   },
   "homepage": "https://sami.jerssonarrivasplata.com/",
   "dependencies": {
-    "@jersson-arrivasplata-rojas/sami-utils": "^0.0.6",
+    "@jersson-arrivasplata-rojas/sami-utils": "^0.0.18",
     "@stencil/angular-output-target": "^0.4.0",
     "@stencil/core": "^2.13.0",
     "@stencil/react-output-target": "^0.3.1",
@@ -51,6 +52,8 @@
     "@stencil/vue-output-target": "^0.6.0",
     "@stencil/webpack": "^0.0.6",
     "@types/estree": "^0.0.51",
-    "copy-webpack-plugin": "^10.2.4"
+    "@types/webrtc": "^0.0.32",
+    "copy-webpack-plugin": "^10.2.4",
+    "rollup-plugin-node-polyfills": "^0.2.1"
   }
 }
