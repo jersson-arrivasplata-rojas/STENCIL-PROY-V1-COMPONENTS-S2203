@@ -6,41 +6,45 @@ $wrap: "sami-tab";
         background-color: #f1f1f1;*/
 
         /* Style the buttons inside the tab */
-        & div[slot="sami-tab___header"]{
-            & ul {
-                display: flex;
-                flex-direction: row;
-                margin: 0;
-                padding: 0;
-                & li {
-                    list-style: none;
-                    & a {
-                        background-color: inherit;
-                        float: left;
-                        border: none;
-                        outline: none;
-                        cursor: pointer;
-                        padding: 14px 16px;
-                        transition: 0.3s;
-                        font-size: 17px;
-                        text-decoration: none;
-                        color: black;
-                    }
-                    & a:hover {
-                        background-color: #ddd;
-                    }
+        & ul.#{$wrap}___header {
+            display: flex;
+            flex-direction: row;
+            margin: 0;
+            padding: 0;
+            & li {
+                list-style: none;
+                & a {
+                    background-color: inherit;
+                    float: left;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    padding: 14px 16px;
+                    transition: 0.3s;
+                    font-size: 17px;
+                    text-decoration: none;
+                    color: black;
                 }
-                & li.#{$wrap}___active {
+                & a:hover {
                     background-color: #ddd;
                 }
             }
+            & .#{$wrap}___active a{
+                background-color: #ddd;
+            }
         }
-       
-        & div[slot="sami-___body"]{
-            display: none;
+
+        & .#{$wrap}___body {
+            & :not(.#{$wrap}___active),
+            :not(.#{$wrap}___active) * {
+                display: none;
+            }
         }
-        & div[slot="sami-___body"].#{$wrap}___active {
-            display: block;
+        & .#{$wrap}___body {
+            & .#{$wrap}___active,
+            .#{$wrap}___active * {
+                display: block;
+            }
         }
     }
 }
