@@ -1,4 +1,4 @@
-import { Devices } from '@jersson-arrivasplata-rojas/sami-utils/dist/lib';
+import { Devices } from '@jersson-arrivasplata-rojas/sami-utils/lib';
 import { Component, Element, h, Listen, Prop, State } from '@stencil/core';
 
 @Component({
