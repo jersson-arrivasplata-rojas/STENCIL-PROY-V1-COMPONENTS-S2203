@@ -18,9 +18,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `width`  | `width`   |             | `string` | `undefined` |
+| Property    | Attribute    | Description | Type     | Default     |
+| ----------- | ------------ | ----------- | -------- | ----------- |
+| `width`     | `width`      |             | `string` | `undefined` |
+| `wordBreak` | `word-break` |             | `string` | `undefined` |
 
 
 ----------------------------------------------

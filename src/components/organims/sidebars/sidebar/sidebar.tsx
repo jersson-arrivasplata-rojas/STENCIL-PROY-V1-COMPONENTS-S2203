@@ -10,6 +10,8 @@ export class Sidebar {
   class: string[] = [];
   children: Element[];
 
+  @State() innerWidth: number = 0;
+
   @State() isMenuOpen: boolean = false;
   @State() isMobile: boolean = false;
 
@@ -18,7 +20,9 @@ export class Sidebar {
   handleScroll(e: Event) {
     //const array = Array.from(e.srcElement['path']);
     const target = e.target as Window;
-    this.validateMenu(target);//target
+    if(!(target.innerWidth === this.innerWidth)){
+      this.validateMenu(target);//target
+    }
   }
 
 
@@ -52,6 +56,8 @@ export class Sidebar {
   }
 
   componentDidLoad() {
+    
+    this.innerWidth = window.innerWidth;
     this.validateMenu(window);//window
 
   }

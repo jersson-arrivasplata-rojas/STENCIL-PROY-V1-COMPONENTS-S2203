@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-05-17T20:43:07",
+  "timestamp": "2022-05-18T03:39:05",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.15.2",
@@ -1430,6 +1430,22 @@
           "type": "string",
           "mutable": false,
           "attr": "width",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "wordBreak",
+          "type": "string",
+          "mutable": false,
+          "attr": "word-break",
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],

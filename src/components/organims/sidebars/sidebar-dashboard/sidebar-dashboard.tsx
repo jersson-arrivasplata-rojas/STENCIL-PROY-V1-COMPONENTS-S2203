@@ -10,6 +10,7 @@ export class SidebarDashboard {
 
   class: string[] = [];
   children: Element[];
+  @State() innerWidth: number = 0;
 
   @State() isMenuOpen: boolean = false;
   @State() isMobile: boolean = false;
@@ -19,7 +20,9 @@ export class SidebarDashboard {
   handleScroll(e: Event) {
     //const array = Array.from(e.srcElement['path']);
     const target = e.target as Window;
-    this.validateMenu(target);//target
+    if(!(target.innerWidth === this.innerWidth)){
+      this.validateMenu(target);//target
+    }
   }
 
 
@@ -50,6 +53,7 @@ export class SidebarDashboard {
   }
 
   componentDidLoad() {
+    this.innerWidth = window.innerWidth;
     this.validateMenu(window);//window
 
   }
