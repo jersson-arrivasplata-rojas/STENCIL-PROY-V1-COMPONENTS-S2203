@@ -57,26 +57,16 @@ export class SidebarDashboard {
   }
 
   private validateMenu(target: Window) {//target: Window
-
-    if (!(new Devices().isMobile())) {
-      this.isMenuOpen = !this.isMenuOpen;
-      if (target['innerWidth'] < 770) {
-        this.isMobile = true;
-      } else {
-        this.isMenuOpen = true;
-        this.isMobile = false;
-      }
-      //this.isMenuOpen = (!(!isNaN(target['innerWidth']) && target['innerWidth'] < 770));
-      //this.isMobile = false;
-    } else {
-      this.isMenuOpen = !this.isMenuOpen;
-      this.isMobile = true;
-    }
+    //this.isMenuOpen = !this.isMenuOpen;
+    this.isMobile = Boolean((target['innerWidth'] < 770) ? new Devices().isMobile() : false);
+    //this.isMenuOpen = Boolean(target['innerWidth'] < 770);
+    this.isMenuOpen = true;
   }
 
   @Method()
   async show() {
-    this.validateMenu(window)
+    this.isMenuOpen = !this.isMenuOpen;
+    this.isMobile = Boolean(new Devices().isMobile());
   }
 
   getClass(): string {
@@ -86,6 +76,9 @@ export class SidebarDashboard {
     }
     if (this.isMobile) {
       this.class.push('sami-sidebar-dashboard___mobile')
+    }
+    if (!this.isMobile) {
+      this.class.push('sami-sidebar-dashboard___desktop')
     }
     return this.class.join(' ');
   }

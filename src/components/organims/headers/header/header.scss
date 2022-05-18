@@ -10,6 +10,11 @@ $wrap: "sami-header";
   box-shadow: 4px 9px 8px 0px rgb(0 0 0 / 20%);
   background: var(--sami-screen);
 }
+@media (min-width: 770px) {
+  #{$wrap}.#{$wrap} {
+    z-index: 2;
+  }
+}
 /*
   & div.#{$wrap}.#{$wrap}___desktop {
     display: flex;

@@ -3,25 +3,23 @@ $box-shadow: 0px 0px 0px 0px var(--sami-dark-200), 0px 0px 3px 0px var(--sami-da
 $padding: 10px 10px 10px 35px;
 $border-right-color: rgba(var(--sami-border), 100%);
 $wrap: "sami-sidebar-dashboard";
-
 #{$wrap} {
-  & div.#{$wrap}:not(.#{$wrap}___active):not(.#{$wrap}___mobile),
-  div.#{$wrap}.#{$wrap}___mobile:not(.#{$wrap}___active),
-  div.#{$wrap}.#{$wrap}___mobile.#{$wrap}___active {
+  & div.#{$wrap} {
     & nav.#{$wrap}___nav {
       left: 0px;
       transition: all 1s;
     }
   }
 
-  & div.#{$wrap}.#{$wrap}___mobile:not(.#{$wrap}___active) {
+  & div.#{$wrap}.#{$wrap}___mobile:not(.#{$wrap}___active),
+  & div.#{$wrap}.#{$wrap}___desktop:not(.#{$wrap}___active) {
     & nav.#{$wrap}___nav {
-      left: -250px;
+      left: -320px;
       transition: all 1s;
     }
   }
 
-  & div.#{$wrap}::before {
+  & div.#{$wrap}.#{$wrap}___active::before {
     position: fixed;
     content: "";
     width: 100%;
@@ -31,18 +29,35 @@ $wrap: "sami-sidebar-dashboard";
     top: 0;
     z-index: 1;
   }
-  & div.#{$wrap}.#{$wrap}___active:not(.#{$wrap}___mobile)::before,
-  div.#{$wrap}.#{$wrap}___mobile:not(.#{$wrap}___active)::before {
+
+  & div.#{$wrap}.#{$wrap}___mobile:not(.#{$wrap}___active)::before,
+  & div.#{$wrap}.#{$wrap}___desktop:not(.#{$wrap}___active)::before {
     display: none;
   }
-  & div.#{$wrap}.#{$wrap}___active.#{$wrap}___mobile::before {
+
+  & div.#{$wrap}.#{$wrap}___active.#{$wrap}___mobile::before,
+  & div.#{$wrap}.#{$wrap}___active.#{$wrap}___desktop::before {
     display: block;
+  }
+  @media (min-width: 770px) {
+    & div.#{$wrap}.#{$wrap}___active.#{$wrap}___mobile::before,
+    & div.#{$wrap}.#{$wrap}___active.#{$wrap}___desktop::before {
+      display: none;
+    }
+  }
+  & div.#{$wrap}.#{$wrap}___active.#{$wrap}___mobile,
+  & div.#{$wrap}.#{$wrap}___active.#{$wrap}___desktop {
+    & nav.#{$wrap}___nav {
+      & .#{$wrap}___menu {
+        box-shadow: 8px 8px 8px -1px var(--sami-dark-200);
+      }
+    }
   }
 
   & nav.#{$wrap}___nav {
     box-shadow: $box-shadow;
     background: var(--sami-screen);
-    z-index: 0;
+    z-index: 1;
     width: 100%;
     height: 100%;
     max-width: 320px;
@@ -52,16 +67,15 @@ $wrap: "sami-sidebar-dashboard";
       display: none;
       padding: 0px;
       position: absolute;
-      top: -4px;
+      top: 18px;
       right: -45px;
       z-index: 0;
       font-size: 2.3rem;
       height: 45px;
       width: 45px;
       text-align: center;
-      box-shadow: 8px 8px 8px -1px var(--sami-dark-200);
       background: var(--sami-screen);
-      color: var(--sami-white);
+      color: var(--sami-dark);
     }
 
     & .#{$wrap}___body {
@@ -98,35 +112,6 @@ $wrap: "sami-sidebar-dashboard";
           }
         }
       }
-
-      /*& 
-      & ul li {
-        p {
-          padding: 15px 35px 15px 35px;
-        }
-        & :nth-child(1) {
-          & p {
-            color: var(--sami-dark-500);
-            border-bottom-style: solid;
-            border-bottom-width: 1px;
-            border-bottom-color: var(--sami-dark-200);
-            display: block;
-            padding-bottom: 10px;
-            font-size: 12px;
-          }
-        }
-        & :nth-child(2) {
-          & a {
-            font-size: 14px;
-            text-decoration: none;
-            color: var(--sami-dark);
-            height: 50px;
-            display: flex;
-            justify-content: left;
-            align-items: center;
-          }
-        }
-      }*/
     }
     & .#{$wrap}___footer {
       margin-bottom: 10%;
@@ -140,6 +125,11 @@ $wrap: "sami-sidebar-dashboard";
       & .#{$wrap}___menu {
         display: block;
       }
+    }
+  }
+  @media (max-width: 770px) {
+    & nav.#{$wrap}___nav {
+      padding-top: 0px !important;
     }
   }
 }

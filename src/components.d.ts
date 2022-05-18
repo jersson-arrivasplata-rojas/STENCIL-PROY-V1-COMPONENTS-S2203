@@ -105,6 +105,7 @@ export namespace Components {
     }
     interface SamiMain {
         "width"?: string;
+        "wordBreak"?: string;
     }
     interface SamiParagraph {
         "align"?: string;
@@ -426,6 +427,7 @@ declare namespace LocalJSX {
     }
     interface SamiMain {
         "width"?: string;
+        "wordBreak"?: string;
     }
     interface SamiParagraph {
         "align"?: string;

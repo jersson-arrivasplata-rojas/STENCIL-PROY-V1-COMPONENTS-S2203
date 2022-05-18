@@ -16,17 +16,12 @@ $wrap: "sami-grid";
             grid-template-columns: repeat(3, 1fr);
         }
     }
-    @media (max-width: 960px) {
-        & div.#{$wrap}.#{$wrap}___card  {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-    @media (max-width: 769px) {
+    @media (max-width: 1330px) {
         & div.#{$wrap}.#{$wrap}___card  {
             grid-template-columns: repeat(2, 1fr);
         }
     }
-    @media (max-width: 540px) {
+    @media (max-width: 950px) {
         & div.#{$wrap}.#{$wrap}___card  {
             grid-template-columns: repeat(1, 1fr);
         }

@@ -115,6 +115,18 @@ html {
 .sami-object-fit-contain {
     object-fit: contain;
 }
+.sami-border-width-0 {
+    border-width: 0px;
+}
+.sami-border-width-1 {
+    border-width: 1px;
+}
+.sami-border-width-2 {
+    border-width: 2px;
+}
+.sami-border-width-3 {
+    border-width: 3px;
+}
 /**/
 .d-flex {
     display: flex;
@@ -539,6 +551,20 @@ html {
     z-index: 4;
 }
 /*fin padding*/
+
+.sami-word-break-break-word{
+    word-break: break-word;
+}
+
+.sami-only-desktop {
+    display: none;
+}
+@media (min-width: 820px) {
+    .sami-only-desktop {
+        display: block !important;
+    }
+}
+
 
 @media (min-width: 520px) {
     .sami-desk-max-width-520 {

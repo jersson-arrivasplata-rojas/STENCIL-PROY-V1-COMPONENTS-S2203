@@ -1,6 +1,6 @@
 {
   "name": "@jersson-arrivasplata-rojas/sami",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Componente de Stencil",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",

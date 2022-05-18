@@ -77,8 +77,8 @@ export class CardCode {
       'width': (new Devices().isMobile()) ? target['screen']['width'] : target['innerWidth'],
     };
     if (measures.width <= 550) {
-      this.host.parentElement.parentElement.parentElement.style.maxWidth = (measures.width) + 'px';
-      this.width = (measures.width) + 'px';
+      this.host.parentElement.parentElement.parentElement.style.maxWidth = (measures.width-20) + 'px';
+      this.width = (measures.width-20) + 'px';
     } else {
       this.width = '';
     }

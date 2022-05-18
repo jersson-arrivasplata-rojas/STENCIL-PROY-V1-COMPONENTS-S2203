@@ -1,7 +1,6 @@
 import { AlignItemsEnum } from "../enum/align-items.enum";
 import { BackgroundColorEnum } from "../enum/background-color.enum";
 import { BorderStyleEnum } from "../enum/border-style.enum";
-import { BorderWidthEnum } from "../enum/border-width.enum";
 import { ColorEnum } from "../enum/color.enum";
 import { DisplayEnum } from "../enum/display.enum";
 import { FontWeigthEnum } from "../enum/font-weigth.enum";
@@ -15,6 +14,7 @@ import { PositionEnum } from "../enum/position.enum";
 import { TextAlignEnum } from "../enum/text-align.enum";
 import { TextDecorationEnum } from "../enum/text-decoration.enum";
 import { TextTransformEnum } from "../enum/text-transform.enum";
+import { WordBreakEnum } from "../enum/word-break.enum";
 
 export function textDecoration(text: string) {
   if (text && TextDecorationEnum[(text).toUpperCase()]) {
@@ -41,8 +41,8 @@ export function borderStyle(text: string) {
   return '';
 }
 export function borderWidth(text: string) {
-  if (text && BorderWidthEnum[(text).toUpperCase()]) {
-    return 'sami-border-width-' + BorderWidthEnum[text.toUpperCase()];
+  if (text && (NumberEnum['NUMBER_' + (text).toUpperCase()])) {
+    return 'sami-border-width-' + (NumberEnum['NUMBER_' + (text).toUpperCase()]);
   }
   return '';
 }
@@ -115,6 +115,12 @@ export function display(text: string) {
 export function margin(text: string) {
   if (text && (MarginEnum[(text).toUpperCase()])) {
     return 'sami-margin-' + (MarginEnum[(text).toUpperCase()]);
+  }
+  return '';
+}
+export function wordBreak(text: string) {
+  if (text && (WordBreakEnum[(text).toUpperCase()])) {
+    return 'sami-word-break-' + (WordBreakEnum[(text).toUpperCase()]);
   }
   return '';
 }

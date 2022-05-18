@@ -1,4 +1,5 @@
 import { Component, Element, h, Prop } from '@stencil/core';
+import { wordBreak } from '../../../../functions/class.function';
 
 @Component({
   tag: 'sami-main',
@@ -8,6 +9,7 @@ import { Component, Element, h, Prop } from '@stencil/core';
 export class Main {
   @Element() host: HTMLDivElement;
   @Prop() width?: string;
+  @Prop() wordBreak?: string;
   class: string[] = [];
 
   constructor() {
@@ -27,6 +29,7 @@ export class Main {
 
   private getClass(): string {
 
+    this.class.push(wordBreak(this.wordBreak));
     return this.class.join(' ');
   }
   render() {

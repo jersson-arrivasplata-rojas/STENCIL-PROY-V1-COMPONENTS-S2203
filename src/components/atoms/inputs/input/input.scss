@@ -39,7 +39,7 @@ $wrap: "sami-input";
 
   & .#{$wrap}-doc-search {
     height: 45px;
-    max-width: 500px;
+    max-width: 520px;
     width: 100%;
     font-size: 15px;
     padding-left: 20px;
@@ -47,5 +47,11 @@ $wrap: "sami-input";
     border-color: black;
     border-radius: 8px;
   }
-  
+
+  @media (max-width: 520px) {
+    & .#{$wrap}-doc-search {
+      width: 320px;
+      min-width: 320px;
+    }
+  }
 }

@@ -58,7 +58,7 @@ export class Hyperlink {
 
     this.class.push(position(this.position));
     this.class.push(borderStyle(this.borderStyle));
-    this.class.push(borderWidth(this.borderStyle));
+    this.class.push(borderWidth(this.borderWidth));
     this.class.push(textColor(this.color));
     this.class.push(textDecoration(this.decoration));
     this.class.push(backgroundColor(this.background));
