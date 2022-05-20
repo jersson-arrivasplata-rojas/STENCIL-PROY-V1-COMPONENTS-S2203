@@ -203,6 +203,7 @@ $wrap: "sami-card-code";
       }
       & div.#{$wrap}___preview-html {
         position: absolute;
+        width: 100%;
       }
       & pre {
         /*.#{$wrap}___code-html*/
